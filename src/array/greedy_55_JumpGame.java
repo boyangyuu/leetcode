@@ -12,7 +12,7 @@ public class greedy_55_JumpGame {
         int i = nums.length - 2;
         int w = 0;
         while(i >= 0) {
-            if (nums[i] == 0 || nums[i] <= w){
+            if (nums[i] <= w){ // fix bug2 exceed time
                 w++;
             } else {
                 w = 0; // fix bug1
@@ -56,7 +56,7 @@ public class greedy_55_JumpGame {
  步骤2
  步骤3
 
- bug1
- bug2
+ bug1 中间可能出0 , 导致cannot jump
+ bug2 超时 可以减少判断次数  nums[i] <= w || nums[i] == 0 改为  nums[i] <= w
  bug3
  */
