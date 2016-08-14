@@ -7,7 +7,20 @@ public class dc_169_MajorityElement {
     }
 
     public int majorityElement(int[] nums) {
-        return 0;
+        int n = nums[0];
+        int c = 0;
+        for (int i = 0; i < nums.length; i++) {
+            // restore
+            if (c == 0) {
+                n = nums[i];
+                c = 1;
+                continue;
+            }
+            if (n == nums[i]) c++;
+            else c--;
+        }
+
+        return n;
     }
 }
 /** 题
