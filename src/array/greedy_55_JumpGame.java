@@ -50,7 +50,7 @@ public class greedy_55_JumpGame {
  参考网站
 
  思路 :
-
+后面开始 无法跳跃的值 为无效值 无需维护, O(1)
 
  步骤1
  步骤2
