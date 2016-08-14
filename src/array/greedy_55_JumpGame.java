@@ -2,7 +2,7 @@ package array;
 
 public class greedy_55_JumpGame {
     public static void main(String[] args) {
-        int[] nums = {4,2,1,0,4};
+        int[] nums = {0,2,3};
         System.out.println(greedy_55_JumpGame.canJump(nums));
     }
 
@@ -15,12 +15,13 @@ public class greedy_55_JumpGame {
             if (nums[i] == 0 || nums[i] <= w){
                 w++;
             } else {
-                return true;
+                w = 0; // fix bug1
+                //return true; bug1
             }
             i--;
         }
 
-        return ret;
+        return w == 0;
     }
 
 }
