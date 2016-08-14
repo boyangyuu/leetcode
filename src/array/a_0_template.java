@@ -3,7 +3,7 @@ package array;
 import java.util.*;
 
 public class a_0_template {
-    public static void mains(String[] args) {
+    public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
