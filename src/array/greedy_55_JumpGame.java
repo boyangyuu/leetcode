@@ -2,12 +2,23 @@ package array;
 
 public class greedy_55_JumpGame {
     public static void main(String[] args) {
-        int[] nums = {0,0,0,0};
-        //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        int[] nums = {4,2,1,0,4};
+        System.out.println(greedy_55_JumpGame.canJump(nums));
     }
 
     public static boolean canJump(int[] nums) {
+        if (nums.length == 1) return true;
         boolean ret = false;
+        int i = nums.length - 2;
+        int w = 0;
+        while(i >= 0) {
+            if (nums[i] == 0 || nums[i] <= w){
+                w++;
+            } else {
+                return true;
+            }
+            i--;
+        }
 
         return ret;
     }
