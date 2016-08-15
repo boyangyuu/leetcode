@@ -19,10 +19,12 @@ public class a_57_insertInterval {
         for (int i = 0; i < intervals.size(); i++) {
             Interval v = intervals.get(i);
 
-            if (i == 0 && newInterval.end <= v.start){
-                intervals.add(i, newInterval);
-                checkIndex = i;
-                break;
+            if (i == 0){
+                if (v.start >= newInterval.end || v.start > newInterval.start) { //fix bug1 miss [[1,5]] insert [0,3]
+                    intervals.add(i, newInterval);
+                    checkIndex = i;
+                    break;
+                }
             }
             if (v.start <= newInterval.start){
                 intervals.add(i + 1, newInterval);
