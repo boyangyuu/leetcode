@@ -103,6 +103,8 @@ public class a_57_insertInterval {
  参考网站
 
  思路 :
+ 从头到尾判断即可, 注意 bug!!!
+ 此题做的时候 产生bug很多.....
 
 
  步骤1
