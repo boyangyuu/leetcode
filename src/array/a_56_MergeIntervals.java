@@ -8,34 +8,34 @@ public class a_56_MergeIntervals {
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
 
-    public List<a_56_Interval> merge(List<a_56_Interval> intervals)
+    public List<Interval> merge(List<Interval> intervals)
     {
-        List<a_56_Interval> toRet = new ArrayList<a_56_Interval>();
+        List<Interval> toRet = new ArrayList<Interval>();
         if(intervals == null || intervals.size() == 0)
             return toRet;
 
-        Collections.sort(intervals, new Comparator<a_56_Interval>(){
+        Collections.sort(intervals, new Comparator<Interval>(){
             @Override
-            public int compare(a_56_Interval i1, a_56_Interval i2)
+            public int compare(Interval i1, Interval i2)
             {
                 return i1.start - i2.start;
             }
         });
-        a_56_Interval prev = intervals.get(0);
+        Interval prev = intervals.get(0);
         for(int i = 1; i < intervals.size(); i++)
         {
-            a_56_Interval curr = intervals.get(i);
+            Interval curr = intervals.get(i);
             if(prev.end >= curr.start)
                 prev.end = curr.end > prev.end? curr.end: prev.end;
             else
             {
-                a_56_Interval t = new a_56_Interval(prev.start, prev.end);
+                Interval t = new Interval(prev.start, prev.end);
                 //System.out.println(t.start + ":" + t.end);
                 toRet.add(t);
                 prev = curr;
             }
         }
-        toRet.add(new a_56_Interval(prev.start, prev.end));
+        toRet.add(new Interval(prev.start, prev.end));
         return toRet;
     }
 
@@ -60,9 +60,9 @@ public class a_56_MergeIntervals {
 
  集合的排序算法!!!
 
- Collections.sort(intervals, new Comparator<a_56_Interval>(){
+ Collections.sort(intervals, new Comparator<Interval>(){
 @Override
-public int compare(a_56_Interval i1, a_56_Interval i2)
+public int compare(Interval i1, Interval i2)
 {
 return i1.start - i2.start;
 }
