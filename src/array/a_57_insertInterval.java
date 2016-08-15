@@ -1,5 +1,6 @@
 package array;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class a_57_insertInterval {
@@ -20,13 +21,13 @@ public class a_57_insertInterval {
             Interval v = intervals.get(i);
 
             if (i == 0){
-                if (v.start >= newInterval.end || v.start > newInterval.start) { //fix bug1 miss [[1,5]] insert [0,3]
+                if (v.start > newInterval.start) { //fix bug1 miss [[1,5]] insert [0,3]
                     intervals.add(i, newInterval);
                     checkIndex = i;
                     break;
                 }
             }
-            if (v.start <= newInterval.start){
+            if (v.start <= newInterval.start && v.end >= newInterval.start || i == intervals.size() - 1){
                 intervals.add(i + 1, newInterval);
                 checkIndex = i;
                 break;
@@ -40,6 +41,9 @@ public class a_57_insertInterval {
     }
 
     public static void mergeIntervals(int index, List<Interval> intervals){
+        for (int i = 0; i < intervals.size(); i++) {
+            System.out.print(intervals.get(i).start + "  " + intervals.get(i).end + ";");
+        }
         while(true){
             if (index <= intervals.size() - 1) return;
             Interval curr = intervals.get(index);
