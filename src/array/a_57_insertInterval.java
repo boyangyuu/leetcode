@@ -8,7 +8,6 @@ public class a_57_insertInterval {
         int[] nums = {0,0,0,0};
         System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
-
     public static List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         if (intervals.size() == 0) {
             intervals.add(newInterval);
@@ -27,11 +26,28 @@ public class a_57_insertInterval {
                     break;
                 }
             }
-            if (v.start <= newInterval.start && v.end >= newInterval.start || i == intervals.size() - 1){
+
+            if (i == intervals.size() - 1) {
+                if (v.start <= newInterval.start) {
+                    intervals.add(i+1, newInterval);
+                    checkIndex = i;
+                    break;
+                } else {
+                    intervals.add(i, newInterval);
+                    checkIndex = i;
+                    break;
+                }
+
+            }
+
+            Interval next = intervals.get(i+1);
+            if (v.start <= newInterval.start && next.start >= newInterval.start){
                 intervals.add(i + 1, newInterval);
                 checkIndex = i;
                 break;
             }
+
+
         }
 
         //merge
