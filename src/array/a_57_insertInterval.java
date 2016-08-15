@@ -9,7 +9,10 @@ public class a_57_insertInterval {
     }
 
     public static List<Interval> insert(List<Interval> intervals, Interval newInterval) {
-
+        if (intervals.size() == 0) {
+            intervals.add(newInterval);
+            return intervals;
+        }
 
         //insert
         int checkIndex = 0;
