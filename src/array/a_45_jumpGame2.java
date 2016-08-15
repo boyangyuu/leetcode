@@ -24,7 +24,7 @@ public class a_45_jumpGame2 {
 
             // check to delete object in list
             int check = list.get(list.size() - 2);
-            if (nums[l - i] < i - check) { //bug
+            if (nums[l - i - 1] < i - check) { //bug2
                 list.add(i);
             } else {
                 list.remove(list.size() - 1);
