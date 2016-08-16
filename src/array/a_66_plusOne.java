@@ -7,10 +7,31 @@ public class a_66_plusOne {
     }
 
     public static int[] plusOne(int[] digits) {
-        int [] ret = new int [digits.length];
+        int i = digits.length - 1;
+        int flag = 1;
+        while(i >= 0 && flag == 1){
+            int v = (digits[i] + 1 * flag) % 10;
+            digits[i] = v;
+            if (v == 0) flag = 1;
+            else flag = 0;
+            i--;
+        }
 
+        if (flag == 1) {
+            // new
+            int []ret = new int[digits.length + 1];
+            for (int j = 0; j < ret.length; j++) {
+                if (i == 0) {
+                    ret[j] = 1;
+                } else {
+                    ret[j] = digits[j - 1];
+                }
+            }
+            return ret;
 
-        return ret;
+        } else {
+            return digits;
+        }
     }
 }
 
@@ -34,6 +55,15 @@ public class a_66_plusOne {
  参考网站
 
  思路 :
+ 从 index 为l - 1 开始
+ 条件 i >= 0
+ (nums[i] + 1) % 10 = 0 则进位, flag = 1 i--;
+ != 0  则break
+
+ flag == 1 则 重建数组
+
+
+ flag != 1 则 return
 
 
  步骤1
