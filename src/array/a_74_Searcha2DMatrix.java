@@ -19,8 +19,14 @@ public class a_74_Searcha2DMatrix {
             if (target > v) {
 
                 // 二分插入查找 begin
-                if (mid == matrix.length - 1) head = tail;
-                else if (target < matrix[mid + 1][0]) head = tail = mid;
+                if (mid == matrix.length - 1) {
+                    head = tail;
+                    break;
+                }
+                else if (target < matrix[mid + 1][0]) {
+                    head = tail = mid;
+                    break;
+                }
 
                     // 二分查找查找 end
 
@@ -88,7 +94,7 @@ public class a_74_Searcha2DMatrix {
  思路 :
 根据
  1 找对应的行
- 每行第一个元素, 二分查找,
+ 每行第一个元素, 二分插入查找,  (详情见 tutorial 里的 binarySearch)
  找到 a[i] <= target < a[i + 1]
  返回 i
 
