@@ -11,7 +11,7 @@ public class a_75_SortColors {
         int l = 0;
         int r = nums.length - 1;
         int i = 0;
-        while(i < r) {
+        while(i <= r) {
             // update l
             if(nums[l] == 0) {
                 l++;
@@ -21,7 +21,7 @@ public class a_75_SortColors {
 
             //update r
             if(nums[r] == 2) {
-                r++;
+                r--;
                 continue;
             }
 
@@ -36,7 +36,6 @@ public class a_75_SortColors {
                 int temp = nums[i];
                 nums[i] = nums[r];
                 nums[r] = temp;
-                ;
                 continue;
             } else {
                 i++;
