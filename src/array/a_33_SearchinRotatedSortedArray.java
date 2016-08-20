@@ -6,7 +6,7 @@ public class a_33_SearchinRotatedSortedArray {
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
 
-    public static int search(int[] nums, int target) {
+    public static int search(int[] nums, int target) { 
         if (nums.length == 0) return -1;
         int l = 0, r = nums.length - 1;
         while(l <= r){
