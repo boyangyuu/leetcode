@@ -14,7 +14,7 @@ public class a_33_SearchinRotatedSortedArray {
             if (nums[m] == target) return m;
 
             if (nums[m] < nums[r]) { // 右侧必然有序
-                if (target < nums[m] && target <= nums[r]) l = m + 1;    //右侧检测
+                if (nums[m] < target && target <= nums[r]) l = m + 1;    //右侧检测
                 else r = m - 1; // 排除法 放在左侧
             } else {
                 if (nums[l] <= target && target < nums[m]) r = m - 1; // 左侧检测
