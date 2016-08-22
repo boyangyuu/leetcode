@@ -12,19 +12,19 @@ public class a_54_SpiralMatrix {
         List<Integer> ret = new ArrayList();
         if(matrix.length == 0 || matrix[0].length == 0) return ret;
         int m = matrix.length, n = matrix[0].length;
-        int r = Math.min(m,n) + 1 / 2;
+        int r = Math.min(m,n) + 1 / 2; // bug4 需要加扣好
 
         //循环圈数
         for (int i = 0; i < r; i++, m-=2, n-=2) {
             for (int j = i; j < i+n; j++) //bug1 里面要有i
-                ret.add(matrix[i][j]);  //固定 横坐标 i
+                ret.add(matrix[i][j]);  //固定 纵坐标 i
 
             for (int j = i + 1; j < i+m; j++)
-                ret.add(matrix[j][i+m-1]); //固定纵坐标 i + m - 1
+                ret.add(matrix[j][i+m-1]); //固定横坐标 i + m - 1
 
-            if (m == 1) break;
+            if (m == 1 || n == 1) break; // bug3      [[2],[3],[4]]
             for (int j = i+n-2; j >= i; j--) {
-                ret.add(matrix[i+n-1][j]);   //固定横坐标 bug2
+                ret.add(matrix[i+m-1][j]);   //固定横坐标 bug2 // m 一定出现在左边 (纵坐标) ,
             }
 
             for (int j = i+m-2; j >= i + 1; j--) {
