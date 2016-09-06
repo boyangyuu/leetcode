@@ -13,16 +13,16 @@ public class a_229_MajorityElementII {
         //ret.contains()
         int m = 0, n = 0, cm = 0, cn = 0, i = 0;
         while(i < nums.length) {
-            if (cm == 0) {
+            if (nums[i] == m) {
+                cm++;
+            } else if (nums[i] == n) {
+                cn++;
+            } else if (cm == 0) {
                 m = nums[i];
                 cm = 1;
             } else if (cn == 0) {
                 n = nums[i];
                 cn = 1;
-            } else if (nums[i] == m) {
-                cm++;
-            } else if (nums[i] == n) {
-                cn++;
             } else {
                 cm--;
                 cn--;
