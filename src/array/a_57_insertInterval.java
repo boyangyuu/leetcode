@@ -106,6 +106,7 @@ public class a_57_insertInterval {
  从头到尾判断即可, 注意 bug!!!
  此题做的时候 产生bug很多.....
 
+ 改成 http://www.cnblogs.com/grandyang/p/4367569.html 的思路
 
  步骤1
  步骤2
