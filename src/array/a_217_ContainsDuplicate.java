@@ -15,7 +15,7 @@ public class a_217_ContainsDuplicate {
                 return true;
             } else {
                 map.put(nums[i], true);
-            }
+            } 
         }
         return false;
     }
