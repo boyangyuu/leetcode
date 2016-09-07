@@ -29,7 +29,7 @@ public class a_289_GameofLife {
                 int cnt = 0;
                 for (int k = 0; k < 8; k++) {
                     int r = i + dr[k];
-                    int c = i + dc[k];        //  bug1
+                    int c = j + dc[k];        //  bug1
                     if (r >= 0 && r < board.length
                          && c >= 0 && c < board[0].length
                          &&(board[r][c] == 1 ||board[r][c] == 3))  //活着的cnt
