@@ -1,6 +1,6 @@
 package dp;
 
-public class d_62_UniquePaths {
+public class d$_62_UniquePaths {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
