@@ -22,14 +22,23 @@ public class d_70_climbingstairs {
 
     }
 
-    public int recursiveClimbStairs(int n, HashMap<Integer, Integer> maps){
+    public int climbStairs1(int n) {
+        int[] maps = new int[n];
+        for (int i = 0; i < maps.length; i++) {
+            maps[i] = 0;
+        }
+        return recursiveClimbStairs(n, maps);
+
+    }
+
+    public int recursiveClimbStairs(int n, int[] maps){
         if (n == 1) return 1;
         if (n == 2) return 2;
-        if (maps.containsKey(n)) {
-            return maps.get(n);
+        if (maps[n-1] != 0) {
+            return maps[n-1];
         }
-        maps.put(n, climbStairs(n-1) + climbStairs(n-2) + 2);
-        return maps.get(n);
+        maps[n - 1] = climbStairs(n-1) + climbStairs(n-2);
+        return maps[n - 1];
     }
 
 }
