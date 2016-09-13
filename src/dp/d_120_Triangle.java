@@ -11,12 +11,12 @@ public class d_120_Triangle {
 
     public int minimumTotal(List<List<Integer>> triangle) {
         int[] dp = new int[triangle.size()];
-        for (int i = triangle.size() - 1; i >= 0; i--) {
+        for (int i = triangle.size() - 1; i > 0; i--) {
             List<Integer> list = triangle.get(i);
             for (int j = 0; j < list.size(); j++) {
                 int cur = list.get(j);
                 if (i == triangle.size() - 1) dp[j] = cur;
-                else if (j == 0) {
+                else if (j == 0) { // todo bug
                     dp[j] = dp[j] + cur;
                 } else {
                     dp[j] = Math.max(dp[j], dp[j-1]) + cur;
