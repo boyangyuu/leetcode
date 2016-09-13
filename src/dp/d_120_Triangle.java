@@ -16,9 +16,7 @@ public class d_120_Triangle {
             for (int j = 0; j < list.size(); j++) {
                 int cur = list.get(j);
                 if (i == triangle.size() - 1) dp[j] = cur;
-                else if (j == 0) { // todo bug
-                    dp[j] = dp[j] + cur;
-                } else {
+                else {
                     dp[j] = Math.max(dp[j], dp[j-1]) + cur;
                 }
 
