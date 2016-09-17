@@ -15,7 +15,8 @@ public class d_300_LongestIncreasingSubsequence {
             for (int j = 0; j < i; j++) {
                 dp[i] = 1;          // todo!!!! bug 1
                 if (nums[i] > nums[j]) { // 严格递增
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                    dp[i] = Math.max(dp[i], dp[j] + 1);  // todo  可用二分查找优化, 由于这里的nums[j] 大小不确定,所以造成了困难!
+                    //todo  不会想这块。。
                 }
             }
             ret = Math.max(dp[i], ret);
@@ -23,6 +24,8 @@ public class d_300_LongestIncreasingSubsequence {
 
         return ret;
     }
+
+    // better solution 二分查找
 
 }
 /** 题
