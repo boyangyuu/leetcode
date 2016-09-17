@@ -22,12 +22,12 @@ public class d_0_template {
  *
  参考网站
 
- 思路 :
+ TODO solotion
 
 
- 步骤1
- 步骤2
- 步骤3
+ TODO case
+
+ TODO bug
 
  bug1
  bug2
