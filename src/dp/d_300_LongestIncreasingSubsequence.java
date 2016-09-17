@@ -10,9 +10,10 @@ public class d_300_LongestIncreasingSubsequence {
         int ret = 0;
         int[] dp = new int[nums.length];
         if (nums.length <= 1) return nums.length;
-        dp[0] = 1;   // todo bug1
+//        dp[0] = 1;                  // todo!!! bug1
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
+                dp[i] = 1;          // todo!!!! bug 1
                 if (nums[i] > nums[j]) { // 严格递增
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
@@ -56,6 +57,7 @@ public class d_300_LongestIncreasingSubsequence {
  TODO bug
 
  bug1
+ todo 千万别光写 dp[0] = 1, 因为别的地方也会出现 case , 别的地方dp[j] 也最少是1 例如 [10,9,2] 中的 2, dp为1 而非 0
  bug2
  bug3
  */
