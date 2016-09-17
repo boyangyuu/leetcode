@@ -11,8 +11,9 @@ public class d_152_MaximumProductSubarray {
         int max = nums[0], min = nums[0], ret = max;
 
         for (int i = 1; i < nums.length; i++) {
+            int max1 = max;
             max = Math.max(Math.max(max * nums[i], min * nums[i]), nums[i]); // todo bug1
-            min = Math.min(Math.min(max * nums[i], min * nums[i]), nums[i]); // todo bug1
+            min = Math.min(Math.min(max1 * nums[i], min * nums[i]), nums[i]); // todo bug1
             ret = Math.max(ret, max);
 //            System.out.println("max "+max);
 //            System.out.println("min "+min);
@@ -54,8 +55,9 @@ public class d_152_MaximumProductSubarray {
  TODO bug
 
  bug1
- 负数的直接跳过,   todo bug1   负负得正
- bug2
- 负数的直接跳过,   todo bug1   负负得正
+ max modified, calculate min again then error , so add max1
+
  bug3
+ 负数的直接跳过,   todo bug1   负负得正
+
  */
