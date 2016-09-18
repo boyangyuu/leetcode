@@ -9,7 +9,7 @@ public class d_304_RangeSumQuery2DImmutable {
     public static int[][] dp;
 
     public void NumMatrix(int[][] matrix) {
-        if(matrix.length == 0) matrix = new int [0][0];
+        if(matrix.length == 0) matrix = new int [1][1]; // todo bug 4
         dp = new int[matrix.length + 1][matrix[0].length + 1]; //todo bug2
         for (int i = 1; i <= matrix.length; i++) {
             for (int j = 1; j <= matrix[0].length; j++) {
@@ -55,7 +55,11 @@ public class d_304_RangeSumQuery2DImmutable {
 
  bug1
   要这样写,才简便
+
  bug2
+
  bug3
   注意转换
+ todo bug4
+   nums为 {} 时 转为 {{0}}
  */
