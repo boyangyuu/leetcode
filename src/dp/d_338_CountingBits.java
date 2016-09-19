@@ -19,7 +19,10 @@ public class d_338_CountingBits {
  *
  * http:
  *
+ Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in
+ their binary representation and return them as an array.
 
+ todo the number of 1's stands for the appear times of "1"
 
  */
 
@@ -52,7 +55,7 @@ public class d_338_CountingBits {
  13   1101    3
  14   1110    3
  15   1111    4
-
+  //todo
   dp[i] = {
     dp[i/2] // i % 2 == 0 (even)
     dp[i/2] + 1 // i % 2 == 1 (odd)
