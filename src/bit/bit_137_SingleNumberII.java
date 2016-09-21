@@ -11,9 +11,9 @@ public class bit_137_SingleNumberII {
         for (int i = 0; i < 32; i++) {
             int sum = 0;
             for (int j = 0; j < nums.length; j++) {
-                sum += (nums[j]<<i) & 1;
+                sum += (nums[j]>>i) & 1; // todo bug2
             }
-            ret |= sum; // += 也可以
+            ret |= sum>>i; // += 也可以 todo bug1
         }
         return ret;
     }
@@ -44,7 +44,12 @@ public class bit_137_SingleNumberII {
  TODO bug
 
  bug1
+ ret |= sum;
+ ret |= sum>>i;
+
  bug2
+ sum += (nums[j]>>i) & 1; // 箭头方向为移动方向  1101 >> 2 = 11
+ sum += (nums[j]<<i) & 1;
  bug3
  */
 
