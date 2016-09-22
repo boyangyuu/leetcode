@@ -29,7 +29,7 @@ public class hs_76_MinimumWindowSubstring {
 
         }
 
-
+        return "";
     }
 
 }
