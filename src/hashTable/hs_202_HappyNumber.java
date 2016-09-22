@@ -51,8 +51,9 @@ public class hs_202_HappyNumber {
 
 
  {
-  set : object=> case 82
-  取各个整数  x/10 , x%10  直到x/10 为0
+  int n   : 每次迭代的n
+  Set set : object=> case 82
+  int sum : 取各个整数之和  x/10 , x%10  直到x 为0
  }
 
 
