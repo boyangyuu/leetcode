@@ -12,25 +12,20 @@ public class a_54_SpiralMatrix {
         List<Integer> ret = new ArrayList();
         if(matrix.length == 0 || matrix[0].length == 0) return ret;
         int m = matrix.length, n = matrix[0].length;
-        int r = Math.min(m,n) + 1 / 2; // bug4 需要加扣好
+        int r = m > n ? (n + 1) / 2 : (m + 1) / 2;
+        int p = m, q = n;
 
-        //循环圈数
-        for (int i = 0; i < r; i++, m-=2, n-=2) {
-            for (int j = i; j < i+n; j++) //bug1 里面要有i
-                ret.add(matrix[i][j]);  //固定 纵坐标 i
+        for (int i = 0; i < r; ++i, p -= 2, q -= 2) {
+            for (int col = i; col < i + q; ++col)
+                ret.add(matrix[i][col]);
+            for (int row = i + 1; row < i + p; ++row)
+                ret.add(matrix[row][i + q - 1]);
 
-            for (int j = i + 1; j < i+m; j++)
-                ret.add(matrix[j][i+m-1]); //固定横坐标 i + m - 1
-
-            if (m == 1 || n == 1) break; // bug3      [[2],[3],[4]]
-            for (int j = i+n-2; j >= i; j--) {
-                ret.add(matrix[i+m-1][j]);   //固定横坐标 bug2 // m 一定出现在左边 (纵坐标) ,
-            }
-
-            for (int j = i+m-2; j >= i + 1; j--) {
-                ret.add(matrix[j][i]);
-            }
-
+            if (p == 1 || q == 1) break;        //todo bug
+            for (int col = i + q - 2; col >= i; --col)
+                ret.add(matrix[i + p - 1][col]);
+            for (int row = i + p - 2; row > i; --row)
+                ret.add(matrix[row][i]);
         }
 
 
@@ -64,6 +59,18 @@ public class a_54_SpiralMatrix {
  参考网站 https://discuss.leetcode.com/topic/3713/super-simple-and-easy-to-understand-solution/21
  https://discuss.leetcode.com/topic/3713/super-simple-and-easy-to-understand-solution/21
  思路 :
+
+ {
+    int round =  = (Math.min(m,n) + 1) / 2;
+    for {
+        4 for // top right below left
+    }
+    p =  横向边长 , every round -= 2
+    q =  纵向边长 , every round -= 2
+
+ }
+
+
 
  错误: 创造边界之后搞,
 

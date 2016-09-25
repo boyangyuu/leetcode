@@ -7,31 +7,24 @@ public class a_66_plusOne {
     }
 
     public static int[] plusOne(int[] digits) {
-        int i = digits.length - 1;
-        int flag = 1;
-        while(i >= 0 && flag == 1){
-            int v = (digits[i] + 1 * flag) % 10;
-            digits[i] = v;
-            if (v == 0) flag = 1;
-            else flag = 0;
-            i--;
-        }
-
-        if (flag == 1) {
-            // new
-            int []ret = new int[digits.length + 1];
-            for (int j = 0; j < ret.length; j++) {
-                if (i == 0) {
-                    ret[j] = 1;
-                } else {
-                    ret[j] = digits[j - 1];
-                }
+        for (int i = digits.length - 1; i >= 0; --i) {
+            if (digits[i] == 9) digits[i] = 0;
+            else {
+                digits[i] += 1;
+                return digits;
             }
-            return ret;
-
-        } else {
-            return digits;
         }
+
+        int[] res = new int[digits.length + 1];
+        if (digits[0] == 0) {
+            res[0] = 1;
+            for (int i = 0; i < digits.length; i++) {
+                res[i+1] = digits[i];
+            }
+
+
+        };
+        return res;
     }
 }
 
@@ -55,6 +48,16 @@ public class a_66_plusOne {
  参考网站
 
  思路 :
+
+ todo 用 List 写
+ {
+    从尾部遍历 digits
+    if digits[i] == 9 digits[i] = 0;
+    else ++; return digits
+
+ }
+
+
  从 index 为l - 1 开始
  条件 i >= 0
  (nums[i] + 1) % 10 = 0 则进位, flag = 1 i--;

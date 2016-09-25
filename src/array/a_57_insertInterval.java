@@ -8,72 +8,28 @@ public class a_57_insertInterval {
         int[] nums = {0,0,0,0};
         System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
-    public static List<Interval> insert(List<Interval> intervals, Interval newInterval) {
-        if (intervals.size() == 0) {
-            intervals.add(newInterval);
-            return intervals;
+
+    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+        List<Interval> res = new ArrayList<>(intervals);
+        int i = 0, overlap = 0, n = res.size();
+        while (i < n) {
+            Interval cur = res.get(i);
+            if (newInterval.end < cur.start) break;
+            else if (newInterval.start > cur.end) {}
+            else {
+                newInterval.start = Math.min(newInterval.start, cur.start);
+                newInterval.end = Math.max(newInterval.end, cur.end);
+                ++overlap;
+            }
+            ++i;
         }
 
-        //insert
-        int checkIndex = 0;
-        for (int i = 0; i < intervals.size(); i++) {
-            Interval v = intervals.get(i);
-
-            if (i == 0){
-                if (v.start > newInterval.start) { //fix bug1 miss [[1,5]] insert [0,3]
-                    intervals.add(i, newInterval);
-                    checkIndex = i;
-                    break;
-                }
-            }
-
-            if (i == intervals.size() - 1) {
-                if (v.start <= newInterval.start) {
-                    intervals.add(i+1, newInterval);
-                    checkIndex = i;
-                    break;
-                } else {
-                    intervals.add(i, newInterval);
-                    checkIndex = i;
-                    break;
-                }
-
-            }
-
-            Interval next = intervals.get(i+1);
-            if (v.start <= newInterval.start && next.start >= newInterval.start){
-                intervals.add(i + 1, newInterval);
-                checkIndex = i;
-                break;
-            }
-
-
+        int from = i - overlap;  // the first inserted index
+        for (int j = 0; j < overlap; j++) {
+            res.remove(from);
         }
-
-        //merge
-        mergeIntervals(checkIndex, intervals);
-
-        return intervals;
-    }
-
-    public static void mergeIntervals(int index, List<Interval> intervals){
-        for (int i = 0; i < intervals.size(); i++) {
-            System.out.print(intervals.get(i).start + "  " + intervals.get(i).end + ";");
-        }
-        while(true){
-            if (index <= intervals.size() - 1) return;
-            Interval curr = intervals.get(index);
-            Interval next = intervals.get(index + 1);
-            if (next.start <= curr.end){
-                next.start = curr.start;
-                next.end = Math.max(curr.end, next.end);
-                intervals.remove(index);
-            } else {
-                index++;
-            }
-
-        }
-
+        res.add(from, newInterval);
+        return res;
     }
 
 }
@@ -103,10 +59,26 @@ public class a_57_insertInterval {
  参考网站
 
  思路 :
- 从头到尾判断即可, 注意 bug!!!
- 此题做的时候 产生bug很多.....
+    新插对象无论如何都会被插入
+  能插的位置都插,, 最后删掉 overlap个 被插的, 插入新插对象
+  注意 不要改旧数值
 
- 改成 http://www.cnblogs.com/grandyang/p/4367569.html 的思路
+ step 1. {
+    int overlap = 0 // 重复区间 遇到重复区间则加1
+    int i = 0 ;    // 维持到最后一个可以插入的位置
+    int from = i - overlap; // 第一个插入的位置
+    newInterval ; // 维护, 使其被插入, 直到最大化
+    if 新区间末尾 小于 intervals[0]的开头 则无法插入 跳出循环
+    elseif 新区间开头 大于 intervals[i] 的末尾 循环继续
+    else 插入 , overlap ++;
+
+    删除所有的overlap区间, 添加 维护后的newInterval
+
+ }
+
+ step 2. {
+
+ }
 
  步骤1
  步骤2

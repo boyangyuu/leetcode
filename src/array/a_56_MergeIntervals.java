@@ -10,9 +10,8 @@ public class a_56_MergeIntervals {
 
     public List<Interval> merge(List<Interval> intervals)
     {
-        List<Interval> toRet = new ArrayList<Interval>();
-        if(intervals == null || intervals.size() == 0)
-            return toRet;
+        List<Interval> res = new ArrayList<Interval>();
+        if(intervals.size() == 0)  return res;
 
         Collections.sort(intervals, new Comparator<Interval>(){
             @Override
@@ -21,22 +20,17 @@ public class a_56_MergeIntervals {
                 return i1.start - i2.start;
             }
         });
-        Interval prev = intervals.get(0);
+        res.add(intervals.get(0));
         for(int i = 1; i < intervals.size(); i++)
         {
             Interval curr = intervals.get(i);
+            Interval prev = res.get(res.size()-1);
             if(prev.end >= curr.start)
                 prev.end = curr.end > prev.end? curr.end: prev.end;
             else
-            {
-                Interval t = new Interval(prev.start, prev.end);
-                //System.out.println(t.start + ":" + t.end);
-                toRet.add(t);
-                prev = curr;
-            }
+                res.add(curr);
         }
-        toRet.add(new Interval(prev.start, prev.end));
-        return toRet;
+        return res;
     }
 
 }
@@ -44,7 +38,11 @@ public class a_56_MergeIntervals {
  *
  * http:
  *
+ Given a collection of intervals, merge all overlapping intervals.
 
+ For example,
+ Given [1,3],[2,6],[8,10],[15,18],
+ return [1,6],[8,10],[15,18].
 
  */
 
@@ -56,7 +54,11 @@ public class a_56_MergeIntervals {
  参考网站
 
  思路 :
- 之后
+ {
+    List res : 结果
+    Interval prev : 当前res末尾元素
+    Interval cur  : res[i] , 与prev 合并
+ }
 
  集合的排序算法!!!
 

@@ -48,15 +48,11 @@ public class a_73_SetMatrixZeroes {
 
         // 3 handle row 1 , column 1
         if (isContains0InR1) {
-            for (int i = 0; i < matrix[0].length; i++) {
-                matrix[0][i] = 0;
-            }
+            for (int i = 0; i < matrix[0].length; i++)  matrix[0][i] = 0;
         }
 
         if (isContains0InC1) {
-            for (int i = 0; i < matrix.length; i++) {
-                matrix[i][0] = 0;
-            }
+            for (int i = 0; i < matrix.length; i++) matrix[i][0] = 0;
         }
     }
 
