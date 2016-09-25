@@ -1,5 +1,6 @@
 package hashTable;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class hs_204_CountPrimes {
@@ -8,46 +9,27 @@ public class hs_204_CountPrimes {
     }
 
     public int countPrimes(int n) {
-        HashSet<Integer> set = new HashSet<>();
         int cnt = 0;
-        int index = 1;
-        while(++index < n) { // todo bug1
-            boolean flag = true;
-            for (int i : set){
-                if (i * i <= index && index % i == 0) {  //todo bug3
-                    flag = false; // todo bug2
-                    break;
-                }
-            }
-            if (flag) {
-                set.add(index);
-                cnt++;
-            }
+        int[] map = new int[n]; // from 2 to n-1, def is 0|prime //todo bug1
 
+        //generate map
+        for (int i = 2; i < Math.sqrt(n); i++) {
+            if(map[i] == 0) {
+                for (int j = i*i; j < n; j+=i) { //todo bug2
+                    map[j] = 1;
+                }
+
+            }
         }
 
+        //count
+        for (int i = 2; i < map.length; i++) {
+            if(map[i] == 0) cnt++;
+        }
         return cnt;
     }
 
-    public int countPrimes1(int n) {
-        boolean[] isPrime = new boolean[n];
-        for (int i = 2; i < n; i++) {
-            isPrime[i] = true;
-        }
-        // Loop's ending condition is i * i < n instead of i < sqrt(n)
-        // to avoid repeatedly calling an expensive function sqrt().
-        for (int i = 2; i * i < n; i++) {
-            if (!isPrime[i]) continue;
-            for (int j = i * i; j < n; j += i) {
-                isPrime[j] = false;
-            }
-        }
-        int count = 0;
-        for (int i = 2; i < n; i++) {
-            if (isPrime[i]) count++;
-        }
-        return count;
-    }
+
 }
 /** 题
  *
@@ -63,11 +45,19 @@ public class hs_204_CountPrimes {
  *
  *
  参考网站
-
+  todo http://www.cnblogs.com/grandyang/p/4462810.html 观看图
 
  TODO solotion
+
+ 思想
+ 1. 非质数Xn一定可以由 1个质数(小于根号Xn)和1个其他数字相乘组成, 所以遇到质数,则将其所有可能产生的非质数 产生出来 则剩下的一定是质数
+最小因子 非质例如 2*47 = 94
+
+
  {
-    Set set : 存 prime (质数)
+    HashMap map : key=> index value=> boolean default is true(prime)
+    Math.sqr(n) : 最小质数的范围
+
 
  }
 
@@ -76,12 +66,14 @@ public class hs_204_CountPrimes {
  TODO bug
 
  bug1
- while(++index < n) { // todo bug1
- while(++index <= n) { // 题干less than
+ int[] map = new int[n+1];
+ int[] map = new int[n];// from 2 to n-1, def is 0|prime //todo bug1 题意为小于n
 
  bug2
- if (index % i == 0) continue; // todo bug2
- if (index % i == 0) flag = false; // todo bug2
+
+ for (int j = i; j < n; j+=i) { //todo bug2
+ for (int j = i*2; j < n; j+=i) { // todo j不是from 最小质数
+ for (int j = i*i; j < n; j+=i) { //todo i*i 才是两者乘积较小的 例如 3=+3  应该是 9,12,15
 
  bug3
  */
