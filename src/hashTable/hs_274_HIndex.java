@@ -17,11 +17,9 @@ public class hs_274_HIndex {
         for (int v : set){}
     }
 
-    public int hIndex(int[] citations) {
-
-    }
-
-
+//    public int hIndex(int[] citations) {
+//
+//    }
 
 
 }
