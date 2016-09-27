@@ -15,15 +15,6 @@ public class hs_0_template {
         for (int v : set){}
     }
 
-
-
-
-
-
-
-
-
-
 }
 /** 题
  *
