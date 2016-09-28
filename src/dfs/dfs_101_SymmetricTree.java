@@ -59,11 +59,7 @@ public class dfs_101_SymmetricTree {
 todo!! 注意 第三层 3和4是不等的,
 
  TODO bug
-
- TODO follow
- todo#! 有时可以用set 优化map
-
-
+ 
  bug1
 
 
