@@ -11,7 +11,6 @@ public class dfs_98_ValidateBinarySearchTree {
 
     public boolean isValidBST(TreeNode root) {
         return help(root, Long.MAX_VALUE, Long.MIN_VALUE); // TODO bug1
-
     }
 
     public boolean help(TreeNode root, long max, long min) {
@@ -59,16 +58,13 @@ public class dfs_98_ValidateBinarySearchTree {
      6 20
  题干 ,The left subtree of a node contains only nodes with keys less than the node's key.
 
- TODO bug
-
-
-
  TODO follow
  todo#! 有时可以用set 优化map
 
 
+ TODO bug
  bug1
- return help(root, INTEGER.MAX_VALUE, INT.MIN_VALUE); // TODO bug1
+ return help(root, INTEGER.MAX_VALUE, INT.MIN_VALUE); // TODO bug1 可能 root.val 是max_value,
  return help(root, Long.MAX_VALUE, Long.MIN_VALUE); // TODO bug1
  bug2
 
