@@ -17,25 +17,14 @@ public class dfs_105_ConstructBinaryTreefromPreorderandInorderTraversal {
 
         //get the divide index, divide the inorder to left , right
         int i;
-        for (i = il; i <= ir; i++) { //todo bug 1
-            if (preorder[pl] == inorder[i]) break;  // cuz the question said they r distinct
-        }
         TreeNode root = new TreeNode(preorder[pl]);
+        for (i = il; i <= ir; i++) { //todo bug 1
+            if (preorder[pl] == root.val) break;  // cuz the question said they r distinct
+        }
         root.left = help(preorder, pl + 1, pl + i - il, inorder, il, i - 1); //i - il means the length of the left due to the divide
         root.right = help(preorder, pl + i - il + 1, pr, inorder, i + 1, ir); //todo bug
         return root;
-
     }
-
-
-
-
-
-
-
-
-
-
 }
 /** 题
  *
@@ -56,6 +45,8 @@ public class dfs_105_ConstructBinaryTreefromPreorderandInorderTraversal {
  TODO solotion
 
 
+
+
  TODO case
 
  TODO bug
@@ -71,6 +62,23 @@ public class dfs_105_ConstructBinaryTreefromPreorderandInorderTraversal {
 /*
 TODO tutorial
 
+    1　　　　　　preorder:　　  1　　2　　3
+   / \　　　　　  inorder:　　     2　　1　　3
+ 2    3　　  　　 postorder:　　 2　　3　　1
+
+ todo!! 递归理解
+ preorder[] : {root, left: [root left right], right : [root left right]}
+ inorder[]  : {left: [left root right] root right: [left root right]}
+
+we can use the preorder[0] as the root, to divide the INORDER to left , root, right
+also , according the length of left part , we can divde the PREOREDR too
+then, recursively divide pre and in arrays
+
+help(pre, )
+{
+
+
+}
 
 TODO follow
 

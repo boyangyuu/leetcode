@@ -61,21 +61,6 @@ public class dfs_104_MaximumDepthofBinaryTree {
 /*
 TODO tutorial
 
-    1　　　　　　preorder:　　  1　　2　　3
-   / \　　　　　  inorder:　　     2　　1　　3
- 2    3　　  　　 postorder:　　 2　　3　　1
-
- todo!! 递归理解
- preorder[] : {root, left: [root left right], right : [root left right]}
- inorder[]  : {left: [left root right] root right: [left root right]}
-
-so, recursively divide pre and in arrays
-
-help(pre, )
-{
-
-
-}
 
 
 
