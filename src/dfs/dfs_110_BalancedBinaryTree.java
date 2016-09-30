@@ -50,6 +50,15 @@ public class dfs_110_BalancedBinaryTree {
 
 
  TODO solotion
+ getMaxDeepth
+ {
+    leftDeep = f(left);
+
+    leftDeep = f(left);
+
+    if abs(leftDeep, rightDeep) > 1 return -1;
+    return 1 + max(left, right);
+ }
 
 
  TODO case

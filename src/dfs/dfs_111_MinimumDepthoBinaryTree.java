@@ -36,6 +36,14 @@ public class dfs_111_MinimumDepthoBinaryTree {
  todo!!! 这里的 leaf node 指当node 左右子树均为null, 而其自身不为null, todocase 中 3 不是, 4,5,6是
 
  TODO solotion
+ 当左右子树其中有一个为null, 则递归另一个,
+ 否则 , 取较小值 + 1,
+ f = {
+    if (leftChild == null) f(rightChild);
+    else if (rightChild == null) f(leftChild);
+    else min(f(leftChild), f(rightChild)) + 1
+ }
+
 
 
  TODO case
