@@ -15,7 +15,7 @@ public class dfs_0_tutorials {
     1. 若在左右子树的前面被访问叫做前序，其顺序为根左右
     2. 若在左右子树的中间被访问叫做中序，其顺序为左根右 todo! 对于 二叉搜索树 bst来说 中序遍历是
     3. 若在左右子树的后面被访问叫做后序，其顺序为左右根
-
+    4. 水平遍历,
 
      */
 
@@ -26,6 +26,16 @@ public class dfs_0_tutorials {
         help(root.right);
 //        visit root;
     }
+
+    void levelorder(TreeNode root, int level) {
+        if (root == null) return;
+
+        if (root.left == null) levelorder(root.left, level + 1);
+        if (root.right == null) levelorder(root.right, level + 1);
+    }
+
+
+
 
 }
 /** 题
@@ -42,6 +52,10 @@ public class dfs_0_tutorials {
  *
  *
  参考网站
+
+ 先序遍历
+
+
 
 
  TODO solotion
