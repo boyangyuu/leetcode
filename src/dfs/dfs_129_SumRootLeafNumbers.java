@@ -16,7 +16,7 @@ public class dfs_129_SumRootLeafNumbers {
     public int help(TreeNode root, int sum) {
         if (root == null) return 0;
         sum = sum * 10 + root.val;
-        if (root.left == null && root.right == null) return sum;
+        if (root.left == null && root.left == null) return sum;
         else if (root.left == null) return help(root.right, sum);
         else if (root.right == null) return help(root.left, sum);
         else return help(root.left, sum) + help(root.left, sum);
