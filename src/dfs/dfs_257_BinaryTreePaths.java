@@ -21,7 +21,7 @@ public class dfs_257_BinaryTreePaths {
     public void help(TreeNode root,String str, List<String> list) {
         if (root == null) return;
         int l = str.length();
-        if (str.length() == 0) str += root.val;
+        if (str.length() == 0) str += root.val; //todo bug1
         else str += "->" + root.val;
 
         if (root.left == null && root.right == null)
@@ -78,8 +78,9 @@ public class dfs_257_BinaryTreePaths {
 
  TODO bug
  bug1
-
-
+case {1}
+ output : {"->1"}
+ expected {"1"}
  bug2
 
  bug3
