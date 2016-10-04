@@ -8,58 +8,13 @@ public class a_74_Searcha2DMatrix {
     }
 
     public static boolean searchMatrix(int[][] matrix, int target) {
-        int head = 0;
-        int tail = matrix.length -1;
-        int mid;
-
-        //二分插入
-        while(head <= tail){
-            mid = (head + tail) / 2;
-            int v = matrix[mid][0];
-            if (target > v) {
-
-                // 二分插入查找 begin
-                if (mid == matrix.length - 1) {
-                    head = tail;
-                    break;
-                }
-                else if (target < matrix[mid + 1][0]) {
-                    head = tail = mid;
-                    break;
-                }
-
-                    // 二分查找查找 end
-
-                else {
-                    head = mid + 1;  //二分查找的话 只需要这句话
-                }
-
-            }
-            else if (target < v) tail = mid - 1;
-            else {
-                return true;
-            }
+        int left = 0, right = matrix.length;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (matrix[mid][0] <= target) left = mid + 1;
+            else right = mid - 1;
         }
 
-        int r = head;
-        head = 0;
-        tail = matrix[r].length - 1;
-        mid = 0;
-
-        //二分查找
-        while(head <= tail){
-            mid = (head + tail) / 2;
-            int v = matrix[r][mid];
-            if (target > v) {
-                head = mid + 1;
-
-            }
-            else if (target < v) tail = mid - 1;
-            else {
-                return true;
-            }
-        }
-        return false;
     }
 
 }
