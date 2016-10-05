@@ -14,6 +14,7 @@ public class a_74_Searcha2DMatrix {
             if (matrix[mid][0] <= target) left = mid + 1;
             else right = mid - 1;
         }
+        return false;
 
     }
 
