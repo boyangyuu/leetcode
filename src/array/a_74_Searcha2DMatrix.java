@@ -8,12 +8,26 @@ public class a_74_Searcha2DMatrix {
     }
 
     public static boolean searchMatrix(int[][] matrix, int target) {
-        int left = 0, right = matrix.length;
+        // step 1 binary insert
+        int left = 0, right = matrix.length - 1;
         while (left <= right) {
             int mid = (left + right) / 2;
             if (matrix[mid][0] <= target) left = mid + 1;
             else right = mid - 1;
         }
+        if (right == -1) return false; // todo bug 1
+
+        // step binary search
+        int row = right;
+        left = 0; right = matrix[row].length - 1;
+        while (left <= right) {
+            int mid = (right - left) / 2 + left;
+            if (matrix[row][mid] == target) return true;
+            else if (matrix[row][mid] < target) left = mid + 1;
+            else right = mid - 1;
+        }
+
+
         return false;
 
     }
@@ -47,26 +61,38 @@ public class a_74_Searcha2DMatrix {
  *
  参考网站
 
- 思路 :
-根据
- 1 找对应的行
- 每行第一个元素, 二分插入查找,  (详情见 tutorial 里的 binarySearch)
- 找到 a[i] <= target < a[i + 1]
- 返回 i
+ todo solution
+ todo alert!!
+ solution 1
+ step 1
+ 二分插入法, 找对应的行
+ right指针 最后的位置, 即为第一个 >=target 的位置(可插入)  //todo alert 一定要是right指针
+ right 会存在找不到的情况, 会变为-1, if (right == -1) return false; // todo bug 1
 
- 2 从对应行 二分查找
- 0,lengh
+ case
+ {{1}} , 0
 
->= 则 向后搜索
- < 则
+ step 2
+ 二分查找法 从对应行 二分查找
+
+ solution 2
+ 一次二分查找法
+ 如果我们按S型遍历该二维数组，可以得到一个有序的一维数组，那么我们只需要用一次二分查找法，而关键就在于坐标的转
+ 换，如何把二维坐标和一维坐标转换是关键点，把一个长度为n的一维数组转化为m*n的二维数组(m*n = n)后，那么原一维数
+ 组中下标为i的元素将出现在二维数组中的[i/n][i%n]的位置，有了这一点，代码很好写出来了
 
 
-
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
+ //
+ =>
+ if (right == -1) return false; // todo bug 1
+ case :             // todo bug 1
+ {{1}} , 0
+ expected: false
+ output: null point (right == -1)
+
+
  bug2
  bug3
  */
