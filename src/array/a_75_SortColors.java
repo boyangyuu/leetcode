@@ -6,8 +6,22 @@ public class a_75_SortColors {
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
 
+    //计数法(简单)
+    public void sortColors(int[] nums) {
+        //step 1
+        int[] colors = new int[3];
+        for (int i = 0; i < nums.length; i++) colors[nums[i]]++;
 
-    public static void sortColors(int[] nums) {
+        //step 2
+        int index = 0;
+        for (int i = 0; i < colors.length; i++)
+            for (int j = 0; j < colors[i]; j++)
+                nums[index++] = i;
+
+    }
+
+    // 不改变数组内容
+    public static void sortColors1(int[] nums) {
         int l = 0;
         int r = nums.length - 1;
         int i = 0;
