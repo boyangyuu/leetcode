@@ -3,31 +3,30 @@ package array;
 public class a_80_RemoveDuplicates {
     public static void main(String[] args) {
         int[] nums = {0,0,0};
-        System.out.println(a_80_RemoveDuplicates.removeDuplicates(nums));
     }
 
 
-    public static int removeDuplicates(int[] nums) {
-        if (nums.length < 3) return nums.length;
-        int i = 0, j = 1;
+    public int removeDuplicates(int[] nums) {
+        if (nums.length <= 2) return nums.length;
+        int limit = 1, index = 1,index2 = 1, preNum = nums[0], length = 1;
 
-        while(j < nums.length){
-            if (i == 0 || nums[i - 1] != nums[i]) {
-                nums[i] = nums[j];
-                i++;
-                j++;
+        while (index < nums.length){
+            if (nums[index] == preNum) {
+                limit++;
             } else {
-                if (nums[i] != nums[j]) {
-                    nums[i + 1] = nums[j];
-                    i++;
-                    j++;
-                } else {
-                    j++;
-                }
+                preNum = nums[index];
+                limit = 1;
             }
 
+            if (limit <= 2) {
+                nums[index2] = preNum;
+                index2++;
+                length++;
+            }
+            index++;
         }
-        return i + 1;
+        return length;
+
     }
 
 }

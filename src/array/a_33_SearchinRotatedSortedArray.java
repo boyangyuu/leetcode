@@ -6,7 +6,35 @@ public class a_33_SearchinRotatedSortedArray {
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
 
-    public static int search(int[] nums, int target) { 
+    //神秘方法
+    public int search(int[] nums, int target) {
+        int rotate = 0; // the first index that cur < next element
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] >= nums[i + 1]) rotate = i;
+        }
+        int l = 0, r = nums.length - 1;
+        while (l <= r) {
+            int m = (r - l) / 2 + l;
+            if (target == nums[m]) return m;
+
+            if (nums[l] <= nums[r]) { // todo bug 2
+                if (target > nums[m]) l = m + 1;
+                else r = m - 1;
+            } else {
+                if (target == nums[l]) return l; // todo bug1
+                if (target > nums[l]) r = rotate;
+                else l = rotate + 1;
+            }
+
+        }
+
+        return -1;
+
+    }
+
+
+    //排除法
+    public static int search1(int[] nums, int target) {
         if (nums.length == 0) return -1;
         int l = 0, r = nums.length - 1;
         while(l <= r){
@@ -44,9 +72,41 @@ public class a_33_SearchinRotatedSortedArray {
  * 时间  空间
  *
  *
- *
- 参考网站
- http://www.cnblogs.com/grandyang/p/4325648.html
+
+ todo solution1
+
+ if (nums[m] <= nums[r]) { // 右侧必然有序
+   正常二分查找
+ else
+  if target < mid : l = rotate + 1
+  else r = rotate
+
+
+ todo bug
+ bug1
+ //
+ =>
+ if (target == nums[l]) return l; // todo bug1
+ case [3,1,5]
+ output : -1
+ expected : 0
+
+ bug2
+ if (nums[l] <= nums[r]) { // todo bug 2
+ =>
+ if (nums[l] < nums[r]) { // todo bug 2
+ case [1] 2
+ output : time exceed
+ expected : -1
+
+ bug3
+
+
+
+
+
+ todo solution2 参考网站即可
+
 
  注意:
 !!!!!!   7　　0　　1　　 2　　4　　5　　6 这种也是可以的!! 是轮转
@@ -61,12 +121,4 @@ public class a_33_SearchinRotatedSortedArray {
  注意 要比较最右边 因为中间值靠左
 
 
-
- 步骤1
- 步骤2
- 步骤3
-
- bug1
- bug2
- bug3
  */
