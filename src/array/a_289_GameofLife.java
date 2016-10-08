@@ -15,14 +15,14 @@ public class a_289_GameofLife {
 
 4. 如果死细胞周围正好有三个活细胞，则该位置死细胞复活
 
-    0 0-0
+    0 0-0  //todo! 要用 0, 1, 2, 3 方便些 不要用1,2,3,4
     1 1-1
     2 0-1
     3 1-0
      */
 
     public void gameOfLife(int[][] board) {
-        int[] dr = {-1, -1, -1, 0, 0, 1, 1, 1}; // 重点1 建立矢量坐标
+        int[] dr = {-1, -1, -1, 0, 0, 1, 1, 1}; // todo!! 重点1 建立矢量坐标
         int[] dc = {-1, 0, 1,  -1, 1, -1, 0, 1};
         for (int i = 0; i < board.length; i++) {  // r
             for (int j = 0; j < board[0].length; j++) { // c

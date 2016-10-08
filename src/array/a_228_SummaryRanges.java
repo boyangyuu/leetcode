@@ -10,34 +10,21 @@ public class a_228_SummaryRanges {
     }
 
     public List<String> summaryRanges(int[] nums) {
-        List<String> ret = new ArrayList();
-        int i = 0, l = 0;
-        while(true){
-            if (i == nums.length - 1) {
-                if (l == 0)
-                    ret.add("" + nums[i]);
-                else {
-                    ret.add(nums[i - 1] - l + 1 + "->" + nums[i - 1]);
-                }
-                break;
-            }
-
-            if (nums[i] == nums[i - 1] + 1){
-                l++;
-                i++;
-            } else {
-                if (l == 0)
-                    ret.add("" + nums[i-1]);
-                else {
-                    ret.add((nums[i - 1] - l + 1) + "->" + nums[i - 1]);
-                }
-                l = 0;
-                i++;
+        List<String> res = new ArrayList<>();
+        if (nums.length == 0) return res;
+        String tmps = "" + nums[0];
+        String tmps1 = "";
+        for (int i = 0; i < nums.length - 1; i++) { // todo bug 1
+            if (nums[i + 1] == nums[i] + 1)
+                tmps1 = "->" + nums[i + 1];
+            else {
+                res.add(tmps + tmps1);
+                tmps = "" + nums[i + 1];
+                tmps1 = "";
             }
         }
-
-
-        return ret;
+        res.add(tmps + tmps1);
+        return res;
     }
 
 
@@ -58,21 +45,31 @@ public class a_228_SummaryRanges {
  参考网站
 
  思路 :
-l 前面有几个元素可以连
+ todo solution 1
+ Given a sorted integer array without duplicates, return the summary of its ranges.
+
+ For example, given [0,1,2,4,5,7], return ["0->2","4->5","7"].
+
+ 数据结构
+ int cur // from 0 to n - 2
+ String tmps = ""; // start with "" + nums[0]
+ String tmps1 = ""; // ->xxxx //todo tips 设两个str 拼接
+ 思路
+ for (1 : n -1)
+ if nums[cur + 1] == nums[cur] + 1
+    tmps1 = "->nums[cur + 1]"
+ else
+    res.add (tmps + tmps2)
+    tmps = "nums[cur+1]"
+    tmps1 = ""
+
+ add the last element res.add(tmps + tmps1)
 
 
-
- a[i+1]  == a[i] + 1 :    //重点 往后看,i+1 别往前看 a[i] == a[i-1] 别这样比!!!
-    如果 i+1 到头 , 直接插入 "a[i+1] -> a[i] - l"
-
-    l++;
-    i++;
- a[i+1]  != a[i] + 1 :
-    如果i + 1到头
-    l == 0 则 插入a[i];
-    l != 0 则 插入 "a[i] -> a[i] - l"
-    l 重置为0
-
+ todo bug
+ for (int i = 1; i < nums.length - 1; i++) { // todo bug 1
+ =>
+ for (int i = 0; i < nums.length - 1; i++) { // todo bug 1
 
  步骤1
  步骤2

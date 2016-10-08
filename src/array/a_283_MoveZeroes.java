@@ -7,22 +7,15 @@ public class a_283_MoveZeroes {
     }
 
     public void moveZeroes(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0) {
-                int index = i;
-                while(true){
-                    index++;
-                    if(index >= nums.length) {
-                        return;
-                    }
-                    if (nums[index] != 0) {
-                        nums[i] = nums[index];
-                        nums[index] = 0;
-                        break;
-                    }
-                }
-            }
+        int i = 0, j = 0;
+        while(j < nums.length) {
+            if (nums[j] == 0)
+                j++;
+            else
+                nums[i++] = nums[j++];
         }
+
+        while (i < nums.length) nums[i++] = 0;
     }
 
 }
@@ -42,7 +35,14 @@ public class a_283_MoveZeroes {
  参考网站
 
  思路 :
+ tips
+ 本题要求操作次数最少!
+ so 不要用交换， 交换每个数可能需要2次操作次数 加2个指针遍历次数
 
+ 优化方法
+ 两个指针， nums[i] = nums[j] , i指向被重置位置， j 一直往后寻找非0的数字
+
+ 直到j 到结尾时， 其他nums 元素均设置为0即可。
 
  步骤1
  步骤2

@@ -46,6 +46,18 @@ left 左起点 right 右起点 ret 结果
  sum < target 则 right++;
  sum >= target 则 left左移,检测是否可以更新ret
 
+todo!! solution 2
+ step 1
+ 新建数组, x[i] 表示 nums[0]:nums[i] 之和
+
+ step 2
+ for 遍历
+ {
+    以 nums[i] 为左起点, 二分查找 x 中 第一个大于等于target的坐标 r ,  binarySearch(x, i, l -1, target)
+    res = Max(r-i, res)
+ }
+
+
 
  步骤1
  步骤2
