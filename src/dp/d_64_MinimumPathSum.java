@@ -14,8 +14,8 @@ public class d_64_MinimumPathSum {
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
                 if (i == 0 && j == 0) dp[i][j] = grid[i][j];
-                else if (i == 0) dp[i][j] = dp[i][j-1];
-                else if (j == 0) dp[i][j] = dp[i-1][j];
+                else if (i == 0) dp[i][j] = dp[i][j-1] + grid[i][j];
+                else if (j == 0) dp[i][j] = dp[i-1][j] + grid[i][j];
                 else dp[i][j] = Math.min(dp[i][j-1], dp[i-1][j]) + grid[i][j];
             }
         }
@@ -40,9 +40,9 @@ public class d_64_MinimumPathSum {
  参考网站
 
 todo solution
- if (i == 0 && j == 0) dp[i][j] = grid[i][j];
+ if (i == 0 && j == 0) dp[i][j] = grid[i][j]; //// todo tutorial 处理边界的方式
  else if (i == 0) dp[i][j] = dp[i][j-1];
- else if (j == 0) dp[i][j] = dp[i-1][j];
+ else if (j == 0) dp[i][j] = dp[i-1][j]; // todo tutorial 处理边界的方式
  else dp[i][j] = Math.min(dp[i][j-1], dp[i-1][j]) + grid[i][j];
 todo bug
  bug1

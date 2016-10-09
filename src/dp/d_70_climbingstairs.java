@@ -22,6 +22,19 @@ public class d_70_climbingstairs {
 
     }
 
+    public int climbStairs2(int n) {
+        if (n <= 2) return n;
+        int pre2 = 1; // ret[0]
+        int res = 2; // ret[1]
+        for (int i = 2; i < n; i++) {
+            int tmp = res;
+            res = res + pre2;
+            pre2 = tmp;
+        }
+        return res;
+
+    }
+
     public int climbStairs1(int n) {
         int[] maps = new int[n];
         for (int i = 0; i < maps.length; i++) {
