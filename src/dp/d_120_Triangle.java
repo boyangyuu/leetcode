@@ -45,7 +45,7 @@ public class d_120_Triangle {
  *
  参考网站
 
- 思路 :
+todo solution
  if (i != 0)
 f(n , i-1) = min( f(n-1, i-1), f(n-1, i)  + x[l-n][i]
 else
@@ -53,10 +53,7 @@ else
 
  until n = l
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

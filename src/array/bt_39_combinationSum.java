@@ -70,7 +70,7 @@ public class bt_39_combinationSum {
  *
  参考网站
 
- 思路 :
+todo solution
  求解解空间 (树状)
  解(进0次, deep) => {2,3,6,7}
  解(进1次, 解(进0次, deep - 1)) => 2 * 1 + {3,6,7}   .... (进n次, 解(进0次,deep -1)) 2 * n + {3,6,7}
@@ -81,10 +81,7 @@ public class bt_39_combinationSum {
 
 
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

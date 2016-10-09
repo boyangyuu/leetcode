@@ -82,7 +82,7 @@ public class a_45_jumpGame2 {
  *
  参考网站
 
- 思路 :
+todo solution
  方法1 O(n²)
 倒数, 每次寻找倒数第一个jump点
  以此jump 继续找
@@ -109,10 +109,7 @@ gg exceed Time
 
 
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

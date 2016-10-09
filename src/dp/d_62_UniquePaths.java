@@ -46,16 +46,15 @@ public class d_62_UniquePaths {
  *
  参考网站
 
- 思路 :
+todo solution
+ 终点为 f(m,n) , 进入终点有两种途径, 从 f(m, n-1) 处, f(m-1,n)处
+ 故 => f(i,j) = f(i-1,j) + f(i,j-1)
+ 且边界 为1, 例如 f(i,0) == 1 ,f(0,j) == 1
 
- f(i,j) = f(i-1,j) + f(i,j-1)
- 难点在于选用双重for循环
 
 
- 步骤1
- 步骤2
- 步骤3
 
+todo bug
  bug1
  bug2
  bug3

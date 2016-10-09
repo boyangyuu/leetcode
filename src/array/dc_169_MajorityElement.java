@@ -42,7 +42,7 @@ public class dc_169_MajorityElement {
 
  O(n) time O(1) space
 
- 思路 :
+todo solution
  如何消除掉元素, 取a[0], a[1]
 既然大于一半, a[0], a[1] 不一样 则可以抵消, 但是假如a[0], a[1] 一样, 怎么办??
  本来想 保存 a[0],a[i] 但是会有可能空间过大, 此时. a[0],a[1]既然一样, 为什么不计数 , 这样空间仅为2 !!!????
@@ -54,10 +54,7 @@ public class dc_169_MajorityElement {
  三个都不一样的时候删,
  否则 则count1++ 或者count2++
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

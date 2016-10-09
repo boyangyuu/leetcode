@@ -78,7 +78,7 @@ public class a_73_SetMatrixZeroes {
  *
  参考网站
 
- 思路 :
+todo solution
  方法1 :
  space : m + n
  矩形外, 分别存 水平 垂直方向 是否置0
@@ -105,10 +105,7 @@ public class a_73_SetMatrixZeroes {
 
 
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

@@ -53,7 +53,7 @@ public class a_56_MergeIntervals {
  *
  参考网站
 
- 思路 :
+todo solution
  {
     List res : 结果
     Interval prev : 当前res末尾元素
@@ -70,10 +70,7 @@ return i1.start - i2.start;
 }
 });
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

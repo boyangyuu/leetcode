@@ -65,7 +65,7 @@ public class a_59_SpiralMatrix2 {
  *
  参考网站 https://discuss.leetcode.com/topic/3713/super-simple-and-easy-to-understand-solution/21
  https://discuss.leetcode.com/topic/3713/super-simple-and-easy-to-understand-solution/21
- 思路 :
+todo solution
 
  错误: 创造边界之后搞,
 
@@ -74,9 +74,6 @@ public class a_59_SpiralMatrix2 {
 
 
 
- 步骤1
- 步骤2
- 步骤3
 
  bug1
  确定边界

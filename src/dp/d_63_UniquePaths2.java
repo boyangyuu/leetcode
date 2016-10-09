@@ -49,7 +49,7 @@ public class d_63_UniquePaths2 {
  *
  参考网站
 
- 思路 :
+todo solution
 
  需要研究下 一维空间解决的办法!
 
@@ -58,10 +58,7 @@ public class d_63_UniquePaths2 {
 else j == 0 。。
  else i,j == 0
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

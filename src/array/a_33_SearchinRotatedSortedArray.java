@@ -110,7 +110,7 @@ public class a_33_SearchinRotatedSortedArray {
 
  注意:
 !!!!!!   7　　0　　1　　 2　　4　　5　　6 这种也是可以的!! 是轮转
- 思路 :
+todo solution
  规律:
  7　　0　　1　　 2!　　4　　5　　6
 

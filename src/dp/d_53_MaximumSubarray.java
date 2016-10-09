@@ -51,7 +51,7 @@ public class d_53_MaximumSubarray {
  *
  参考网站
 
- 思路 :
+todo solution
  https://discuss.leetcode.com/topic/6413/dp-solution-some-thoughts
 
  todo solution 1
@@ -63,10 +63,7 @@ public class d_53_MaximumSubarray {
 
 
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

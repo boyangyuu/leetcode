@@ -40,7 +40,7 @@ public class a_209_MinimumSizeSubarraySum {
  *
  参考网站
 
- 思路 :
+todo solution
 left 左起点 right 右起点 ret 结果
 
  sum < target 则 right++;
@@ -59,10 +59,7 @@ todo!! solution 2
 
 
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

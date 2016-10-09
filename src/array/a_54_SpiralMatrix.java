@@ -58,7 +58,7 @@ public class a_54_SpiralMatrix {
  *
  参考网站 https://discuss.leetcode.com/topic/3713/super-simple-and-easy-to-understand-solution/21
  https://discuss.leetcode.com/topic/3713/super-simple-and-easy-to-understand-solution/21
- 思路 :
+todo solution
 
  {
     int round =  = (Math.min(m,n) + 1) / 2;
@@ -79,9 +79,6 @@ public class a_54_SpiralMatrix {
 
 
 
- 步骤1
- 步骤2
- 步骤3
 
  bug1
  确定边界

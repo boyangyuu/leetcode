@@ -34,7 +34,7 @@ public class a_283_MoveZeroes {
  *
  参考网站
 
- 思路 :
+todo solution
  tips
  本题要求操作次数最少!
  so 不要用交换， 交换每个数可能需要2次操作次数 加2个指针遍历次数
@@ -44,10 +44,7 @@ public class a_283_MoveZeroes {
 
  直到j 到结尾时， 其他nums 元素均设置为0即可。
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

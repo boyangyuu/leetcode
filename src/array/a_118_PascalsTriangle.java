@@ -58,13 +58,10 @@ public class a_118_PascalsTriangle {
  *
  参考网站
 
- 思路 :
+todo solution
  具体生成算是：每一行的首个和结尾一个数字都是1，从第三行开始，中间的每个数字都是上一行的左右两个数字之和。代码如下：
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

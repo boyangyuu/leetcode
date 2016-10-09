@@ -49,7 +49,7 @@ public class a_48_RotateImage {
  *
  参考网站
 
- 思路 :
+todo solution
  总结出公式 [ai, aj] => [aj, a[n-1-i]]
  由于不能有额外空间
  a[i], a[j] => a[j], a[n-1-i] => a[n-i-1], a[n-j-1] => a[n-j-1], a[i] => a[i],a[j] ()
@@ -70,9 +70,6 @@ public class a_48_RotateImage {
 
 注意 奇数行时, 有所不同, 可以根据 i, j 设置
 
- 步骤1
- 步骤2
- 步骤3
 
  bug1
  int temp = M1; M1= M2 => 错!

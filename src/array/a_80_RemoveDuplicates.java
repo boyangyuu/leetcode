@@ -51,7 +51,7 @@ public class a_80_RemoveDuplicates {
  *k
  参考网站
 
- 思路 :
+todo solution
 #######本道题 debug很多次 建议熟悉思路 不要用cnt方法数数!
 
 两个指针, i = 0, j = 1, j 试图去复制到 i的下一个位置
@@ -73,10 +73,7 @@ public class a_80_RemoveDuplicates {
 
 
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

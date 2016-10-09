@@ -61,7 +61,7 @@ public class d_91_DecodeWays {
  https://discuss.leetcode.com/topic/35840/java-clean-dp-solution-with-explanation
  https://discuss.leetcode.com/topic/54450/2ms-java-dp-solution
 
- 思路 :
+todo solution
 如何迭代
 
  错误:
@@ -76,10 +76,7 @@ public class d_91_DecodeWays {
 
 方法不够简洁!!
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

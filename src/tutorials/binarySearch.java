@@ -56,16 +56,13 @@ public class binarySearch {
  *
  参考网站
 
- 思路 :
+todo solution
 利用二分查找算法, 当 < target时候 做前后判断是否可以插入, a[i] < target < a[i+1]
  永远不能插入只有可能是 [0] < target! 二分查找自动定位在0处
 
  注意 int取整 默认向下取整~!! int a = 1.9 , a value 为 1!!
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

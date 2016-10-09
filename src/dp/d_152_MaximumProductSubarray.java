@@ -38,7 +38,7 @@ public class d_152_MaximumProductSubarray {
  *
  参考网站
 
- 思路 :
+todo solution
  this is a hard question
  result = Max(fm(1),fm(2),fm(3) .. f(m))
 

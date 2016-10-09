@@ -39,15 +39,12 @@ public class d_64_MinimumPathSum {
  *
  参考网站
 
- 思路 :
+todo solution
  if (i == 0 && j == 0) dp[i][j] = grid[i][j];
  else if (i == 0) dp[i][j] = dp[i][j-1];
  else if (j == 0) dp[i][j] = dp[i-1][j];
  else dp[i][j] = Math.min(dp[i][j-1], dp[i-1][j]) + grid[i][j];
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

@@ -44,7 +44,7 @@ public class a_228_SummaryRanges {
  *
  参考网站
 
- 思路 :
+todo solution
  todo solution 1
  Given a sorted integer array without duplicates, return the summary of its ranges.
 
@@ -71,10 +71,7 @@ public class a_228_SummaryRanges {
  =>
  for (int i = 0; i < nums.length - 1; i++) { // todo bug 1
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

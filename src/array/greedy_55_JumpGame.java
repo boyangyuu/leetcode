@@ -49,12 +49,9 @@ public class greedy_55_JumpGame {
  *
  参考网站
 
- 思路 :
+todo solution
 后面开始 无法跳跃的值 为无效值 无需维护, O(1)
 
- 步骤1
- 步骤2
- 步骤3
 
  bug1 中间可能出0 , 导致cannot jump
  bug2 超时 可以减少判断次数  nums[i] <= w || nums[i] == 0 改为  nums[i] <= w

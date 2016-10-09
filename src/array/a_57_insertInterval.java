@@ -58,7 +58,7 @@ public class a_57_insertInterval {
  *
  参考网站
 
- 思路 :
+todo solution
     新插对象无论如何都会被插入
   能插的位置都插,, 最后删掉 overlap个 被插的, 插入新插对象
   注意 不要改旧数值
@@ -80,10 +80,7 @@ public class a_57_insertInterval {
 
  }
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

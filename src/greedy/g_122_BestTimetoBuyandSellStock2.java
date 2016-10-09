@@ -46,16 +46,13 @@ public class g_122_BestTimetoBuyandSellStock2 {
  *
  参考网站
 
- 思路 :
+todo solution
 
  从tmp起 每次找后面直到小于tmp的子数组中 差距最大的值 作为交易
 
 
  本答案用了个技巧 就是  3 4 5 1, 正常 应该是 5-3 , 而我做的 -3 + 4 -4 + 5 操作上不允许 结果其实是一样的
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

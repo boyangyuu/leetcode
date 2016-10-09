@@ -56,14 +56,11 @@ public class a_229_MajorityElementII {
  *
  参考网站
 
- 思路 :
+todo solution
  需要两遍遍历，第一遍历找出两个候选众数，
  第二遍遍历重新投票验证这两个候选众数是否为众数即可，选候选众数方法和前面那篇Majority Element 求众数一样
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

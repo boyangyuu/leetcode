@@ -47,7 +47,7 @@ public class a_66_plusOne {
  *
  参考网站
 
- 思路 :
+todo solution
 
  todo 用 List 写
  {
@@ -69,10 +69,7 @@ public class a_66_plusOne {
  flag != 1 则 return
 
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3

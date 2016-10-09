@@ -85,7 +85,7 @@ public class a_75_SortColors {
  *
  参考网站
 
- 思路 :
+todo solution
  1. 排序 (0,1 )和 2 再排序 0, 1 , 再拼接
 
  2.
@@ -99,10 +99,7 @@ public class a_75_SortColors {
 
 
 
- 步骤1
- 步骤2
- 步骤3
-
+todo bug
  bug1
  bug2
  bug3
