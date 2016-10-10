@@ -29,8 +29,9 @@ TODO tutorial
  2. 判断乘积正负  m ^ n << 32 , 1 为相同(正)
  3. 正数转负数  +5 0101 -5 1011, 求反+1
 
-
-
+ todo int => bit
+ String s = Integer.toBinaryString(n);
+ -1 : 100..01 (32bit)
 
 
 
