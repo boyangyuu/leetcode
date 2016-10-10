@@ -36,6 +36,9 @@ public class math_168_ExcelSheetColumnTitle {
  参考网站
 
  TODO solotion
+ 10 format converts to 26 format
+ 10进制转换为26进制 , 进制 :format
+
  商为下次 的n
  余数为当前字母的值
 
@@ -52,7 +55,7 @@ public class math_168_ExcelSheetColumnTitle {
  bug2
  //
  =>
- n -= (n-1) % 26; //TODO bug 2
+ n -= (n-1) % 26; //TODO bug 2 , 每次都需要减去当前的字母值
 
  bug3
  */

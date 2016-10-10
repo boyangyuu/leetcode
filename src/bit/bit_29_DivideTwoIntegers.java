@@ -25,6 +25,7 @@ public class bit_29_DivideTwoIntegers {
         else return (int) ans;
     }
 
+    // 不行的方法!
     public int divide1(int dividend, int divisor) {
         long dd = Math.abs(dividend), dv = Math.abs(divisor);
         long ans = 0;
