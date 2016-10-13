@@ -45,6 +45,10 @@ public class math_13_RomanToInteger {
 
  TODO solotion
 
+ 遍历字符串, {
+    if 当前字符 小于下一个字符 res -= curv
+    else res += curv
+ }
 
  TODO case
 
