@@ -1,13 +1,14 @@
-package math;
+package backtrack;
 
-public class math_357_CountNumberswithUniqueDigits {
+public class bt_357_CountNumberswithUniqueDigits {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
 
     public int countNumbersWithUniqueDigits(int n) {
-
+        // giveup 留到backtrack的时候做
+        return 1;
     }
 
 }
