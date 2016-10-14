@@ -16,7 +16,11 @@ TODO tutorial
  char c = (char)('A' + 1); todo A => B
 
 
-
+ todo 分割字符串
+ String[] strs = path.split("/"); //
+ tag: string_71_
+ case: "/a"
+ output : {"", "a"} // alert!! 会有""的存在
 
 
 
