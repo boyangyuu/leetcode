@@ -3,12 +3,15 @@ package string;
 public class string_0_template {
     public static void main(String[] args) {
 
-
     }
 
 
-}
 
+
+
+
+
+}
 
 /** Solution
  * 时间  空间
@@ -18,7 +21,9 @@ public class string_0_template {
  参考网站
  TODO translation
 
+
  TODO solotion
+
 
  TODO case
 
@@ -28,5 +33,7 @@ public class string_0_template {
  bug2
  bug3
  */
+
+
 
 

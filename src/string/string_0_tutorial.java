@@ -5,8 +5,6 @@ public class string_0_tutorial {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
-
-
 }
 
 
