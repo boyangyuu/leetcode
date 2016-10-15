@@ -22,8 +22,22 @@ TODO tutorial
  case: "/a"
  output : {"", "a"} // alert!! 会有""的存在
 
+ split : "." "*" "|" , String[] v1s = version1.split("\\.");
+ split : "\" , String[] v1s = version1.split("\\\\");
 
 
+ todo trim
+ 去除两边空格
+
+ todo int convert to string
+ int res = Integer.parseInt("-1")
+
+ todo string reverse
+ case string_344_reverseString
+ s = new StringBuffer(s).toString();
+todo String 是不可改变指定字符的!!!
+
+ todo。。
  */
 
 

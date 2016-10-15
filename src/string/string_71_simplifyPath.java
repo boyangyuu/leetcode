@@ -78,7 +78,7 @@ public class string_71_simplifyPath {
  String[] strs = split;
 
  step 2
- 倒序遍历,
+ 倒序遍历, 遇到..就记录 cnt++, 遇到正常字符就check cnt , cnt>0 则忽略本次字符
  if (..) cnt++
  else if cnt >=0 cnt--
  else res = res + cur + "/";
