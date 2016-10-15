@@ -22,7 +22,15 @@ TODO tutorial
  case: "/a"
  output : {"", "a"} // alert!! 会有""的存在
 
+ split : "." "*" "|" , String[] v1s = version1.split("\\.");
+ split : "\" , String[] v1s = version1.split("\\\\");
 
+
+ todo trim
+ 去除两边空格
+
+ todo int convert to string
+ int res = Integer.parseInt("-1")
 
  */
 
