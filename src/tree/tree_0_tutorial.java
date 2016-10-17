@@ -1,10 +1,46 @@
 package tree;
 
 
+import java.util.Stack;
+
 public class tree_0_tutorial {
     public static void main(String[] args) {
+        TreeNode root;
+    }
 
+    /*
+        左儿子入栈,且输出
+     */
+    void pre(TreeNode root){
+        TreeNode cur = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while(cur != null || !stack.isEmpty()){
+            while(cur != null) {
+                System.out.println(cur.val);
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            cur = cur.right;
+        }
+    }
 
+    /*
+        有左儿子进栈
+     */
+
+    void middle(TreeNode root){
+        TreeNode cur = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while(cur != null || !stack.isEmpty()){
+            while(cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            System.out.println(cur.val);
+            cur = cur.right;
+        }
     }
 
 

@@ -1,14 +1,17 @@
 package string;
 
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class string_345_ReverseVowelsofaString {
+
     public static void main(String[] args) {
         List list;Map map;Set set;
     }
+
 
     public String reverseVowels(String s) {
         char[] cs = s.toCharArray();
@@ -29,6 +32,7 @@ public class string_345_ReverseVowelsofaString {
         return new String(cs);
     }
 
+
 }
 
 /** Solution
@@ -38,8 +42,10 @@ public class string_345_ReverseVowelsofaString {
  *
  参考网站
  TODO translation
+
  vowels : 元音
  包括 A、E、I、O、U
+
 
  TODO solotion
 

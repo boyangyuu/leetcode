@@ -5,9 +5,11 @@ import java.util.Map;
 import java.util.Set;
 
 public class string_344_reverseString {
+
     public static void main(String[] args) {
         List list;Map map;Set set;
     }
+
 
     public String reverseString(String s) {
         StringBuffer res = new StringBuffer(s); //todo learn
@@ -37,6 +39,7 @@ public class string_344_reverseString {
         }
         return res;
     }
+
 
 
 
