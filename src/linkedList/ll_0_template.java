@@ -38,6 +38,23 @@ public class ll_0_template {
 
 
  TODO solotion
+ ######s1######
+ --O(n)--
+
+ --data--
+
+ --step1--
+
+ --step2--
+
+ ######s2######
+ --O(n)--
+
+ --data--
+
+ --step1--
+
+ --step2--
 
 
  TODO case
