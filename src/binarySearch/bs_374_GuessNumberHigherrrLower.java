@@ -1,12 +1,27 @@
 package binarySearch;
 
 
-public class bs_0_template {
+public class bs_374_GuessNumberHigherrrLower {
     public static void main(String[] args) {
 
 
     }
 
+    public int guess(int num) {
+        return 1;// -1 1 0
+    }
+
+    public int guessNumber(int n) {
+        int left = 1, right = n;
+        while (left <= right) {
+            int mid = (right - left) / 2 + left;
+            int v = guess(mid);
+            if (v == 0) return mid;
+            else if (v == 1) left = mid + 1;
+            else right = mid - 1;
+        }
+        return -1;
+    }
 }
 /** 题
  *

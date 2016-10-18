@@ -1,7 +1,7 @@
-package binarySearch;
+package heap;
 
 
-public class bs_0_template {
+public class heap_0_template {
     public static void main(String[] args) {
 
 
@@ -42,7 +42,7 @@ public class bs_0_template {
 
 
  TODO follow
- todo#! 有时可以用set 优化map
+
  */
 
 /*

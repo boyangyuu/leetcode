@@ -29,8 +29,10 @@ public class bs_0_tutorial {
 
 
         return -1; // todo 等于target的位置
-//        return left; // todo 第一个大于等于target的位置, 可能是 length
-//        return right; // todo 最后一个小于等于target的位置 可能是 -1;
+//        return left; // todo 第一个大于等于target的位置, 可能是 length (l是一直往大了走的)
+//        return right; // todo 最后一个小于等于target的位置 可能是 -1; (r是往小了走的)
+
+
     }
 
 
@@ -46,5 +48,8 @@ TODO tutorial
  todo 数组优化
     对于已排序的数组问题, 大多数都可以用 二分去优化,
 
+ todo 当数字需要相乘时候, 注意越界
+ 此时left right mid 均应该转为long
+ case 367. Valid Perfect Square
 
  */
