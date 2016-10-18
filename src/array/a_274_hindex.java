@@ -28,17 +28,19 @@ public class a_274_hindex {
     }
 
     //s2 use binarySearch to optimize
-//    public int hIndex1(int[] citations) {
-//        int left = 0, right = citations.length - 1;
-//        while(left < right){
-//            int mid = (right - left) / 2 + left;
-//            int sum = citations.length - mid;
-//            int curv = citations[mid];
-//            if (curv >= sum) return sum;
-//            else if (sum < curv)
-//        }
-//
-//    }
+    public int hIndex1(int[] citations) {
+        int left = 0, right = citations.length - 1;
+        while(left <= right){ //todo
+            int mid = (right - left) / 2 + left;
+            int sum = citations.length - mid;
+            int curv = citations[mid];
+            if (curv == sum) return sum;
+            else if (curv > sum) right = mid - 1;
+            else  left = mid + 1;
+        }
+        int sum = citations.length - left;
+        return sum;
+    }
 
 }
 
