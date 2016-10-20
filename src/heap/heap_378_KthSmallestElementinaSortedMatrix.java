@@ -1,7 +1,7 @@
-package binarySearch;
+package heap;
 import java.util.*;
 
-public class bs_378_KthSmallestElementinaSortedMatrix {
+public class heap_378_KthSmallestElementinaSortedMatrix {
     public static void main(String[] args) {
         System.out.println(Math.sqrt(10));
 
@@ -14,7 +14,7 @@ public class bs_378_KthSmallestElementinaSortedMatrix {
                 return o2 - o1;
             }
         };
-        PriorityQueue<Integer> heap = new PriorityQueue<>(com);
+        PriorityQueue<Integer> heap = new PriorityQueue<>(com); // todo bug1
         for (int r = 0; r < matrix.length; r++) {
             for (int c = 0; c < matrix[0].length; c++) {
                 heap.add(matrix[r][c]);
@@ -95,7 +95,9 @@ public class bs_378_KthSmallestElementinaSortedMatrix {
 
 
  TODO follow
- todo#! 有时可以用set 优化map
+ 判断k的大小, 如果k 大于 num/2, 则求(num-k)th largest
+
+
  */
 
 /*

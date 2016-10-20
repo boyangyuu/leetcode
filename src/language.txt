@@ -1,4 +1,5 @@
  traverse: v 遍历
  citations: 引用
  respectively: adv 分别地
+ retrieve : v 检索
 

@@ -1,9 +1,10 @@
-package heap;
+package design;
 
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
-public class heap_0_template {
+public class design_0_template {
     public static void main(String[] args) {
         List list;Map map;
     }
