@@ -4,16 +4,18 @@ public class common_0_tutorial {
     public static void main(String[] args) {
         //todo arrayList
         List<Integer> list = new ArrayList<>();
-        list.add(1);
+        list.add(1); // 1
+        list.add(3); // 1,3
+        for (int i = 0; i < list.size(); i++) System.out.println(list.get(i)); // 1,3
+        System.out.println("####");
+
+        list.add(0,2); // 2, 1, 3
+        for (int i = 0; i < list.size(); i++) System.out.println(list.get(i));
+        System.out.println("####");
+
+        list.remove(0); // 1,3
         list.add(3);
-        for (int i = 0; i < list.size(); i++) System.out.println(list.get(i));
-        System.out.println("####");
-
-        list.add(0,2);
-        for (int i = 0; i < list.size(); i++) System.out.println(list.get(i));
-        System.out.println("####");
-
-        list.remove((Object) 3);
+        list.remove((Object) 3); // 1 (remove 1 elements)
         for (int i = 0; i < list.size(); i++) System.out.println(list.get(i));
         System.out.println("####");
 

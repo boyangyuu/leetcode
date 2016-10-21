@@ -3,5 +3,5 @@
  respectively: adv 分别地
  retrieve : v 检索
  sentinel : 哨兵, 标记(计)
-
-
+ digit : n 数字
+ combination : n 组合
