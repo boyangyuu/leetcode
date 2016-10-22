@@ -5,3 +5,5 @@
  sentinel : 哨兵, 标记(计)
  digit : n 数字
  combination : n 组合
+ permutations : 排列
+
