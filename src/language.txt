@@ -4,6 +4,13 @@
  retrieve : v 检索
  sentinel : 哨兵, 标记(计)
  digit : n 数字
+ letter : n 字母
  combination : n 组合
  permutations : 排列
+ successive : 连续的
+ palindromic: 回文的
+
+
+
+
 

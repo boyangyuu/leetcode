@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class bt_78_subsets {
+public class bt_78_subsets extends bt_0_template {
     public static void main(String[] args) {
         List list;Map map;
     }
@@ -29,6 +29,11 @@ public class bt_78_subsets {
         }
     }
 
+    @Override
+    public void output() {
+        super.output();
+        System.out.println("child");
+    }
 }
 /** 题
  *

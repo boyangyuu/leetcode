@@ -10,7 +10,7 @@ public class hs_0_template {
         for (int key : map.keySet()) {
             map.get(key);
         }
-        // set 用法
+        //  set 用法
         HashSet<Integer> set = new HashSet<>();
         for (int v : set){}
     }

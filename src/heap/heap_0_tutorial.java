@@ -13,7 +13,7 @@ public class heap_0_tutorial {
 
     public static void maxHeap() {
         // minHeap
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // 大的优先,最大堆 每次pop最小的
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // 大的优先,最小堆 每次pop最小的
 
         // maxHeap
         Comparator<Integer> com = new Comparator<Integer>() {

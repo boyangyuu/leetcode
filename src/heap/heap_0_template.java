@@ -6,6 +6,7 @@ import java.util.*;
 public class heap_0_template {
     public static void main(String[] args) {
         List list;Map map;
+        PriorityQueue<Integer> heap = new PriorityQueue<>(2);
     }
 
 }

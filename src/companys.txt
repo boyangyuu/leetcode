@@ -1,0 +1,50 @@
+amazon
+
+1. two sum
+ s1: O(nlogn) and 1  => sort and two p
+ s2: O(n) and O(n) => hash find the next (sum - num[i])
+
+2. Add two numbers
+ s1: O(n) use a flag[int 0/1] to stands for carry
+
+3. Longest Substring Without Repeating Characters
+s1: O(n) hashmap two pointers (start, end), if dumplcate remove hashmap from originStart to new Start, end keep ++
+
+5. Longest Palindromic Substring 最长回文串
+s1: O n square, srart from everyelement to check , and todo take care the even and odd, so check(i, i) and check(i,i+1)
+case "1001", "101"
+s2: dp法 dp[i][j] i to j is palind or not,
+
+8. String to Integer (atoi)
+s1:
+case max_int min_int space invalid letter
+
+15. 3sum
+s1: sort traverse every element index1, and solve two sum problem(hash or 2 pointers), to avoid duplicate element store last index1
+
+17. Letter Combinations of a Phone Number
+s1: backtracking
+
+20	Valid Parentheses
+s1: stack store the left part : (、【、{
+
+21	Merge Two Sorted Lists
+s1:
+
+23. Merge k Sorted Lists
+s1: for , create array to store heads of lists
+s2: create heap(PriorityQueue) to store heads of lists, get the minimum one (top one )until heap is empty
+
+
+
+
+
+
+
+
+
+
+log
+4/11 : 4 (1,2,3,5)
+5/11 :(8,15,17,20,21)
+8/11 :
