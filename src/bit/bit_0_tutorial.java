@@ -4,6 +4,9 @@ public class bit_0_tutorial {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+//        System.out.println("1");
+        int test = 2 & 1 << 1;
+        System.out.println(test);
     }
 
 
@@ -20,6 +23,7 @@ TODO tutorial
  非   0 | 0 = 0 , 0 | 1 = 1, 1 | 0 = 1, 1 | 1 = 1 (只有0|0 才为0)
  >>i  右移i位          //1101 >> 2 = 11
  x>>i & 1 取 x的第i+1位的值(1 or 0) // 箭头方向为移动方向
+ 取反 ~  : ~101 = 010
 
  todo 最大最小
  Math.Max_VALUE  2power32 - 1; Math.MIN_VALUE  -2power32

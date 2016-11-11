@@ -35,11 +35,31 @@ s1:
 s1: for , create array to store heads of lists
 s2: create heap(PriorityQueue) to store heads of lists, get the minimum one (top one )until heap is empty
 
+42.	Trapping Rain Water
+todo
+??
 
+48. Rotate Image
 
+                matrix[i][j] = matrix[n - 1 - j][i];
+                matrix[n - 1 - j][i] = matrix[n - 1 - i][n - 1 - j];
+                matrix[n - 1 - i][n - 1 - j] = matrix[j][n - 1 - i];
+                matrix[j][n - 1 - i] = tmp;
+todo x,y坐标每次都会交换,  matrix[i][j] = matrix[n - 1 - j][i]; x坐标直接成为新的y坐标,y坐标 改为 n-1-y 成为新的x坐标
+之后一直重复这种变化,直到回到起点 i,j
 
+49.	Group Anagrams
+排序, hash
 
+73. Set Matrix Zeroes
+ todo bool rowZero = false, colZero = false;//分别记录第一行 和 第一列
+根据第一行第一列的flag来更新第一行第一列
 
+78. subsets
+backtracking
+
+98 Validate Binary Search Tree
+dfs todo help(root, max, min), 每个node判断是不对的, 要注意累计的max 和 min
 
 
 
@@ -47,4 +67,5 @@ s2: create heap(PriorityQueue) to store heads of lists, get the minimum one (top
 log
 4/11 : 4 (1,2,3,5)
 5/11 :(8,15,17,20,21)
-8/11 :
+8/11 : (23,42,48,49,73,78)
+9/11 : (89,98,102, 119)

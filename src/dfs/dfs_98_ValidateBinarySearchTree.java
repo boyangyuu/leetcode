@@ -21,6 +21,16 @@ public class dfs_98_ValidateBinarySearchTree {
         return isValid;
     }
 
+    // todo!! wrong
+    public boolean isValidBST1(TreeNode root) {
+        boolean isValid = true;
+        if (root == null) return true;
+        if (root.left != null) isValid &= root.left.val < root.val && isValidBST(root.left);
+        if (root.right != null) isValid &= root.right.val > root.val && isValidBST(root.right);
+        return isValid;
+    }
+
+
 }
 /** 题
  *
