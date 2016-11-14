@@ -4,6 +4,14 @@ public class string_0_tutorial {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+
+        String s = "a,b,c,d,e,f,g";
+
+        //todo string to char array
+        char[] chars = s.toCharArray();
+
+        //todo string substring
+        System.out.println("substring from 0 to 1: " + s.substring(0,2));
     }
 }
 
@@ -11,6 +19,9 @@ public class string_0_tutorial {
 /** Solution
 
 TODO tutorial
+
+ todo string 转 char array
+
 
  todo #数字转char
  char c = (char)('A' + 1); todo A => B

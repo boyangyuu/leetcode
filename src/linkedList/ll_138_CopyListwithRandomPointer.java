@@ -1,18 +1,21 @@
 package linkedList;
 
-import tree.TreeNode;
 import tutorials.ListNode;
 
-import java.util.*;
-
-public class ll_0_template {
+public class ll_138_CopyListwithRandomPointer {
     public static void main(String[] args) {
         //TreeNode
-        ListNode node = ll_0_tuition.getLinkedList(10);
-
-        System.out.println(node);
+        ListNode node;
+        RandomListNode node1 = new RandomListNode(1);
     }
 
+    public RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) return null;
+        RandomListNode node = new RandomListNode(head.label);
+        node.next = copyRandomList(head.next);
+        node.random = copyRandomList(head.random);
+        return node;
+    }
 
 
 

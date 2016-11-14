@@ -29,10 +29,27 @@ public class notag_0_template {
 
 
  TODO solotion
- #solotion1 time: space:
+ ######s1######
+ --performance
+ time:
+ space:
 
- #solotion2 time: space:
+ --data structure
 
+ --steps
+
+
+
+ ######s2######
+ --performance
+ time:
+ space:
+
+ --data structure
+
+ --steps
+
+ ######sFinal######
  TODO case
 
  TODO bug

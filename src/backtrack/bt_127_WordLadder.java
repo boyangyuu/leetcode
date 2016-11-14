@@ -6,10 +6,11 @@ public class bt_127_WordLadder {
     public static void main(String[] args) {
         List list;Map map;HashSet<Integer> set;
         HashSet<String> set1 = new HashSet<>();
-//        set1.add("hot");set1.add("cog");set1.add("dog");set1.add("tot");set1.add("hog");
-//        set1.add("hop");set1.add("pot");set1.add("dot");
-        set1.add("c");
-        int res = ladderLength("a", "b", set1);
+        set1.add("hot");set1.add("dog");set1.add("dot");
+        set1.add("hog");set1.add("hop");set1.add("tot");
+        set1.add("pot");set1.add("cog");
+        int res = ladderLength("hot", "dog", set1);
+//        int res = ladderLength("hot", "dot", set1);
         System.out.println(res);
     }
 

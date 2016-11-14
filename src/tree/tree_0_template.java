@@ -44,7 +44,27 @@ public class tree_0_template {
 
 
  TODO solotion
+ ######s1######
+ --performance
+ time:
+ space:
 
+ --data structure
+
+ --steps
+
+
+
+ ######s2######
+ --performance
+ time:
+ space:
+
+ --data structure
+
+ --steps
+
+ ######sFinal######
  TODO case
 
  TODO bug

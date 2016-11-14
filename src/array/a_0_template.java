@@ -29,22 +29,26 @@ public class a_0_template {
 
  TODO solotion
  ######s1######
- --O(n)--
+ --performance
+ time:
+ space:
 
- --data--
+ --data structure
 
- --step1--
+ --steps
 
- --step2--
+
 
  ######s2######
- --O(n)--
+ --performance
+ time:
+ space:
 
- --data--
+ --data structure
 
- --step1--
+ --steps
 
- --step2--
+ ######sFinal######
 
  TODO case
 
