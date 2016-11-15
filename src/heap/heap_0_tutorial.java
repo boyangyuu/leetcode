@@ -25,6 +25,8 @@ public class heap_0_tutorial {
 
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(com); // 4 3 2 1
 
+        // deque 双端队列, 维护特殊的堆, 可以O n 时间维护
+        // 见 head_239_slidingWIndowMaximum
 
     }
 

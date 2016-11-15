@@ -1,31 +1,37 @@
 package tree;
 
 
-public class tree_235_LowestCommonAncestorofaBinarySearchTree {
+public class tree_236_LowestCommonAncestorofaBinaryTree {
     public static void main(String[] args) {
 
 
     }
 
-    // 前序遍历
+    static TreeNode check;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        int min = Math.min(p.val, q.val);
-        int max = Math.max(p.val, q.val);
-        if (root.val >= min && root.val <= max) return root;
-        else if (root.val < min) return lowestCommonAncestor(root.right, p, q);
-        else return lowestCommonAncestor(root.left, p, q);
+        if (root == null || root == p || root == q) return root;
+        TreeNode l = lowestCommonAncestor(root.left, p, q);
+        TreeNode r = lowestCommonAncestor(root.right, p, q);
+        if (l != null && r != null) return root;
+        return null;
     }
 
-    // 排除法 更好理解
-    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
-        int min = Math.min(p.val, q.val);
-        int max = Math.max(p.val, q.val);
-        if (root.val < min) return lowestCommonAncestor(root.right, p, q);
-        else if (root.val > max) return lowestCommonAncestor(root.left, p, q);
-        else return root;
-    }
+    void help(TreeNode root, TreeNode p, TreeNode q, boolean isLeftFound) {
+        if (root == null) {
+            check = null;
+            return;
+        }
+        help(root.left, p, q, isLeftFound);
 
-    //层序遍历也可
+        if (isLeftFound && root == p || root == q)  {
+            check = root;
+            return;
+        }
+        if (root == p || root == q) isLeftFound = true;
+        if (isLeftFound && check == null) check = root;
+
+        help(root.right, p, q, isLeftFound);
+    }
 
 
 }
@@ -43,10 +49,17 @@ public class tree_235_LowestCommonAncestorofaBinarySearchTree {
  *
  *
  参考网站
-
+ todo!!! https://segmentfault.com/a/1190000003509399
 
  TODO solotion
  ######s1######
+
+ 前序遍历，
+ 找到left时候， 开始检查后序节点是否为target
+ 例如6，0
+ 由于是前序遍历，自然而然会逐个找6 之上的 root节点（5，3），
+ 先检查5，并标记为在检查状态（check 节点不会变），当访问到尽头时候，扔没有，标记为待检查状态，再检查3节点。
+
  --performance
  time:
  space:

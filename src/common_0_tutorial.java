@@ -24,11 +24,16 @@ public class common_0_tutorial {
         queue.add(1);queue.add(2);
         queue.peek(); // 1 队列 先进先出
 
-        //
+        //todo deque 双向队列 (double end queue)
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.peekLast();deque.peekFirst();
+        deque.pollLast();deque.pollFirst();
 
 
-        //todo linkedList
+        //todo linkedList 可以当链表使用 也可以当双向队列
         LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.pollFirst();
+        linkedList.pollLast(); linkedList.peekLast(); //...
     }
 
     /*
