@@ -1,6 +1,16 @@
 package array;
 
-public class a_396_rotateFunction {
+
+    /*
+    *
+    *
+    *
+    todo 想想如何优化， F(1) 如何建立与F(0)规律
+     */
+
+public class a_396todo_rotateFunction {
+
+
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
