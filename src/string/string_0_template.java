@@ -7,7 +7,6 @@ public class string_0_template {
     }
 
 
-
 }
 
 /** Solution
@@ -47,7 +46,6 @@ public class string_0_template {
 
  TODO bug
 
- bug1
  bug2
  bug3
  */
