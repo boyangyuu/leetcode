@@ -9,6 +9,8 @@ public class bt_22_GenerateParentheses {
         List list;Map map;
     }
 
+
+
 }
 /** 题
  *

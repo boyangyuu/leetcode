@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+// todo  需要code 且复习最佳思路
+
 public class string_5_b100_LongestPalindromicSubstring {
     public static void main(String[] args) {
         List list;Map map;Set set;

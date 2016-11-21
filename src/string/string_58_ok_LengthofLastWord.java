@@ -1,6 +1,6 @@
 package string;
 
-public class string_58_LengthofLastWord {
+public class string_58_ok_LengthofLastWord {
     public static void main(String[] args) {
 
     }

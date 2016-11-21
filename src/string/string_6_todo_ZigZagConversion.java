@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-//todo 复习思路 用List<String> 记住不要尝试数学(On) 不需要code
+//todo 不需要code 复习思路 用List<String> 记住不要尝试数学(On)
 
 public class string_6_todo_ZigZagConversion {
     public static void main(String[] args) {

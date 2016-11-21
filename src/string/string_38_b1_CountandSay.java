@@ -1,9 +1,17 @@
 package string;
 
-public class string_38_CountandSay {
+/*
+todo 只需要记住bug
+ */
+
+public class string_38_b1_CountandSay {
+
+
     public static void main(String[] args) {
         
     }
+
+
     public String countAndSay(int n) {
         String res = "1";
         while (--n > 0) {

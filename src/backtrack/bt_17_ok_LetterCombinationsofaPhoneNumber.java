@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class bt_17_LetterCombinationsofaPhoneNumber {
+public class bt_17_ok_LetterCombinationsofaPhoneNumber {
     public static void main(String[] args) {
         List list;Map map;
     }
@@ -34,7 +34,7 @@ public class bt_17_LetterCombinationsofaPhoneNumber {
 
     public void help(List<String> list, String tmp, String digits, Map<Integer, String[]> map) {
         if (digits.length() == 0) {
-            list.add(tmp);
+            list.add(new String (tmp));
             return;
         }
         int key = digits.charAt(0) - '0';
