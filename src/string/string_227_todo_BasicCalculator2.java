@@ -6,11 +6,57 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
-public class string_227_BasicCalculator2 {
+// todo code 需要记住 : sign 初始化为'+', "3+3" => "+3+3"  这样好写很多
+public class string_227_todo_BasicCalculator2 {
 
     public static void main(String[] args) {
         List list;Map map;Set set;
+
+        // case space
+        System.out.println(calculate1("3 + 2 * 2 / 2 + 12"));
     }
+
+    // 3 + 2 * 2
+    public static int calculate1(String s) {
+        int res = 0, tmp = 0, mu = 1;
+        Stack<Integer> stack = new Stack<>();
+        char sign = '+';
+        for (int i = 0; i < s.length(); i++) {
+            char cur = s.charAt(i);
+            if (cur == ' ') continue;
+            if (cur >= '0' && cur <= '9') {
+                tmp = tmp * 10 + (cur - '0');
+                System.out.println("tmp: " + tmp);
+            }
+
+            // 当前char 是操作符 或者到达了结尾
+            if (i == s.length() - 1 || cur < '0' || cur > '9') {
+                if (sign == '+') { // todo 当前tmp数字 之前的 sign
+                    stack.push(tmp);
+                } else if (sign == '-') {
+                    stack.push(-tmp);
+                } else if (sign == '*') {
+                    int left = stack.pop();
+                    stack.push(left * tmp);
+                } else {
+                    int left = stack.pop();
+                    stack.push(left / tmp);
+                }
+                sign = cur;
+                tmp = 0;
+            }
+        }
+
+        while (stack.empty() == false) {
+            int e = stack.pop();
+            res += e;
+            System.out.println("e: " + e);
+        }
+        return res;
+    }
+
+
+
 
     public int calculate(String s) {
         int res = 0, tmp = 0;

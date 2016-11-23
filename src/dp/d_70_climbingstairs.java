@@ -21,39 +21,6 @@ public class d_70_climbingstairs {
         return ret[n - 1];
 
     }
-
-    public int climbStairs2(int n) {
-        if (n <= 2) return n;
-        int pre2 = 1; // ret[0]
-        int res = 2; // ret[1]
-        for (int i = 2; i < n; i++) {
-            int tmp = res;
-            res = res + pre2;
-            pre2 = tmp;
-        }
-        return res;
-
-    }
-
-    public int climbStairs1(int n) {
-        int[] maps = new int[n];
-        for (int i = 0; i < maps.length; i++) {
-            maps[i] = 0;
-        }
-        return recursiveClimbStairs(n, maps);
-
-    }
-
-    public int recursiveClimbStairs(int n, int[] maps){
-        if (n == 1) return 1;
-        if (n == 2) return 2;
-        if (maps[n-1] != 0) {
-            return maps[n-1];
-        }
-        maps[n - 1] = climbStairs(n-1) + climbStairs(n-2);
-        return maps[n - 1];
-    }
-
 }
 /** 题
  *

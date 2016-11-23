@@ -1,5 +1,7 @@
 package dp;
 
+
+// todo 用stack做 别用dp!
 public class d_32_LongestValidParentheses {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};

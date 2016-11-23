@@ -2,7 +2,7 @@ package hashTable;
 
 import java.util.*;
 
-public class hs_49_GroupAnagrams {
+public class hs_49_ok_GroupAnagrams {
     public static void main(String[] args) {
 
     }

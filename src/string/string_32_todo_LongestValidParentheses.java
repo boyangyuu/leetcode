@@ -6,29 +6,33 @@ import java.util.Set;
 import java.util.Stack;
 
 /*
-    todo!!! 记住逻辑bug  用stack On 即可
+    todo 强记思路即可!! 用stack 存左括号的位置 , On 即可
  */
 public class string_32_todo_LongestValidParentheses {
     public static void main(String[] args) {
         List list;Map map;Set set;
-        System.out.println(longestValidParentheses("()(()"));
+        System.out.println(longestValidParentheses("(()()"));
     }
 
     public static int longestValidParentheses(String s) {
-        int res = 0, tmp = 0;
-        Stack<Character> stack = new Stack<>();
+        int res = 0, start = 0;
+        Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);
             if (cur == '(') {
-                stack.push('(');
+                stack.push(i);
             } else {
-                if (stack.empty()) tmp = 0;
+                if (stack.empty()) start = i + 1; // vaild start update
                 else {
                     stack.pop();
-                    tmp += 2;
+
+                    if (stack.empty()) res = Integer.max(res, i - start + 1); // stack 为空, 合法start 为start变量
+                    else {
+                        int startV = stack.peek() + 1; // todo stack不为空时, 合法start为堆栈里peek元素(i == 0)的下一个元素
+                        res = Integer.max(res, i - startV + 1);
+                    }
                 }
             }
-            res = Math.max(res, tmp);
         }
         return res;
     }

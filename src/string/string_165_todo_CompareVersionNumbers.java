@@ -4,14 +4,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class string_165_CompareVersionNumbers {
+//简单过下就好 1minute
+//todo learn 如果split "." "*" 要用 "\\." 做转义字符 否则无法分割!
+//todo case 1.0 == 1
+
+
+public class string_165_todo_CompareVersionNumbers {
     public static void main(String[] args) {
         List list;Map map;Set set;
-        System.out.println(Integer.parseInt("1.01"));
+
+        //todo case 1.0 is equal 1
+        System.out.println(compareVersion("1.0", "1"));
     }
 
-    public int compareVersion(String version1, String version2) {
-        String[] v1s = version1.split("\\.");
+    public static int compareVersion(String version1, String version2) {
+        String[] v1s = version1.split("\\."); //todo learn \\. 特殊字符需要 \\
         String[] v2s = version2.split("\\.");
         int l = Math.max(v1s.length, v2s.length);
         for (int i = 0; i < l; i++) {

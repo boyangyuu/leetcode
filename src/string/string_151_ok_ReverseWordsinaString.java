@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class string_151_ReverseWordsinaString {
+public class string_151_ok_ReverseWordsinaString {
     public static void main(String[] args) {
         List list;Map map;Set set;
     }

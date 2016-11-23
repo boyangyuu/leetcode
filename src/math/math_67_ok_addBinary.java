@@ -1,6 +1,6 @@
 package math;
 
-public class math_67_addBinary {
+public class math_67_ok_addBinary {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
@@ -12,12 +12,13 @@ public class math_67_addBinary {
         while (ia >= 0 || ib >= 0) { // todo bug 1
             int va = ia >= 0 ? a.charAt(ia--) - '0' : 0;
             int vb = ib >= 0 ? b.charAt(ib--) - '0' : 0;
-            res += (va + vb + carry) % 2; // todo bug 2
+            res = (va + vb + carry) % 2 + res; // todo bug 2
             carry = (va + vb + carry) / 2;
         }
         if (carry == 1) return "1" + res;
         else return res;
     }
+
 
 }
 /** 题

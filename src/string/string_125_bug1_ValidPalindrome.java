@@ -1,34 +1,36 @@
 package string;
 
-public class string_125_ValidPalindrome {
+// todo 记住 如何将小写转大写即可
+// todo 记住 数字的case "1oooo1" 这种也叫回文
+public class string_125_bug1_ValidPalindrome {
     public static void main(String[] args) {
+        //case number
+        System.out.println(isPalindrome("11"));
 
+        //case upper
+        System.out.println(isPalindrome("Aa"));
     }
 
-    public boolean isPalindrome(String s) {
+    public static boolean isPalindrome(String s) {
+        s = s.toUpperCase(); // todo bug 1 记住这种方式
         int i = 0, j = s.length() - 1;
         while(j > i){
             char ci = s.charAt(i);
             char cj = s.charAt(j);
-            if (!isAlphanumeric(ci)) i++; //todo bug 1
+            if (!isAlphanumeric(ci)) i++; //solved bug 1
             else if (!isAlphanumeric(cj)) j--;
             else {
-                if (ci != cj) {
-                    if (ci >= 'a' && cj >= 'A' || ci >= 'A' && cj >= 'a' ) {
-                        if (Math.abs(ci - cj) != 'a' - 'A') return false; //todo bug 2
-                    } else
-                        return false;
-                }
+                if (ci != cj) return false;
                 i++;j--;
             }
         }
         return true;
     }
 
-    public boolean isAlphanumeric(char c){
+    public static boolean isAlphanumeric(char c){
         if ('a' <= c && c <= 'z') return true;
         if ('A' <= c && c <= 'Z') return true;
-        if ('0' <= c && c <= '9') return true;
+        if ('0' <= c && c <= '9') return true;  //todo bug 3 case 数字
         return false;
     }
 
@@ -68,11 +70,6 @@ public class string_125_ValidPalindrome {
  expected: false
 
 
- bug3
-
- 'A' - 'a';
- =>
- 'a' - 'A'; // todo bug3 这个才是 32
  */
 
 

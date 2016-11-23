@@ -7,6 +7,14 @@ public class string_0_tutorial {
 
         String s = "a,b,c,d,e,f,g";
 
+        //upper
+        System.out.println(s.toUpperCase());
+        System.out.println("lower: " + 'a' + "upper" + Character.toUpperCase('a'));
+
+        // todo convert string to int
+        String ints = "123";
+        System.out.println("string => int:  " + Integer.parseInt(ints));
+
         //todo string to char array
         char[] chars = s.toCharArray();
 
