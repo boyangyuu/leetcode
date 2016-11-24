@@ -13,11 +13,15 @@ public class string_227_todo_BasicCalculator2 {
         List list;Map map;Set set;
 
         // case space
-        System.out.println(calculate1("3 + 2 * 2 / 2 + 12"));
+//        System.out.println(calculate1("3 + 2 * 2 / 2 + 12"));
+
+        // todo case "5   "
+        System.out.println("output: " + calculate1("5  ") + "    expected : 5"); // todo bug : s = s.trim()
     }
 
     // 3 + 2 * 2
     public static int calculate1(String s) {
+        s = s.trim();
         int res = 0, tmp = 0, mu = 1;
         Stack<Integer> stack = new Stack<>();
         char sign = '+';

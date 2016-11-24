@@ -4,7 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class string_344_reverseString {
+// todo 转array char
+public class string_344_ok_reverseString {
 
     public static void main(String[] args) {
         List list;Map map;Set set;

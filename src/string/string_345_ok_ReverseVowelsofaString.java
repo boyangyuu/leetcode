@@ -6,12 +6,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class string_345_ReverseVowelsofaString {
-
+// todo consider the upper case
+public class string_345_ok_ReverseVowelsofaString {
     public static void main(String[] args) {
         List list;Map map;Set set;
     }
-
 
     public String reverseVowels(String s) {
         char[] cs = s.toCharArray();
