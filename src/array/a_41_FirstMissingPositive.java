@@ -9,6 +9,21 @@ public class a_41_FirstMissingPositive {
         System.out.println(ret);
     }
 
+//    public static int firstMissingPositive(int[] nums) {
+//
+//    }
+
+
+
+
+
+
+
+
+
+
+
+
     public static int firstMissingPositive(int[] nums) {
         int i = 0;
         while(i < nums.length){

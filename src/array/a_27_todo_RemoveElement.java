@@ -4,15 +4,23 @@ import java.util.List;
 import java.util.Map;
 
 
-// todo 不是特别熟练 建议再code一遍以后
-public class a_27_ok_RemoveElement {
+// todo 需要学习最佳思路
+public class a_27_todo_RemoveElement {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
         List list;Map map;
-        System.out.println(removeElement(new int[]{3,2,2,3}, 3));
+        System.out.println(removeElement1(new int[]{3,2,2,3}, 3));
     }
 
+    public static int removeElement1(int[] nums, int val) {
+        int res = 0;
+        for (int i = 0; i < nums.length; i++)
+            if(nums[i] != val) nums[res++] = nums[i];
+        return res;
+    }
+
+    //垃圾方法
     public static int removeElement(int[] nums, int val) {
         int j = 0, l = nums.length; // 不是 val 的element
         for (int i = 0; i < nums.length; i++) {

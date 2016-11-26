@@ -1,9 +1,63 @@
 package array;
 
-public class a_48_RotateImage {
-    public static void mains(String[] args) {
 
+// todo bug!!!! 奇数情况 非常恶心 记住即可!!!
+/*
+todo bug 1
+1 2 3
+4 5 6
+7 8 9
+=>
+! 2 3
+! 5 6
+7 8 9
+旋转 1,4 位即可!
+
+todo bug 2
+拿1,3,7,9四个点去想, 之后位移时候搞准方向, i,j 每次都变横纵坐标
+ */
+
+
+public class a_48_todobug100_RotateImage {
+    public static void main(String[] args) {
+        int[][] matrix = new int[3][3];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = i;
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        rotate1(matrix);
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
+
+    public static void rotate1(int[][] matrix) {
+        int n = matrix.length;
+        int r1 = matrix.length / 2 ,r2 = matrix[0].length / 2;
+        if (n % 2 == 1) {
+            r1 = matrix.length / 2 + 1;
+            r2 = matrix.length / 2;
+        }
+        for (int i = 0; i < r1; i++) {
+            for (int j = 0; j < r2; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[n - 1 - j][i];
+                matrix[n - 1 - j][i] = matrix[n - 1 - i][n - 1 - j];
+                matrix[n - 1 - i][n - 1 - j] = matrix[j][n - 1 - i];
+                matrix[j][n - 1 - i] = temp;
+            }
+        }
+    }
+
+
+
 
     public void rotate(int[][] matrix) {
         int n = matrix.length;

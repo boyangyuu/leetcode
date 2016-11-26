@@ -1,9 +1,33 @@
 package array;
 
-public class a_33_SearchinRotatedSortedArray {
+
+// todo 强记 最佳方法 确定有序数组位置 且排除法
+// todo bug case {3,1} 3, 1
+public class a_33_todo_SearchinRotatedSortedArray {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+
+        // case 7
+        System.out.println(search3(new int[]{4,5,6,7,0,1,2}, 0));
+
+        System.out.println(search3(new int[]{3,1}, 1));
+    }
+
+    public static int search3(int[] nums, int target) {
+        int i = 0, j = nums.length - 1;
+        while (i <= j) { //todo bug 二分查找法 是<= 不是 <
+            int mid = (j - i) / 2 + i;
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] >= nums[i]) { // 左侧有序 // todo bug > => >=, 否则会遗漏
+                if (nums[i] <= target && target < nums[mid]) j = mid - 1;
+                else i = mid + 1;
+            } else { // 右侧必然有序
+                if (nums[mid] < target && target<= nums[j]) i = mid + 1;
+                else j = mid - 1;
+            }
+        }
+        return -1;
     }
 
     //神秘方法

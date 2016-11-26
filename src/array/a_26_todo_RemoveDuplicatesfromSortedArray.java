@@ -3,19 +3,36 @@ package array;
 import java.util.List;
 import java.util.Map;
 
-public class a_26_RemoveDuplicatesfromSortedArray {
+
+// todo 不是特别熟练 建议再code一遍以后
+public class a_26_todo_RemoveDuplicatesfromSortedArray {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
         List list;Map map;
 
-        System.out.println(removeDuplicates(new int[]{1,1,2}));
+        System.out.println(removeDuplicates1(new int[]{1,1,2}));
 
-        System.out.println(removeDuplicates(new int[]{0,1,1,4,2,2}));
+        System.out.println(removeDuplicates1(new int[]{0,1,1,4,2,2}));
 
-        System.out.println(removeDuplicates(new int[]{}));
+        //case null
+        System.out.println(removeDuplicates1(new int[]{}));
+
+        // todo bug case if => while
+        System.out.println(removeDuplicates1(new int[]{1,1,1}));
+
     }
 
+    public static int removeDuplicates1(int[] nums) {
+        int res = 0;
+        for (int i = 0; i < nums.length; i++) {
+            while (i != nums.length - 1 && nums[i + 1] == nums[i]) i++; //todo bug if =>while
+            nums[res++] = nums[i];
+        }
+        return res;
+    }
+
+    //垃圾方法
     public static int removeDuplicates(int[] nums) {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -76,7 +93,9 @@ public class a_26_RemoveDuplicatesfromSortedArray {
 
  TODO follow
  bug1
-
+ if (i != nums.length - 1 && nums[i + 1] == nums[i]) i++; //todo bug if =>while
+ =>
+ while (i != nums.length - 1 && nums[i + 1] == nums[i]) i++; //todo bug if => while
 
  bug2
 

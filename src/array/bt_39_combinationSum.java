@@ -1,47 +1,43 @@
 package array;
 import java.util.*;
 
+//todo 仅需要复习下 如何去重 利用start指针即可。。
+/*
+ //todo 利用start记录即可
+ 2 => 2 => 2,3,4,7 =>..
+      3 => 3,4,7
+      4 => 4,7
+      7 => 7
+ todo 避免 {2,2,3} {3,2,2} 这种情况出现, 答案必须满足从小到大
+ */
+
 public class bt_39_combinationSum {
     public static void main(String[] args) {
         int[] nums = {2,3,4,7};
         int target = 7;
-        combinationSum(nums, target);
-
+        System.out.println(combinationSum1(nums, target));
     }
 
-
-    public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public static List<List<Integer>> combinationSum1(int[] candidates, int target) {
         List<List<Integer>> re = new ArrayList<>();
-        List<Integer> stack = new ArrayList<>();
-        solve(stack, candidates, 0, target, re);
-        return re;
+        List<List<Integer>> res = new ArrayList<>();
+        help(new ArrayList<Integer>(), res, candidates, 0, target);
+        return res;
     }
-
-    public static void solve(List<Integer> stack, int[] candidates, int deep, int target, List<List<Integer>> re){
-        //
-        System.out.println("stack" + stack);
-
-        if (deep >= candidates.length) return;;
-
-        //出口
-        int v = candidates[deep];
-        if (v == target) {
-            stack.add(v);
-            re.add(stack);
+    
+    public static void help(List<Integer> tmp, List<List<Integer>> res, int[] candidates, int start, int target) {
+        if (target == 0) {
+            res.add(new ArrayList<Integer>(tmp));
             return;
-        }
+        } else if (target < 0) return;
 
-        if (v > target) return;
-        for (int i = 0; i <= target / v; i++) {
-            //do
-            stack.add(stack.size(), v);
-            target -= v;
-            solve(stack, candidates, deep + 1, target, re);
-            //undo
-            target += v;
-            stack.remove(stack.size() - 1);
+        for (int i = start; i < candidates.length; i++) {
+            tmp.add(candidates[i]);
+            help(tmp, res, candidates, i, target - candidates[i]); // todo i为start
+            tmp.remove(tmp.size() - 1);
         }
     }
+
 
 }
 /** 题
@@ -72,13 +68,8 @@ public class bt_39_combinationSum {
  参考网站
 
 todo solution
- 求解解空间 (树状)
- 解(进0次, deep) => {2,3,6,7}
- 解(进1次, 解(进0次, deep - 1)) => 2 * 1 + {3,6,7}   .... (进n次, 解(进0次,deep -1)) 2 * n + {3,6,7}
- .....
- 解(进0次, 0) 出口
+去重方法
 
- 深度优先遍历 记住是深度优先!!
 
 
 

@@ -3,7 +3,7 @@ package array;
 import java.util.*;
 
 // todo 能否进一步优化?到 On * n
-public class a_18_4Sum {
+public class a_18_ok_4Sum {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
     }

@@ -3,7 +3,7 @@ package array;
 import java.util.*;
 
 // todo bug case {0,0,0,0} 题目要求是 unique answer
-public class a_16__3sumCloset {
+public class a_16_ok_3sumCloset {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

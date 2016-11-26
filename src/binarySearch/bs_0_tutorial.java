@@ -3,8 +3,11 @@ package binarySearch;
 
 public class bs_0_tutorial {
     public static void main(String[] args) {
+        System.out.println("第一个小于0的位置" + binarySearchLeft(new int[]{1,2,3}, 0));
+        System.out.println("第一个小于3的位置" + binarySearchLeft(new int[]{1,2,3}, 3));
 
-
+        System.out.println("第一个大于0的位置" + binarySearchRight(new int[]{1,2,3}, 0));
+        System.out.println("第一个大于3的位置" + binarySearchRight(new int[]{1,2,3}, 3));
     }
 
     /*
@@ -12,32 +15,38 @@ public class bs_0_tutorial {
     *
      */
 
-    public int binarySearch(int[] nums, int target){
+    public static int binarySearch(int[] nums, int target){
         int l = 0, r = nums.length - 1;
         while (l <= r) {
             int mid = (r - l) / 2 + l;
-
-//            if (nums[mid] == nums[r]) { // todo 返回第一个等于target的位置
-//                r--;
-//                continue;
-//            }
-
             if (nums[mid] == target) return mid;
             else if (nums[mid] < target) l = mid + 1;
             else r = mid - 1;
         }
-
-
         return -1; // todo 等于target的位置
-//        return left; // todo 第一个大于等于target的位置, 可能是 length (l是一直往大了走的)
-//        return right; // todo 最后一个小于等于target的位置 可能是 -1; (r是往小了走的)
-
-
     }
 
+    // left 第一个小于target的值 (-1: l - 1)
+    public static int binarySearchLeft(int[] nums, int target){
+        int l = 0, r = nums.length - 1;
+        while (l <= r) {
+            int mid = (r - l) / 2 + l;
+            if (nums[mid] < target) l = mid + 1;
+            else r = mid - 1;
+        }
+        return r; //(r是往小了走的)
+    }
 
-
-
+    // right 第一个大于target的值 (0: l)
+    public static int binarySearchRight(int[] nums, int target){
+        int l = 0, r = nums.length - 1;
+        while (l <= r) {
+            int mid = (r - l) / 2 + l;
+            if (nums[mid] <= target) l = mid + 1;
+            else r = mid - 1;
+        }
+        return l; //(l是往大了走的)
+    }
 }
 /** 题
  *

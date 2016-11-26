@@ -6,7 +6,6 @@ import java.util.*;
 public class a_57_insertInterval {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
-        System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
 
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
