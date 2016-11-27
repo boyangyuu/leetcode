@@ -5,6 +5,7 @@ import java.util.Map;
 
 
 // todo 不是特别熟练 建议再code一遍以后
+// todo 主要利用双指针
 public class a_26_todo_RemoveDuplicatesfromSortedArray {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};

@@ -1,10 +1,23 @@
-package array;
+package greedy;
 
-public class greedy_55_JumpGame {
+public class greedy_55_ok_JumpGame {
     public static void main(String[] args) {
-        int[] nums = {0,2,3};
-        System.out.println(greedy_55_JumpGame.canJump(nums));
+        int[] nums = {0,1,3};
+//        int[] nums = {2,3,1,1,4};
+        System.out.println(canJump1(nums));
     }
+
+
+    //best solution
+    public static boolean canJump1(int[] nums) {
+        int j = nums.length, cur = nums.length - 1;
+        while (--j >= 0) {
+            int distance = cur - j;
+            if (nums[j] >= distance) cur = j;
+        }
+        return cur == 0;
+    }
+
 
     public static boolean canJump(int[] nums) {
         if (nums.length == 1) return true;

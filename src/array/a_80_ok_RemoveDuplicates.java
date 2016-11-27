@@ -1,9 +1,37 @@
 package array;
 
-public class a_80_RemoveDuplicates {
+public class a_80_ok_RemoveDuplicates {
     public static void main(String[] args) {
-        int[] nums = {0,0,0};
+        int[] nums = new int[]{1,1,2,2,2,2,3};
+        System.out.println(removeDuplicates1(nums));
+        for (int i = 0; i < nums.length; i++)
+            System.out.print(nums[i] + ",");
+
     }
+
+    public static int removeDuplicates1(int[] nums) {
+        if (nums.length <= 1) return nums.length;
+        int times = 1, last = nums[0], res = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == last) {
+                times++;
+                if (times <= 2) res++;
+            } else {
+                times = 1;
+                last = nums[i];
+                res++;
+            }
+            nums[res - 1] = nums[i];
+        }
+        return res;
+    }
+
+
+
+
+
+
+
 
 
     public int removeDuplicates(int[] nums) {

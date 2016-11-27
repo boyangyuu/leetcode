@@ -1,11 +1,51 @@
 package array;
 
 import java.util.*;
-
-public class a_54_SpiralMatrix {
+/*
+todo 新方法 1 做方向 2定范围 3新坐标是否在范围内, 不是则变化方向
+todo 记住思路 和 case , 且需要重新编码
+ */
+public class a_54_todo_SpiralMatrix {
     public static void main(String[] args) {
-        int[][] nums = {{1,2,3},{4,5,6},{7,8,9}};
-        a_54_SpiralMatrix.spiralOrder(nums);
+//        int[][] nums = {{1,2,3},{4,5,6},{7,8,9}};
+//        int[][] nums = {{1,2,3},{4,5,6}};
+//        spiralOrder1(nums);
+//
+//        // todo bug case
+//        int[][] numsNull = {}; // {{}}
+//        System.out.println(spiralOrder1(numsNull));
+
+        // todo bug case
+        int[][] nums2 = {{1}, {2}};
+        System.out.println(spiralOrder1(nums2));
+    }
+
+    public static List<Integer> spiralOrder1(int[][] matrix) {
+        List<Integer> res = new ArrayList();
+        if (matrix.length == 0 || matrix[0].length == 0) return res;
+        int[][] directs = new int[][]{{0,1}, {1,0}, {0,-1}, {-1,0}};
+        int directIndex = 0;
+        int r = 0, i = 0, j = 0;
+        while (true) {
+            res.add(matrix[i][j]);
+            System.out.println("cur : " + matrix[i][j] + "  direct: " + directIndex);
+            if (res.size() == matrix.length * matrix[0].length) break;
+            int newi = i + directs[directIndex][0];
+            int newj = j + directs[directIndex][1];
+            if (newj > matrix[0].length - 1 - r || newj < r
+                    || newi > matrix.length - 1 - r || newi < r) {
+                System.out.println("newi" + newi);
+                System.out.println("newj" + newj);
+                directIndex++;
+                newi = i + directs[directIndex][0];
+                newj = j + directs[directIndex][1];
+            }
+            i = newi;j = newj;
+            if (i == r && j == r) {
+                i = r + 1;j = r + 1;r++;directIndex = 0; continue;
+            }
+        }
+        return res;
     }
 
     public static List<Integer> spiralOrder(int[][] matrix) {

@@ -1,10 +1,50 @@
 package array;
 
-public class a_66_plusOne {
+import java.util.ArrayList;
+import java.util.List;
+
+
+// todo 看不太懂题目 ,, code完全没问题
+public class a_66_todo_plusOne {
     public static void main(String[] args) {
-        int[] nums = {0,0,0,0};
-        //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        // normal case
+        int[] res1 = plusOne1(new int[]{1,2,9,9});
+        for (int i = 0; i < res1.length; i++) System.out.print(res1[i] + ",");
+
+
+
+        res1 = plusOne1(new int[]{9,9});
+        for (int i = 0; i < res1.length; i++) System.out.print(res1[i] + ",");
     }
+
+    public static int[] plusOne1(int[] digits) {
+        int c = 0;
+        int[] res = new int[digits.length];
+        for (int i = digits.length - 1; i >= 0 ; i--) {
+            int tmp = 0;
+            if (i == digits.length - 1) tmp = digits[i] + 1;
+            else tmp = digits[i] + c;
+            res[i] = tmp % 10;
+            c = tmp / 10;
+        }
+        if (c == 1) {
+            res = new int[digits.length + 1];
+            res[0] = 1;
+        }
+        return res;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; --i) {

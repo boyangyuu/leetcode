@@ -10,7 +10,7 @@
  successive : 连续的
  palindromic: 回文的
  lexicographically : 词典
-
+ contiguous : 连续的
 
 
 

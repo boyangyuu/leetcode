@@ -1,6 +1,6 @@
 package dp;
 
-public class d_62_UniquePaths {
+public class d_62_ok_UniquePaths {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
@@ -34,10 +34,11 @@ public class d_62_UniquePaths {
          */
 
         int[] dp = new int[n];  //bugs1
-        dp[0] = 1;
+//        dp[0] = 1;
         for (int i = 0; i < m; i++) {
             for (int j = 1; j < n; j++) {
-                dp[j] += dp[j - 1];
+                if (j == 0) dp[j] = 1;
+                else dp[j] += dp[j - 1];
             }
         }
         return dp[n-1];
