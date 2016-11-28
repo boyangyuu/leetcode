@@ -1,11 +1,26 @@
 package array;
 
-public class a_74_Searcha2DMatrix {
+//ok 左下角搜索
+public class a_74_ok_Searcha2DMatrix {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         int a = 1 / 2;
         System.out.println(a);
+
+        System.out.println(searchMatrix1(new int[][]{{1,4,5,7}, {10,11,12,13}}, 3));
     }
+
+    //best
+    public static boolean searchMatrix1(int[][] matrix, int target) {
+        int i = matrix.length - 1, j = 0;
+        while (i >= 0 && j < matrix[0].length) {
+            if (matrix[i][j] == target) return true;
+            else if (matrix[i][j] < target) j++;
+            else i--;
+        }
+        return false;
+    }
+
 
     public static boolean searchMatrix(int[][] matrix, int target) {
         // step 1 binary insert
@@ -26,8 +41,6 @@ public class a_74_Searcha2DMatrix {
             else if (matrix[row][mid] < target) left = mid + 1;
             else right = mid - 1;
         }
-
-
         return false;
 
     }

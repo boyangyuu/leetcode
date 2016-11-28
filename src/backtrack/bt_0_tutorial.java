@@ -21,7 +21,11 @@ public class bt_0_tutorial {
  3. 组合类题目
 
 TODO tutorial
- todo O(n)
+ 1. visited 方法 避免重复
+
+ 2. set 方法 避免重复
+
+ 3. sort and start 方法 避免重复
 
 
 TODO bug
