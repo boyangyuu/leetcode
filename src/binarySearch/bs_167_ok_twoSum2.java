@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class bs_167_twoSum2 {
+public class bs_167_ok_twoSum2 {
     public static void main(String[] args) {
         List list;Map map;Set set;
     }

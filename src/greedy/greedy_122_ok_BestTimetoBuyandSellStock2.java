@@ -1,10 +1,40 @@
 package greedy;
 
-public class greedy_122_BestTimetoBuyandSellStock2 {
+public class greedy_122_ok_BestTimetoBuyandSellStock2 {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        System.out.println(maxProfit1(new int[]{10,1,2,3,7,100,99,5}));
+        System.out.println(maxProfit1(new int[]{1,2,7,6,99,5}));
     }
+
+    public static int maxProfit1(int[] prices) {
+        boolean bought = false;
+        int res = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (!bought) {
+                if (i != prices.length - 1 && prices[i] < prices[i + 1]) {
+                    res -= prices[i];
+                    bought = true;
+                }
+            } else {
+                if (i == prices.length - 1 || prices[i] > prices[i + 1]) {
+                    res += prices[i];
+                    bought = false;
+                }
+            }
+        }
+        return res;
+    }
+
+
+
+
+
+
+
+
+
 
     public int maxProfit(int[] prices) {
         if (prices.length == 0) return 0;

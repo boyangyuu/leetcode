@@ -1,25 +1,18 @@
 package array;
 
-public class dc_169_MajorityElement {
+public class a_169_ok_MajorityElement {
     public static void mains(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
 
     public int majorityElement(int[] nums) {
-        int n = nums[0];
-        int c = 0;
+        int n = nums[0], c = 0;
         for (int i = 0; i < nums.length; i++) {
-            // restore
-            if (c == 0) {
-                n = nums[i];
-                c = 1;
-                continue;
-            }
+            if (c == 0) n = nums[i];
             if (n == nums[i]) c++;
             else c--;
         }
-
         return n;
     }
 }

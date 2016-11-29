@@ -2,11 +2,56 @@ package dfs;
 
 import tree.TreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+// todo !!!想法不够快和编程速度(40minutes) 都不行, 需要重写code
+
+// todo 注意 边界写法
+
 public class dfs_105_ConstructBinaryTreefromPreorderandInorderTraversal {
     public static void main(String[] args) {
         //TreeNode
         TreeNode node;
+        node = buildTree1(new int[]{3,2,1,5,4}, new int[]{1, 2, 3, 4, 5});
+        LinkedList<TreeNode> s = new LinkedList<>(); // 既可以当队列, 又可以当站 todo !!水平输出需要用队列 不是站
+        s.add(node);
+        while(!s.isEmpty()) {
+            TreeNode cur = s.pollFirst();
+            System.out.println(cur.val);
+            if (cur.left != null) s.add(cur.left);
+            if (cur.right != null) s.add(cur.right);
+        }
     }
+
+    public static TreeNode buildTree1(int[] preorder, int[] inorder) {
+        return help(preorder, inorder, 0, preorder.length - 1, 0, inorder.length - 1);
+    }
+
+    //todo 想不到 递归 return tree
+    public static TreeNode help(int[] preorder, int[] inorder, int pl, int pr, int il, int ir) {
+        if (pl > pr || il > ir) return null; // todo !! 边界写法 不要写成 0 <pl < l, ....
+        int rootV = preorder[pl];
+        TreeNode cur = new TreeNode(rootV);
+        int mid = -1;
+        for (int i = il; i <= ir; i++) if (inorder[i] == rootV) mid = i;
+        cur.left = help(preorder, inorder, pl + 1, mid + pl - il, il, mid - 1);
+        cur.right = help(preorder, inorder, pr - ir + mid + 1, pr, mid + 1, ir);
+        return cur;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return help(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);

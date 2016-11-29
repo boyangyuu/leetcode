@@ -1,12 +1,44 @@
 package dfs;
 
 import tree.TreeNode;
+import tutorials.ListNode;
+
+import java.util.LinkedList;
 
 public class dfs_106_ConstructBinaryTreefromPreorderandInorderTraversal2 {
     public static void main(String[] args) {
         //TreeNode
-        TreeNode node;
+        TreeNode node = buildTree1(new int[]{1,2,3,4,5}, new int[]{1,2,4,5,3});
+        LinkedList<TreeNode> l = new LinkedList<>();
+        l.add(node);
+        while (l.isEmpty() == false) {
+            TreeNode cur = l.pollFirst();
+            System.out.println(cur.val);
+            if (cur.left != null) l.add(cur.left);
+            if (cur.right != null) l.add(cur.right);
+        }
     }
+
+    public static TreeNode buildTree1(int[] inorder, int[] postorder) {
+        return help(inorder, postorder, 0, inorder.length - 1, 0, postorder.length - 1);
+    }
+
+    public static TreeNode help(int[] inorder, int[] postorder, int il, int ir, int pl, int pr) {
+        if (il > ir || pl > pr) return null;
+        TreeNode node = new TreeNode(postorder[pr]);
+        int rootIndex = -1;
+        for (int i = il; i <= ir; i++) if (postorder[pr] == inorder[i]) rootIndex = i;
+        node.left = help(inorder, postorder, il, rootIndex - 1, pl, rootIndex - 1 - il + pl);
+        node.right = help(inorder, postorder, rootIndex + 1, ir, pr - ir + rootIndex, pr - 1);
+        return node;
+    }
+
+
+
+
+
+
+
 
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         return help(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);

@@ -11,6 +11,7 @@
  palindromic: 回文的
  lexicographically : 词典
  contiguous : 连续的
+ logarithmic complexity: logn 对数复杂度
 
 
 
