@@ -10,10 +10,11 @@ public class bs_167_ok_twoSum2 {
     }
 
     public int[] twoSum(int[] numbers, int target) {
-        int i = 0, j = numbers.length + 1;
+        int i = 0, j = numbers.length - 1;
         while(i < j) {
             int sum = numbers[i] + numbers[j];
-            if (sum > target) j--;
+            if (sum == target) break;
+            else if (sum > target) j--;
             else i++;
         }
 

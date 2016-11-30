@@ -1,10 +1,32 @@
 package array;
 
-public class a_209_MinimumSizeSubarraySum {
+public class a_209_todo_MinimumSizeSubarraySum {
+
+    /*
+    todo 思路还是来的慢 8分钟 重点练习思路
+    可以从dp法入手去想, dp[i] = 1 + dp[i-1] - num(前面可以去掉的元素数目)
+     */
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
 //        1 2 2 3 3 4
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        System.out.println(minSubArrayLen1(7, new int[]{2,3,1,2,4,3}));
+
+        //case
+        System.out.println(minSubArrayLen1(1000, new int[]{2,3,1,2,4,3}));
+    }
+
+
+    public static int minSubArrayLen1(int s, int[] nums) {
+        int start = 0, tmp = 0, res = nums.length + 1;
+        for (int i = 0; i < nums.length; i++) {
+            tmp += nums[i];
+            if (tmp >= s) {
+                while(start < i && tmp - nums[start] >= s) tmp -= nums[start++];
+                res = Math.min(res, i - start + 1);
+            }
+        }
+        return res == nums.length + 1 ? 0 : res;
     }
 
     public static int minSubArrayLen(int s, int[] nums) {

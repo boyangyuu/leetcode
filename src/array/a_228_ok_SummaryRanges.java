@@ -3,7 +3,7 @@ package array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class a_228_SummaryRanges {
+public class a_228_ok_SummaryRanges {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

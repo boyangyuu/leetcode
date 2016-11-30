@@ -1,10 +1,32 @@
 package array;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class a_238_ProductofArraExceptSelf {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        int[] res = productExceptSelf1(new int[]{1,2,3,4});
+        System.out.println(Arrays.toString(res));
     }
+
+    public static int[] productExceptSelf1(int[] nums) {
+        int left = 1, right = 1;
+        int[] res = new int[nums.length];
+
+        for (int i = 0; i < res.length; i++) {
+            res[i] = left;
+            left *= nums[i];
+        }
+
+        for (int i = res.length - 1; i >= 0; i--) {
+            res[i] *= right;
+            right *= nums[i];
+        }
+        return res;
+    }
+
 
     public int[] productExceptSelf(int[] nums) {
         int [] ret = new int [nums.length];

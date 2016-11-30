@@ -2,7 +2,7 @@ package array;
 
 import java.util.HashMap;
 
-public class a_217_ContainsDuplicate {
+public class a_217_ok_ContainsDuplicate {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
