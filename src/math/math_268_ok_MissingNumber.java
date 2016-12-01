@@ -1,6 +1,6 @@
 package math;
 
-public class math_268_MissingNumber {
+public class math_268_ok_MissingNumber {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
@@ -9,6 +9,16 @@ public class math_268_MissingNumber {
     /*
         O(n)
      */
+
+    public int missingNumber2(int[] nums) {
+        // 0..n+1 之和
+        int sum = (nums.length  + 0) * (nums.length + 1) / 2;
+        for (int i = 0; i < nums.length; i++) {
+            sum -= nums[i];
+        }
+        return sum;
+    }
+
     public int missingNumber(int[] nums) {
         int n = nums.length;
         int sum = 0;

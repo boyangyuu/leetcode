@@ -3,7 +3,9 @@ package array;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class a_238_ProductofArraExceptSelf {
+
+// todo 复习思路即可
+public class a_238_todo_ProductofArraExceptSelf {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

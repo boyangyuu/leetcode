@@ -1,6 +1,6 @@
 package array;
 
-public class a_283_MoveZeroes {
+public class a_283_ok_MoveZeroes {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

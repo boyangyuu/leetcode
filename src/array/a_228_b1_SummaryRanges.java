@@ -3,11 +3,41 @@ package array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class a_228_ok_SummaryRanges {
+
+// todo 需要复习下思路 这道题还算比较复杂。 另外注意一个case
+public class a_228_b1_SummaryRanges {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+
+        // normal
+        System.out.println(summaryRanges1(new int[]{0,1,2,4,5,7}));
+
+        //todo case {3,5,7}
+        System.out.println(summaryRanges1(new int[]{3,5,7})); // output is "3", "5", "7"
     }
+
+    public static List<String> summaryRanges1(int[] nums) {
+        List<String> res = new ArrayList<>();
+        String tmp = "";
+        int start = 0;
+        for (int i = 0; i < nums.length; i++) {
+            // 新起点
+            if (tmp.equals("")) {
+                start = i;
+                tmp += nums[i];
+            }
+            if (i == nums.length - 1 || nums[i] != nums[i + 1] - 1) {
+                if (start != i) tmp += "->" + nums[i];
+                res.add(tmp);
+                tmp = "";
+            }
+        }
+        return res;
+    }
+
+
+
 
     public List<String> summaryRanges(int[] nums) {
         List<String> res = new ArrayList<>();

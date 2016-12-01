@@ -1,5 +1,6 @@
 package array;
 
+// todo next time code
 public class a_289_GameofLife {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
