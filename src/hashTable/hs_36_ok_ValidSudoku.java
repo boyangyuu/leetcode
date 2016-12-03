@@ -1,8 +1,11 @@
 package hashTable;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
-public class hs_36_ValidSudoku {
+
+//todo 最笨方法配上hashset 即可
+public class hs_36_ok_ValidSudoku {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         System.out.println('.' == '.');
@@ -11,12 +14,13 @@ public class hs_36_ValidSudoku {
     public boolean isValidSudoku(char[][] board) {
         //each column
         int r = board.length, c = board[0].length;
-        HashMap<Integer, Character> m = new HashMap();
+//        HashMap<Integer, Character> m = new HashMap();
+        HashSet<Character> m = new HashSet<>();
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
                 if (board[i][j] == '.') continue;
-                if (m.containsValue(board[i][j])) return false;
-                else m.put(j, board[i][j]);
+                if (m.contains(board[i][j])) return false;
+                else m.add(board[i][j]);
             }
             m.clear();
         }
@@ -25,8 +29,8 @@ public class hs_36_ValidSudoku {
         for (int j = 0; j < c; j++) {
             for (int i = 0; i < r; i++) {
                 if (board[i][j] == '.') continue;
-                if (m.containsValue(board[i][j])) return false;
-                else m.put(i, board[i][j]); //todo bug2
+                if (m.contains(board[i][j])) return false;
+                else m.add(board[i][j]);
             }
             m.clear();
         }
@@ -38,8 +42,8 @@ public class hs_36_ValidSudoku {
                 for (int k = 0; k <= 2; k++) {
                     for (int l = 0; l <= 2; l++) {
                         if (board[i+k][j+l] == '.') continue;
-                        if (m.containsValue(board[i+k][j+l])) return false;
-                        else m.put((i+k)*j+l, board[i+k][j+l]); // todo bug1 !!!!
+                        if (m.contains(board[i+k][j+l])) return false;
+                        else m.add(board[i+k][j+l]);
                     }
                 }
                 m.clear();

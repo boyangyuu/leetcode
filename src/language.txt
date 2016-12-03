@@ -12,6 +12,7 @@
  lexicographically : 词典
  contiguous : 连续的
  logarithmic complexity: logn 对数复杂度
+ celebrity : n.名人
 
 
 

@@ -1,4 +1,4 @@
-package array;
+package $;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 // 一遍通过 简单复习下思路
-public class a_245_todo_$ShortestWordDistance3 {
+public class a_$245_todo_ShortestWordDistance3 {
     private HashMap<String, List<Integer>> map = new HashMap<>();
     private String[]words;
 

@@ -1,10 +1,10 @@
-package array;
+package $;
 
 import java.util.List;
 import java.util.Map;
 
 // 第一次就一遍过
-public class a_243_ok_$ShortestWordDistance {
+public class a_$243_ok_ShortestWordDistance {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
