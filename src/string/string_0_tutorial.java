@@ -20,6 +20,10 @@ public class string_0_tutorial {
 
         //todo string substring
         System.out.println("substring from 0 to 1: " + s.substring(0,2));
+
+        // indexOf
+        int end = s.indexOf(',' , 3); // the index of "/"
+        System.out.println("index of 用法 输入查找字符 及start坐标 :" + end);
     }
 }
 
