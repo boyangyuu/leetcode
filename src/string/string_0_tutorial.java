@@ -15,8 +15,6 @@ public class string_0_tutorial {
         String ints = "123";
         System.out.println("string => int:  " + Integer.parseInt(ints));
 
-        //todo string to char array
-        char[] chars = s.toCharArray();
 
         //todo string substring
         System.out.println("substring from 0 to 1: " + s.substring(0,2));
@@ -24,6 +22,14 @@ public class string_0_tutorial {
         // indexOf
         int end = s.indexOf(',' , 3); // the index of "/"
         System.out.println("index of 用法 输入查找字符 及start坐标 :" + end);
+
+        // charArray so I can modified the string
+        char[] chars = s.toCharArray();
+        chars[1] = '-';
+        chars[1 + 1] = '-';
+        String news = new String(chars);
+        System.out.println("charArray : " + news);
+
     }
 }
 
