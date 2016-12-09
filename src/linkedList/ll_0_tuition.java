@@ -50,6 +50,7 @@ public class ll_0_tuition {
             System.out.print(cur.val + "->");
             cur = cur.next;
         }
+        System.out.println();
     }
 
 

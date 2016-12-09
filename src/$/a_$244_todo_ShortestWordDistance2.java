@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 // 第一次就一遍过
-public class a_$244_ok_ShortestWordDistance2 {
+// todo 第二次反而懵逼没思路突然
+
+
+public class a_$244_todo_ShortestWordDistance2 {
     private HashMap<String, List<Integer>> map = new HashMap<>();
     private String[]words;
 
@@ -22,7 +25,7 @@ public class a_$244_ok_ShortestWordDistance2 {
 //                "makes", "coding"));
     }
 
-    public a_$244_ok_ShortestWordDistance2(String[] words) {
+    public a_$244_todo_ShortestWordDistance2(String[] words) {
         this.words = words;
         for (int i = 0; i < words.length; i++){
             if (map.containsKey(words[i])) map.get(words[i]).add(i);
@@ -67,6 +70,9 @@ public class a_$244_ok_ShortestWordDistance2 {
 
 
  TODO solotion
+
+
+
  ######s1######
  --performance
  time:

@@ -2,11 +2,54 @@ package linkedList;
 
 import tutorials.ListNode;
 
-public class ll_61_RotateList {
+public class ll_61_ok_RotateList {
     public static void main(String[] args) {
         //TreeNode
-        ListNode node;
+        ListNode node = ll_0_tuition.getLinkedList(5);
+        node = rotateRight2(node, 2);
+        ll_0_tuition.printListNode(node);
+
+        //todo bug case head == null
+        node = rotateRight2(null,0);
+
     }
+
+    public static ListNode rotateRight2(ListNode head, int k) {
+        if (head == null || head.next == null) return head;
+        int l = 0;
+        ListNode l1 = head;
+        while (l1 != null) {
+            l1 = l1.next;
+            l++;
+        }
+
+        k = k % l;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode fast = dummy, slow = dummy;
+        while (k-- != 0) slow = slow.next;
+        while (slow.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        slow.next = dummy.next;
+        ListNode res = fast.next;
+        fast.next = null;
+        return res;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public ListNode rotateRight(ListNode head, int k) {
         if (head == null || head.next == null) return head;
