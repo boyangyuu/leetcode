@@ -2,11 +2,54 @@ package linkedList;
 
 import tutorials.ListNode;
 
-public class ll_143_ReorderList {
+// todo 思路慢了下, 5分钟,
+public class ll_143_code_ReorderList {
     public static void main(String[] args) {
         //TreeNode
         ListNode node;
     }
+
+
+    public static void reorderList1(ListNode head) {
+        if (head == null || head.next == null || head.next.next == null) return;
+        // step 1 find mid
+        ListNode l1 = head, l2 = head;
+        while (l2 != null && l2.next != null) {
+            l2 = l2.next.next;
+            l1 = l1.next;
+        }
+
+        // step 2 reverse // 1,2,3 cut ,4,5; 1,2,3  cut 4
+        ListNode dummy = new ListNode(-1);
+        dummy.next = l1.next;
+        l1.next = null;
+        ListNode cur = dummy.next;
+        while (cur.next != null) {
+            ListNode t = cur.next;
+            cur.next = cur.next.next;
+            t.next = dummy.next;
+            dummy.next = t;
+        }
+
+        // step 3 merge
+        ListNode head1 = head;
+        while (dummy.next != null) {
+            ListNode t = dummy.next;
+            dummy.next = dummy.next.next;
+
+            t.next = head1.next;
+            head1.next = t;
+            head1 = t.next;
+        }
+    }
+
+
+
+
+
+
+
+
 
     public void reorderList(ListNode head) {
         //step 1
@@ -65,6 +108,10 @@ public class ll_143_ReorderList {
  参考网站
 
  TODO solotion
+
+ todo case 1,2,3,4,5,6
+ todo 记住 分割为 1,2,3,4 ; 5,6 之后, 5,6 分别插入 152634 满足条件
+
  todo WTF!!!!!!!超费劲的题
  step 1
  divide from the middle , the left is more
