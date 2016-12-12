@@ -2,11 +2,45 @@ package linkedList;
 
 import tutorials.ListNode;
 
-public class ll_147_InsertionSortList {
+
+// 建议再code 一遍
+public class ll_147_todo_InsertionSortList {
     public static void main(String[] args) {
         //TreeNode
-        ListNode node;
+        ListNode node = ll_0_tuition.getLinkedList(3);
+        ListNode res = insertionSortList1(node);
+        ll_0_tuition.printListNode(res);
+
     }
+    public static ListNode insertionSortList1(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode l1 = dummy.next;
+        while (l1.next != null) {
+            ListNode cur = dummy;
+            while (cur.next != null && cur != l1) {
+                if (cur.next.val < l1.next.val){
+                    //delete
+                    ListNode t = l1.next;
+                    l1.next = l1.next.next;
+
+                    //insert
+                    t.next = cur.next;
+                    cur.next = t;
+                    break;
+                } else cur = cur.next;
+            }
+            if (cur == l1) l1 = l1.next;
+        }
+        return dummy.next;
+    }
+
+
+
+
+
+
 
     public ListNode insertionSortList(ListNode head) {
         if (head == null || head.next == null) return head;
