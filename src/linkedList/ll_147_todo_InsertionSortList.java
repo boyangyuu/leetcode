@@ -4,6 +4,7 @@ import tutorials.ListNode;
 
 
 // 建议再code 一遍
+// 算法学习 :http://blog.csdn.net/morewindows/article/details/6678165/
 public class ll_147_todo_InsertionSortList {
     public static void main(String[] args) {
         //TreeNode
@@ -35,11 +36,6 @@ public class ll_147_todo_InsertionSortList {
         }
         return dummy.next;
     }
-
-
-
-
-
 
 
     public ListNode insertionSortList(ListNode head) {

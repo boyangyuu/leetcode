@@ -4,12 +4,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class bs_162_todorem_FindPeakElement {
+public class bs_162_todo_FindPeakElement {
+
 
     // todo 本题强记就好!!    , 要好好利用 -1,n 处-无穷这个特点
     public static void main(String[] args) {
         List list;Map map;Set set;
         System.out.println(findPeakElement1(new int[]{1, 2, 3, 1}));
+    }
+
+    // recommended 出错, 必须 搞出mid+1 , 否则死循环, 例如 (i==0+j==1)/2 = 0, i = mid, 一直循环下去
+    public static int findPeakElement2(int[] nums) {
+        int i = 0, j = nums.length - 1;
+        while (i < j) {
+            int mid = (i + j) / 2;
+            //if () return mid;
+        }
+        return i;
     }
 
     // recommended
@@ -20,11 +31,10 @@ public class bs_162_todorem_FindPeakElement {
             if (nums[mid] < nums[mid + 1]) i = mid + 1;
             else j = mid;
         }
-        return j;
+        return i;
     }
 
-
-    // 没看明白
+    // 没看明白( 同样推荐, 但不是logn!!)
     public int findPeakElement(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (i == 0 || nums[i] > nums[i - 1]) {

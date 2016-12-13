@@ -2,7 +2,7 @@ package linkedList;
 
 import tutorials.ListNode;
 
-public class ll_160_IntersectionofTwoLinkedLists {
+public class ll_160_ok_IntersectionofTwoLinkedLists {
     public static void main(String[] args) {
         //TreeNode
         ListNode node;

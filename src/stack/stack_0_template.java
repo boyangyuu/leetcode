@@ -1,27 +1,11 @@
-package tree;
-
-import tutorials.BinaryTree;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.TreeSet;
+package stack;
 
 
-
-
-
-
-public class tree_0_template {
+public class stack_0_template {
     public static void main(String[] args) {
 
 
     }
-
-
-
-
-
-
 
 
 
@@ -75,7 +59,7 @@ public class tree_0_template {
  bug3
 
  TODO follow
- todo#! 有时可以用set 优化map
+
  */
 
 /*
