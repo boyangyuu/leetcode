@@ -2,10 +2,61 @@ package hashTable;
 
 import java.util.*;
 
+// todo 建议放弃!!!!!!!!!!!!!
+// todo 得到了思路 建议背下 (本题 1/6 为 0.166666.. (余数:位置 => 1:1, 4:6, 4:6.。。))
+// todo bug 1 case 1/6, 不一定是 0.(1321) 这种, 也可以是 0.1(6) 这种
+// todo bug 2 case
 public class hs_166_FractiontoRecurringDecimal {
     public static void main(String[] args) {
-        hs_166_FractiontoRecurringDecimal.fractionToDecimal(5, 3);
+        // todo bug case
+        System.out.println(fractionToDecimal1(1,6));
+
+        System.out.println(fractionToDecimal1(1, Integer.MAX_VALUE));
+
+        // normal
+        System.out.println(fractionToDecimal1(0,1));
+        System.out.println(fractionToDecimal1(20,1));
+        System.out.println(fractionToDecimal1(2,3));
+
     }
+
+
+    public static String fractionToDecimal1(int numerator, int denominator) {
+        String flag = (long) numerator * (long) denominator < 0 ? "-" : "";
+        long numerator1 = Math.abs((long)numerator);
+        long denominator1 = Math.abs((long)denominator);
+
+        String res = flag, tmp = "";
+        int a = (int) (numerator1 / denominator1);
+        long b = numerator1 % denominator1;
+        res += a;
+
+        HashMap<Long, Integer> map = new HashMap<>(); // int, index
+        while (b != 0) {
+            a = (int) (b * 10 / denominator1); // 商
+            if (map.containsKey(b)) {
+                int end = map.get(b);
+                String s1 = tmp.substring(0, end);
+                String s2 = tmp.substring(end);
+                return res + "." + s1 + "(" + s2 + ")";
+            } else {
+                map.put(b, tmp.length());
+                tmp += a;
+            }
+
+            b = b * 10 % denominator1; // 余数
+        }
+        if (tmp.length() != 0) res = res + "." + tmp;
+        return res;
+    }
+
+
+
+
+
+
+
+
 
     public static String fractionToDecimal(int numerator, int denominator) {
         if (numerator == 0) return "0";
