@@ -14,6 +14,8 @@
  logarithmic complexity: logn 对数复杂度
  celebrity : n.名人
  bracket : n.括号
+ parentheses : n 括号  [[pəˈrenθəsiːz]]
+ trailing : 拖尾
 
 
 

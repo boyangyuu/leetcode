@@ -1,7 +1,7 @@
 package math;
 
-//2 minutes
-public class math_171_ExcelSheetColumnNumber {
+// todo 2 minutes bugfree 不停 *26 + cur
+public class math_171_ok_ExcelSheetColumnNumber {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

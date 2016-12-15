@@ -2,7 +2,8 @@ package math;
 
 
 // todo 复习思路, 严格地写!!
-public class math_168_ExcelSheetColumnTitle {
+
+public class math_168_code_ExcelSheetColumnTitle {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

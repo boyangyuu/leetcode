@@ -1,9 +1,31 @@
 package hashTable;
 
+import java.util.HashMap;
 import java.util.HashSet;
+//updated by 12/15    TIME 12.21 - 12.34 1 bug
 
-public class hs_202_HappyNumber {
+public class hs_202_ok_HappyNumber {
     public static void main(String[] args) {
+        System.out.println(isHappy1(19));
+
+        //todo bug case
+        System.out.println(isHappy1(7));
+    }
+
+
+
+    public static boolean isHappy1(int n) {
+        HashSet<Integer> set = new HashSet<>();
+        while (n != 1) {
+            int sum = 0;
+            String s = "" + n;
+            for (int i = 0; i < s.length(); i++) sum += (s.charAt(i) - '0') * (s.charAt(i) - '0');
+            n = sum;
+            if (set.contains(n)) return false;
+            else set.add(n);
+        }
+        return true;
+
 
     }
 

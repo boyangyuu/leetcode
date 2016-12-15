@@ -2,11 +2,11 @@ package hashTable;
 
 import java.util.*;
 
-// todo 建议放弃!!!!!!!!!!!!!
+//
 // todo 得到了思路 建议背下 (本题 1/6 为 0.166666.. (余数:位置 => 1:1, 4:6, 4:6.。。))
 // todo bug 1 case 1/6, 不一定是 0.(1321) 这种, 也可以是 0.1(6) 这种
-// todo bug 2 case
-public class hs_166_FractiontoRecurringDecimal {
+// todo bug 2 case (可以先不考虑 long intmax )
+public class hs_166_danger_FractiontoRecurringDecimal {
     public static void main(String[] args) {
         // todo bug case
         System.out.println(fractionToDecimal1(1,6));

@@ -1,12 +1,19 @@
 package bit;
 
+import java.util.BitSet;
 
-// 暂时先放弃 bit类题目
-public class bit_0_template {
+public class bit_190_ReverseBits {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
     }
+
+//    public int reverseBits(int n) {
+//        for (int i = 0; i < 32; i++) {
+//            if (n & 1)
+//        }
+//
+//    }
 
 
 }

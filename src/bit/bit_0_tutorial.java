@@ -7,7 +7,20 @@ public class bit_0_tutorial {
 //        System.out.println("1");
         int test = 2 & 1 << 1;
         System.out.println(test);
+
+        // todo  求 某数字的 32位 bit
+        String res1 = "";
+        int resI1 = 0;
+        int target = 1231233121;
+        for (int i = 0; i < 32; i++) {
+            target = target >> i;
+            res1 += target & 1;
+        }
+        System.out.println(res1);
     }
+
+
+
 
 
 }

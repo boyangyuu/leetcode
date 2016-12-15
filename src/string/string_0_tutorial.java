@@ -1,5 +1,8 @@
 package string;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class string_0_tutorial {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
@@ -20,6 +23,7 @@ public class string_0_tutorial {
         System.out.println("substring from 0 to 1: " + s.substring(0,2));
 
         // indexOf
+        s = "a,b,c";
         int end = s.indexOf(',' , 3); // the index of "/"
         System.out.println("index of 用法 输入查找字符 及start坐标 :" + end);
 
@@ -29,6 +33,18 @@ public class string_0_tutorial {
         chars[1 + 1] = '-';
         String news = new String(chars);
         System.out.println("charArray : " + news);
+
+        // compareTo 默认按照 "abcd 1234" 排序
+        Integer[] list = new Integer[nums.length];
+        Comparator<Integer> com = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                String s1 = o1.toString();
+                String s2 = o2.toString();
+                return (s1 + s2).compareTo(s2 + s1); // todo
+            }
+        };
+        Arrays.sort(list, com);        // Arrays.sort(, com) 后面可接comparer
 
     }
 }

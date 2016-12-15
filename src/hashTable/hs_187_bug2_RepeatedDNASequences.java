@@ -2,10 +2,44 @@ package hashTable;
 
 import java.util.*;
 
-public class hs_187_RepeatedDNASequences {
+
+// 2016/12/14 5.10pm-5.40pm:
+// todo 1、题意没理解清楚, 2、高估算法复杂度, 3、答案不允许重复元素。
+public class hs_187_bug2_RepeatedDNASequences {
     public static void main(String[] args) {
 
+        // todo bug case1 理解错题意 // AAAAACCCCC, AAAAACCCCCC, AAAAACCCCC
+        System.out.println(findRepeatedDnaSequences1("AAAAAAAAAAA")); // output [],  expected ["AAAAAAAAAA"] allow intersectation
+
+        // todo bug case2
+        System.out.println(findRepeatedDnaSequences1("AAAAACCCCCAAAAACCCCCCAAAAACCCCC")); // expected 答案不允许有duplicate elements
+
     }
+
+    public static List<String> findRepeatedDnaSequences1(String s) {
+        List<String> res = new ArrayList<>();
+        HashMap<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length() - 9; i++) {
+            String cur = s.substring(i, i + 10);
+//            if (map.containsKey(cur) && map.get(cur) + 10 <= i && !res.contains(cur)) {
+            if (map.containsKey(cur) && !res.contains(cur)) {
+                res.add(cur);
+            } else if (map.containsKey(cur) == false) {
+                map.put(cur, i);
+            }
+        }
+        return res;
+    }
+
+
+
+
+
+
+
+
+
+
 
     public List<String> findRepeatedDnaSequences(String s) {
         HashSet<String> set = new HashSet<>(); //todo bug2
