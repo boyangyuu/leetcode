@@ -1,12 +1,39 @@
 package hashTable;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class hs_204_CountPrimes {
+// 12/15 7:21--7:30pm bf
+public class hs_204_ok_CountPrimes {
     public static void main(String[] args) {
-
+        System.out.println(countPrimes1(14));
     }
+
+    public static int countPrimes1(int n) {
+        int[] dp = new int[n]; // from 2 -- n -1
+        int res = 0;
+        for (int i = 2; i < dp.length; i++) {
+            if (dp[i] == -1) continue;
+            else {
+                res++;
+                for (int j = i * 2; j < dp.length; j+= i) {
+                    dp[j] = -1;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(dp));
+        return res;
+    }
+
+
+
+
+
+
+
+
+
 
     public int countPrimes(int n) {
         int cnt = 0;

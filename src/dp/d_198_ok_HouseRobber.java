@@ -6,7 +6,7 @@ package dp;
 // todo 快速想出 如何利用 O(1) 空间 取代dp法 (建议转成带语义的, 之后好想些,)
 
 
-public class d_198_HouseRobber {
+public class d_198_ok_HouseRobber {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

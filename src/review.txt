@@ -1,5 +1,17 @@
 复习进度
 
+todo 下次review计划,
+(ok的不练, 只需看思路的不code, 提前1周准备好题)
+1、不看tag提示
+2、2个为一组, 50分钟bug free (1e1m)
+3、写清 英语思路, 并时间过后 查看discuss, 并背诵题目
+4、excel 记录每题的思路, tag, case, time, 和做题时间
+
+
+
+
+
+
 #todo array round 2
 alert :
 74,
