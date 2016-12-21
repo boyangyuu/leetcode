@@ -1,14 +1,3 @@
-步骤
-1. 复制template                               git create msg : #easy dc_169_MajorityElement
-写 时间空间,题干,思路,步骤
+关于分类标签
 
-2. coding
-
-3. git 提交 ①create ② fix bug xxx ③ accepted
-
-4. 反复 提交leetcode 直至accepted
-
-计划
-周六日学知识
-不做回溯法
-只做easy medium
+对于review 只需要点开题目, 复习思路和 case 即可

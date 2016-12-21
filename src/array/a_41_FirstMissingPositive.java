@@ -2,26 +2,23 @@ package array;
 
 import java.util.Arrays;
 
+// 12/19 6:10 -- 6.48 failed
+// todo 1 思路没有 没有注意到 该数组的一个特性, 需要再次思考
+// todo 2 bug
 public class a_41_FirstMissingPositive {
     public static void main(String[] args) {
         int[] nums = {1,3,4,2,2};
         int ret = firstMissingPositive(nums);
         System.out.println(ret);
+
+        // todo bug!! case duplicate elements
+        System.out.println(firstMissingPositive(new int[]{7,5,3,5,6,6,6,6,6,4,1})); // except 2 , output wrong
+
     }
 
 //    public static int firstMissingPositive(int[] nums) {
 //
 //    }
-
-
-
-
-
-
-
-
-
-
 
 
     public static int firstMissingPositive(int[] nums) {
