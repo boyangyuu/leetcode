@@ -1,10 +1,56 @@
 package math;
 
-public class math_43_MultiplyStrings {
+
+// 12/21 6:35 - 7.11 36minutes
+public class math_43_ok_MultiplyStrings {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        System.out.println(add1("11", "9"));
+        System.out.println(add1("1", "12"));
+        System.out.println(multiply1("11", "11"));
+        System.out.println(multiply1("10", "12"));
+
+        // corner case
+        System.out.println(multiply1("0", "12"));
+        System.out.println(multiply1("55", "55"));
     }
+
+    public static String multiply1(String num1, String num2) {
+        String res = "0", diff = "";
+        for (int i = num1.length() - 1; i >= 0; i--) {
+            int v1 = num1.charAt(i) - '0';
+            int carry = 0;
+            String mres = "" + diff;
+            for (int j = num2.length() - 1; j >= 0; j--) {
+                int v2 = num2.charAt(j) - '0';
+                mres = (carry + v2 * v1) % 10 + mres;
+                carry = (carry + v2 * v1) / 10;
+            }
+            if (carry > 0) mres = carry + mres;
+            diff += "0";
+            res = add1(res, mres);
+        }
+
+        if (res.charAt(0) == '0') return "0";
+        return res;
+    }
+
+
+    public static String add1(String pre, String cur) {
+        String res = "";
+        int i = pre.length() - 1, j = cur.length() - 1, carry = 0;
+        while (i >= 0 || j >= 0) {
+            int pv = i < 0 ? 0 : pre.charAt(i--) - '0';
+            int pc = j < 0 ? 0 : cur.charAt(j--) - '0';
+            int sum = (pv + pc + carry) % 10;
+            carry = (pv + pc + carry) / 10;
+            res = sum + res;
+        }
+        if (carry == 1) res = 1 + res;
+        return res;
+    }
+
 
     public String multiply(String num1, String num2) {
         String res = "";
