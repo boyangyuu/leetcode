@@ -2,7 +2,7 @@ package linkedList;
 
 import tutorials.ListNode;
 
-public class ll_82_RemoveDuplicatesfromSortedList2 {
+public class ll_82_ok_RemoveDuplicatesfromSortedList2 {
     public static void main(String[] args) {
         //TreeNode
         ListNode node;

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 // todo 倒着数 count the ".."即可 , ignore the ".", ""
-public class string_71_ok_simplifyPath {
+public class string_71_review_simplifyPath {
     public static void main(String[] args) {
         System.out.println(simplifyPath("/a/./b/../../c/"));
     }

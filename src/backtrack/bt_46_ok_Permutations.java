@@ -8,16 +8,18 @@ import java.util.Map;
 import java.util.stream.IntStream;
 
 
-// 12/21 8:29 --
-public class bt_46_Permutations {
+// 12/21 8:29 -- 8:40
+public class bt_46_ok_Permutations {
     public static void main(String[] args) {
         List list;Map map;
         System.out.println(permute1(new int[]{1,1,3}));
+        // todo bug case
+        System.out.println(permute1(new int[]{1,1,3,1}));
     }
 
     public static List<List<Integer>> permute1(int[] nums) {
         int[] visited = new int[nums.length];
-        Arrays.sort(visited);
+        Arrays.sort(nums);
         List<List<Integer>> res = new ArrayList<>();
         help1(nums, visited, res, new ArrayList<>());
         return res;
@@ -31,7 +33,7 @@ public class bt_46_Permutations {
 
         for (int j = 0; j < nums.length; j++) {
             if (visited[j] == 1) continue;
-            if (j >= 1 && nums[j] == nums[j - 1]) continue;
+            if (j >= 1 && nums[j] == nums[j - 1] && visited[j - 1] == 0) continue; // todo 思维里遗漏 && visited[j - 1] == 0
             visited[j] = 1;
             temp.add(nums[j]);
             help1(nums, visited, res, temp);

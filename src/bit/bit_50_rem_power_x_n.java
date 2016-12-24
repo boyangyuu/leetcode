@@ -1,14 +1,39 @@
 package bit;
 
-public class bit_50_power_x_n {
+
+// todo 建议强记思路和解法
+// todo stack over 的时候 不用管它 用help 就不会出现, 很奇怪的问题 不比在意
+public class bit_50_rem_power_x_n {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+
+        System.out.println(myPow1(3.0, -2));
+        System.out.println(myPow1(3.0, 10));
     }
 
-    public double myPow(double x, int n) {
-        if (n < 0) return 1 / help(x, -n); // todo bug 2
-        else return help(x, n);
+    public static double myPow1(double x, int n) {
+        if (n < 0) return 1 / myPow1(x, -n);
+        if (n == 0) return 1;
+        if (n == 1) return x;
+        double t = myPow1(x, n / 2);
+        if (n % 2 == 0) return t * t;
+        else return t * t * x;
+    }
+
+
+
+    public static double myPow(double x, int n) {
+        if (n < 0) return 1 / help3(x, -n); // todo bug 2
+        else return help3(x, n);
+    }
+
+    public static double help3(double x, int n) {
+        if (n == 0) return 1;
+        if (n == 1) return x;
+        double v = help3(x, n / 2);
+        if (n % 2 == 0) return v * v;
+        else return v * v * x;
     }
 
     // solution 1 TLE

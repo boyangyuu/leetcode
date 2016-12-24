@@ -15,15 +15,6 @@ public class a_81_todocode_SearchinRotatedSortedArray2 {
     }
 
 
-
-
-
-
-
-
-
-
-
     // 基础上 变动l,r
     public static boolean search1(int[] nums, int target) {
         if (nums.length == 0) return false;

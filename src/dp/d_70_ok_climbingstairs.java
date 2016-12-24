@@ -2,7 +2,7 @@ package dp;
 
 import java.util.*;
 
-public class d_70_climbingstairs {
+public class d_70_ok_climbingstairs {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
 //        System.out.print(1);

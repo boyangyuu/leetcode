@@ -5,7 +5,7 @@ import java.util.List;
 
 
 // todo 看不太懂题目 ,, code完全没问题
-public class a_66_todo_plusOne {
+public class a_66_ok_plusOne {
     public static void main(String[] args) {
         // normal case
         int[] res1 = plusOne1(new int[]{1,2,9,9});

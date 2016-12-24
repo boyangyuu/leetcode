@@ -5,22 +5,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+// todo 思路1、 set去重。 思路2、想的不好, 要用树状去想, 建议下次code
+// bug case
 
-public class bt_47_Permutations2 {
+public class bt_47_code_Permutations2 {
     public static void main(String[] args) {
         List list;Map map;
+        System.out.println();
     }
 
-    public List<List<Integer>> permuteUnique(int[] nums) {
+    public static List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        Arrays.sort(nums); // todo bug 2
+        Arrays.sort(nums);
         help(nums, new int[nums.length], new ArrayList<>(), res);
         return res;
     }
 
-    public void help(int[] nums, int[] visited, List<Integer> tmp, List<List<Integer>> res) {
+    public static void help(int[] nums, int[] visited, List<Integer> tmp, List<List<Integer>> res) {
         if (tmp.size() == nums.length) {
-            res.add(new ArrayList<>(tmp));
+            res.add(new ArrayList(tmp));
             return;
         }
 
@@ -61,7 +64,11 @@ public class bt_47_Permutations2 {
 set 去重
 
  ######s2######
- 去重
+   1,1,3
+
+ 1 只有一次机会
+
+
  //            if (i > 0 && nums[i] == nums[i - 1] && visited[i - 1] == 0) continue; // todo bug 1
  case 1,1,2
 
