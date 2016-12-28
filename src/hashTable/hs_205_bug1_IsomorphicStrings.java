@@ -15,6 +15,7 @@ public class hs_205_bug1_IsomorphicStrings {
 
         // todo bug case
         System.out.println(isIsomorphic("aa", "ab")); // todo 1 题干没看清 No two characters may map to the same character
+        System.out.println(isIsomorphic("ac", "bb")); // todo 1 题干没说清
     }
 
     public static boolean isIsomorphic(String s, String t) {
@@ -23,7 +24,7 @@ public class hs_205_bug1_IsomorphicStrings {
             if (map.containsKey(s.charAt(i))) {
                 if (map.get(s.charAt(i)) != t.charAt(i)) return false;
             } else {
-                if (map.containsValue(t.charAt(i))) return false;
+//                if (map.containsValue(t.charAt(i))) return false;
                 map.put(s.charAt(i), t.charAt(i));
             }
         }

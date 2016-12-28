@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class tree_0_tutorial {
     public static void main(String[] args) {
-        //[2,1,3,*,*,*,4]
+        //[2,1,3,*,*,*,4] 1层 2; 2层 1,3 ;3层 4
         TreeNode root = new TreeNode(2);TreeNode root1 = new TreeNode(1);TreeNode root2 = new TreeNode(3);
         TreeNode root3 = new TreeNode(4);
         root.left = root1;root.right=root2;root1.right=root3;

@@ -1,4 +1,4 @@
-package backtrack;
+package $;
 
 
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 // 12/25 2:20--2:34 bf
-public class bt_254_ok_FactorCombinations {
+public class bt_$254_ok_FactorCombinations {
     public static void main(String[] args) {
         List list;Map map;
         System.out.println(getFactors(8));

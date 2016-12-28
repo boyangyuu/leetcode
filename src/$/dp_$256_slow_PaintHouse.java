@@ -5,48 +5,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-// todo 第一次做 accepted 但是复习下思路吧、
-// todo 注意题干, 记住bugcase
+// todo 第一次做 accepted 但是思路慢, 先用树思考
 
-public class string_294_todo_FlipGame2 {
+public class dp_$256_slow_PaintHouse {
     public static void main(String[] args) {
         List list = new ArrayList();Map map;Set set;
-        list.add("abc");list.add("abcd");list.add("abce");
 
-        // todo bug case flip 不仅仅一次
-        System.out.println(canWin("++++++")); // "++++++" => "++--++" => ?? => "------" also the starter will win!!
-
-        System.out.println(canWin("+-+-+"));
-        System.out.println(canWin("+++++"));
-        System.out.println(canWin("++++----++--"));
     }
 
-    public static boolean canWin(String s) {
-        boolean res = false;
-        for (int i = 0; i < s.length() - 1; i++) {
-            if (s.charAt(i) == '+' && s.charAt(i + 1) == '+') {
-                String news = s.substring(0, i) + "--" + s.substring(i + 2, s.length());
-                res |= !canWin(news);
-                if (res) return res; // todo bug
-            }
+    public static int minCost(int[][] costs) {
+        int[] dp0 = new int[costs.length + 1];
+        int[] dp1 = new int[costs.length + 1];
+        int[] dp2 = new int[costs.length + 1];
+        for (int i = 1; i < costs.length + 1; i++) {
+            dp0[i] = Math.min(dp1[i - 1], dp2[i - 1]) + costs[i - 1][0];
+            dp1[i] = Math.min(dp0[i - 1], dp2[i - 1]) + costs[i - 1][1];
+            dp2[i] = Math.min(dp0[i - 1], dp1[i - 1]) + costs[i - 1][2];
         }
-        return res;
+        return Math.min(Math.min(dp0[costs.length], dp1[costs.length]), dp2[costs.length]);
     }
-
-    // todo wrong
-    public static boolean canWin1(String s) {
-        int cnt = 0;
-        for (int i = 0; i < s.length() - 1; i++) {
-            if (s.charAt(i) == '+' && s.charAt(i + 1) == '+') {
-                cnt++;
-                i += 2;
-            }
-        }
-        return cnt == 1;
-    }
-
-
-
 }
 
 /** Solution
