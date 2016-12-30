@@ -1,7 +1,7 @@
 package $;
 
 
-public class tree_156_BinaryTreeUpsideDown {
+public class tree_156_$BinaryTreeUpsideDown {
     public static void main(String[] args) {
 
 

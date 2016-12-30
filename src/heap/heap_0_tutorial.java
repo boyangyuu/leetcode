@@ -28,6 +28,7 @@ public class heap_0_tutorial {
         // deque 双端队列, 维护特殊的堆, 可以O n 时间维护
         // 见 head_239_slidingWIndowMaximum
 
+        // todo  heap 每次 pop() 会出最小值, 但是peek不会, 只有每次pop 才会主动对里面的内容进行排序!!
     }
 
 }
