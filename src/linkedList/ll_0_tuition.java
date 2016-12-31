@@ -10,6 +10,8 @@ public class ll_0_tuition {
         ListNode node = getLinkedList(10);
         ListNode newNode = reverseList(node);
         System.out.print("\nafter reverse: "); printListNode(newNode);
+
+        //todo linkedlist (双向队列)
     }
 
     // 翻转 list (技巧, 5,4,3,2,1 假设 cur 为 3,之后移动2)

@@ -30,10 +30,16 @@ public class common_0_tutorial {
         deque.pollLast();deque.pollFirst();
 
 
-        //todo linkedList 可以当链表使用 也可以当双向队列
+        //todo linkedList 可以当链表使用 也可以当双向队列 也可以当堆栈
         LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.pollFirst();
         linkedList.pollLast(); linkedList.peekLast(); //...
+
+        LinkedList<Integer> ls = new LinkedList<>();
+        ls.add(1);ls.add(2);ls.add(3); //   add == addLast =》 (1->2->3) ,  remove == removeLast
+        System.out.println(ls.removeFirst());
+        System.out.println(ls.removeLast());
+        System.out.println(ls);
     }
 
     /*

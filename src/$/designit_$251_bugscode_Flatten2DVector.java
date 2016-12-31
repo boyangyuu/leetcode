@@ -3,45 +3,51 @@ package $;
 import java.util.*;
 
 // todo need code
-// 7:00 --
-public class design_$251_bugscode_Flatten2DVector implements Iterator<Integer> {
-    int r = 0;
-    int c = 0;
-    List<List<Integer>> vec2d;
+/*
+本题类型里有很多类似题目, 如251等
+ */
+
+
+public class designit_$251_bugscode_Flatten2DVector{
+    Queue<Iterator<Integer>> queue;
+    Iterator<Integer> current = null;
     public static void main(String[] args) {
         List<List<Integer>> t = new ArrayList<>();
         List<Integer> a = new ArrayList<>();a.add(1);a.add(2);
         t.add(new ArrayList<>(a));t.add(new ArrayList<>(a));
-        design_$251_bugscode_Flatten2DVector c = new design_$251_bugscode_Flatten2DVector(t);
+        designit_$251_bugscode_Flatten2DVector c = new designit_$251_bugscode_Flatten2DVector(t);
         while (c.hasNext()) System.out.println(c.next());
 
         // todo bug case
         // todo {{}} excepted : nothing; output: error
         t.clear();
         t.add(new ArrayList<>());
-        c = new design_$251_bugscode_Flatten2DVector(t);
+        c = new designit_$251_bugscode_Flatten2DVector(t);
         while (c.hasNext()) System.out.println(c.next());
     }
 
-    public design_$251_bugscode_Flatten2DVector(List<List<Integer>> vec2d) {
-        this.vec2d = vec2d;
-    }
-
-    @Override
-    public boolean hasNext() {
-        while (vec2d.get(c).size() == 0) r++;
-        if (r >= vec2d.size()) return false;
-        return true;
-    }
-
-    @Override
-    public Integer next() {
-        int cur = vec2d.get(r).get(c++);
-        if (c >= vec2d.get(r).size()) {
-            r++;
-            c = 0;
+    public designit_$251_bugscode_Flatten2DVector(List<List<Integer>> vec2d) {
+        queue = new LinkedList<Iterator<Integer>>();
+        for (int i = 0; i < vec2d.size(); i++){
+            queue.add(vec2d.get(i).iterator());
         }
-        return cur;
+        current = queue.poll(); // first
+    }
+
+    public int next() {
+        return current.next();
+    }
+
+    public boolean hasNext() {
+        if (current == null) return false;
+
+        while (!current.hasNext()) {
+            if (!queue.isEmpty()) {
+                current = queue.poll();
+            } else return false;
+        }
+
+        return true;
     }
 }
 
