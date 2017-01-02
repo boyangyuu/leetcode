@@ -1,5 +1,7 @@
 package $;
 
+import temp.NestedInteger;
+
 import java.util.List;
 
 // todo step1、 find the depth;   step2、 dfs

@@ -22,11 +22,11 @@ public class hs_0_tuition {
             }
         }
 
-        //sort
+        //todo sort
         map.put(1,true);map.put(3,true);map.put(2,true);
         System.out.println("map默认排序:" + map); // 1,2,3 升序
 
-        //customize sort
+        //todo customize sort
         // set 排序
         Comparator<Integer> com = new Comparator<Integer>() {
             @Override

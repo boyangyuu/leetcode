@@ -34,8 +34,18 @@ public class tree_$285_todo_InorderSuccessorinBST {
         }
         return res;
     }
-    // todo uccessor
 
+    // s3 递归写法
+    public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
+        if (root == null) return null;
+        if (root.val <= p.val) return inorderSuccessor(root.right, p);
+        else {
+            TreeNode left = inorderSuccessor(root.left, p);
+            return left == null ? root : left;
+        }
+    }
+
+    // todo successor
     public TreeNode successor(TreeNode root, TreeNode p) {
         if (root == null)
             return null;
@@ -47,8 +57,8 @@ public class tree_$285_todo_InorderSuccessorinBST {
             return (left != null) ? left : root;
         }
     }
-    // todo Predecessor
 
+    // todo Predecessor 前序
     public TreeNode predecessor(TreeNode root, TreeNode p) {
         if (root == null)
             return null;

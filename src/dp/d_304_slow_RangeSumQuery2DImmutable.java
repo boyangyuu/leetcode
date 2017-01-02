@@ -1,6 +1,6 @@
 package dp;
 
-public class d_304_RangeSumQuery2DImmutable {
+public class d_304_slow_RangeSumQuery2DImmutable {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

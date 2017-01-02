@@ -3,7 +3,7 @@ package hashTable;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class hs_299_BullsandCows {
+public class hs_299_ok_BullsandCows {
     public static void main(String[] args) {
         //map 用法
         HashMap<Integer, Boolean> map = new HashMap<>();

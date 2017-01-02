@@ -1,4 +1,4 @@
-package $;
+package temp;
 
 /**
  * Created by yuboyang on 12/26/16.

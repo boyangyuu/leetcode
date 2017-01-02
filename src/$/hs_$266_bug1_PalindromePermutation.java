@@ -9,7 +9,7 @@ import java.util.Map;
 // todo 测试有bug ,
 // todo 自己想的方法是 n*logn, 有 o(n), o(n) 的方法
 
-public class hs_266_bug1_PalindromePermutation {
+public class hs_$266_bug1_PalindromePermutation {
     public static void main(String[] args) {
         System.out.println(canPermutePalindrome("aab"));
         System.out.println(canPermutePalindrome("aabc"));

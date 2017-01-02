@@ -24,7 +24,7 @@ public class hs_205_bug1_IsomorphicStrings {
             if (map.containsKey(s.charAt(i))) {
                 if (map.get(s.charAt(i)) != t.charAt(i)) return false;
             } else {
-//                if (map.containsValue(t.charAt(i))) return false;
+                if (map.containsValue(t.charAt(i))) return false;
                 map.put(s.charAt(i), t.charAt(i));
             }
         }

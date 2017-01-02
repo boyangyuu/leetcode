@@ -1,49 +1,42 @@
 package $;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
-/**
- * // This is the interface that allows for creating nested lists.
- * // You should not implement it, or speculate about its implementation
- * public interface NestedInteger {
- *
- *     // @return true if this NestedInteger holds a single integer, rather than a nested list.
- *     public boolean isInteger();
- *
- *     // @return the single integer that this NestedInteger holds, if it holds a single integer
- *     // Return null if this NestedInteger holds a nested list
- *     public Integer getInteger();
- *
- *     // @return the nested list that this NestedInteger holds, if it holds a nested list
- *     // Return null if this NestedInteger holds a single integer
- *     public List<NestedInteger> getList();
- * }
- */
-// todo dfs
-public class dfs_$339_review_NestedListWeightSum {
+// todo slow 建立与其他题的关联
+//
+
+public class dfs_$286_slow_WallsandGates {
 
     public static void main(String[] args) {
 
-
     }
 
-    public int depthSum(List<NestedInteger> nestedList) {
-        return help(nestedList, 1);
-    }
-
-    public static int help(List<NestedInteger> nestedList, int deep) {
-        int sum = 0;
-        for (NestedInteger ni : nestedList) {
-            if (ni.isInteger()) sum += ni.getInteger();
-            else {
-                sum += help(ni.getList(), deep + 1);
+    public static void wallsAndGates(int[][] rooms) {
+        for (int i = 0; i < rooms.length; i++) {
+            for (int j = 0; j < rooms[i].length; j++) {
+                if (rooms[i][j] == 0) {
+                    int expected = 0;
+                    help(rooms, i + 1, j, expected + 1);
+                    help(rooms, i - 1, j, expected + 1);
+                    help(rooms, i, j + 1, expected + 1);
+                    help(rooms, i, j - 1, expected + 1);
+                }
             }
         }
-        return sum;
     }
 
+    public static void help(int[][] rooms, int i, int j, int expected) {
+        if (i < 0 || i >= rooms.length || j < 0 || j >= rooms[0].length) return;
+        if (rooms[i][j] == -1) return;
+
+        if (rooms[i][j] > expected) { // todo 这块比较关键
+            rooms[i][j] = expected;
+            help(rooms, i + 1, j, expected + 1);
+            help(rooms, i - 1, j, expected + 1);
+            help(rooms, i, j + 1, expected + 1);
+            help(rooms, i, j - 1, expected + 1);
+        }
+    }
 }
 /** 题
  *

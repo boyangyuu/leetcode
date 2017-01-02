@@ -8,7 +8,7 @@ import java.util.*;
 //todo 难点在于如何比较两个数字, 本题有非常巧妙的思路
 
 
-public class a_179_LargestNumber {
+public class a_179_slow_LargestNumber {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));

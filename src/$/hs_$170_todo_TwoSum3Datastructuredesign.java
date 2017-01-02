@@ -10,7 +10,7 @@ import java.util.Map;
 // todo 建议重想
 
 
-public class hs_170_todo_TwoSum3Datastructuredesign {
+public class hs_$170_todo_TwoSum3Datastructuredesign {
     static HashMap<Integer, Integer> map = new HashMap<>();
 
     public static void main(String[] args) {
