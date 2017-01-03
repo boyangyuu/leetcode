@@ -8,4 +8,11 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
+
+    public void print() {
+        if (this == null) return;
+        System.out.println(this.val);
+        if (this.left != null) this.left.print();
+        if (this.right != null) this.right.print();
+    }
 }

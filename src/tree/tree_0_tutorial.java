@@ -8,9 +8,8 @@ import java.util.Stack;
 public class tree_0_tutorial {
     public static void main(String[] args) {
         //[2,1,3,*,*,*,4] 1层 2; 2层 1,3 ;3层 4
-        TreeNode root = new TreeNode(2);TreeNode root1 = new TreeNode(1);TreeNode root2 = new TreeNode(3);
-        TreeNode root3 = new TreeNode(4);
-        root.left = root1;root.right=root2;root1.right=root3;
+        TreeNode root = new TreeNode(2);TreeNode root1 = new TreeNode(1);TreeNode root3 = new TreeNode(3);
+        TreeNode root4 = new TreeNode(4);root.left = root1;root.right=root3;root3.right=root4;
 
         level2(root);
     }
@@ -56,18 +55,18 @@ public class tree_0_tutorial {
     }
 
 
-    //   todo 中序 有左儿子进栈
+    //   todo 中序 有左儿子进栈 其实就是模仿递归
     void middle(TreeNode root){
         TreeNode cur = root;
         Stack<TreeNode> stack = new Stack<>();
         while(cur != null || !stack.isEmpty()){
-            while(cur != null) {
+            while(cur != null) { // left recursive
                 stack.push(cur);
                 cur = cur.left;
             }
             cur = stack.pop();
             System.out.println(cur.val);
-            cur = cur.right;
+            cur = cur.right; // right recursive
         }
     }
 
