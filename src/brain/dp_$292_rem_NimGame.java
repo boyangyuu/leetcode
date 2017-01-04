@@ -1,4 +1,4 @@
-package $;
+package brain;
 
 import java.util.ArrayList;
 import java.util.List;

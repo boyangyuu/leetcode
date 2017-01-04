@@ -7,7 +7,7 @@ import java.util.Set;
 
 // todo 6:32 -- 6:50
 
-public class array_$247_bug_StrobogrammaticNumber2 {
+public class a_$247_bug_StrobogrammaticNumber2 {
     public static void main(String[] args) {
         System.out.println(findStrobogrammatic(2));
         System.out.println(findStrobogrammatic(3));

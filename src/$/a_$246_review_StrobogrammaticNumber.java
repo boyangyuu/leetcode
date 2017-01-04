@@ -4,7 +4,7 @@ import java.util.*;
 
 // todo 需要review 符合条件的数字 即可 (review的 都是5分钟要review完的)
 
-public class array_$246_review_StrobogrammaticNumber {
+public class a_$246_review_StrobogrammaticNumber {
     public static void main(String[] args) {
         System.out.println(isStrobogrammatic("101"));
         System.out.println(isStrobogrammatic("1"));
