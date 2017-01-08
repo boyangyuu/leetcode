@@ -18,6 +18,31 @@ public class a_228_b1_SummaryRanges {
     }
 
     public static List<String> summaryRanges1(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new ArrayList<String>();
+        }
+        List<String> res = new ArrayList<>();
+        int prev = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1] + 1) {
+                continue;
+            }
+            if (nums[i - 1] == prev) {
+                res.add("" + prev);
+            } else {
+                res.add(prev + "->" + nums[i - 1]);
+            }
+            prev = nums[i];
+        }
+        if (prev != nums[nums.length - 1]) {
+            res.add(prev + "->" + nums[nums.length - 1]);
+        } else {
+            res.add(prev + "");
+        }
+        return res;
+    }
+
+    public static List<String> summaryRanges2(int[] nums) {
         List<String> res = new ArrayList<>();
         String tmp = "";
         int start = 0;
@@ -36,9 +61,6 @@ public class a_228_b1_SummaryRanges {
         return res;
     }
 
-
-
-
     public List<String> summaryRanges(int[] nums) {
         List<String> res = new ArrayList<>();
         if (nums.length == 0) return res;
@@ -54,6 +76,28 @@ public class a_228_b1_SummaryRanges {
             }
         }
         res.add(tmps + tmps1);
+        return res;
+    }
+
+    // {1,3,7}
+    public static List<String> summaryRanges3(int[] nums) {
+        List<String> res = new ArrayList<>();
+        if (nums == null || nums.length == 0) return res;
+        int pre = 0;
+        if (nums.length == 1) res.add(nums[pre] + "");
+        for (int i = 1; i < nums.length; i++) {
+            // add
+            if (nums[i] != nums[i - 1] + 1) {
+                if (pre == i - 1) res.add(nums[pre] + "");
+                else res.add(nums[pre] + "->" + nums[i - 1]);
+                pre = i;
+            }
+
+            if (i == nums.length - 1) {
+                if (pre == i) res.add(nums[i] + "");
+                else res.add(nums[pre] + "->" + nums[i]);
+            }
+        }
         return res;
     }
 

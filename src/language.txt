@@ -16,9 +16,15 @@
  bracket : n.括号
  parentheses : n 括号  [[pəˈrenθəsiːz]]
  trailing : 拖尾
-
-
+ sentinel : 标记
+ comma : 逗号
+ perfect square : 完全平方数
 ----------------
 come up with 想出
 exchange 交换
 
+--
+consecutive
+Imagine the given array contains [..., 10, 10, 10, 10, ...]. Obviously we can't
+ use more than one of those tens, as that wouldn't be wiggly. So right away we can ignore
+ all consecutive duplicates
