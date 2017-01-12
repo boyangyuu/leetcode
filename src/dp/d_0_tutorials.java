@@ -14,7 +14,10 @@ public class d_0_tutorials {
 /*
 todo tutorial
  TODO 判断是否是dp
- ?
+ 1. 带有阶段性
+ 2. 带有最优性
+ 3. DFS 存在重复计算, 需要自底向上
+ 4. 当前状态 i 可以由以前状态来计算
 
 
  TODO 解空间构造

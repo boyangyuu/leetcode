@@ -9,7 +9,12 @@ import java.util.List;
 public class notag_0_template {
     public static void main(String[] args) {
         //TreeNode
-        TreeNode node;List list;HashMap map;LinkedList queue;
+        TreeNode node;List list;HashMap map;
+
+        LinkedList queue = new LinkedList();
+        queue.add(1);
+        LinkedList q = (LinkedList) queue.clone();
+        System.out.println(q.pop());
     }
 }
 /** 题

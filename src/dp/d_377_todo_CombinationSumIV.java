@@ -2,14 +2,21 @@ package dp;
 
 import java.util.Arrays;
 
+ // todo 研习英文解释 https://discuss.leetcode.com/topic/52302/1ms-java-dp-solution-with-detailed-explanation
+
+// todo 本题是一个非常好的例子, dfs => dp
+
 public class d_377_todo_CombinationSumIV {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        System.out.println(new d_377_todo_CombinationSumIV().combinationSum41(new int[]{1,2,3}, 20));
     }
 
     /*
      */
+
+
     public int combinationSum4(int[] nums, int target) {
         Arrays.sort(nums);
         int[] dp = new int[target + 1];
@@ -24,20 +31,35 @@ public class d_377_todo_CombinationSumIV {
     }
 
 
+    // 此方法效率会高些, 加上dp , 但是由于不是自底向上, 所以上层会有大量计算, 比如 dp[4] = xx + dp[2]
+    // 会大量重复出现
+
+    // todo EDIT: The above solution is top-down. How about a bottom-up one?
+    static int[]dp;
+    public int combinationSum41(int[] nums, int target) {
+        Arrays.sort(nums);
+        dp = new int[target + 1];
+        dp[0] = 1;
+        return help(nums, target);
+    }
+
+
      // dps 方法 然而 tml,
-     public int help(int temp, int[] nums, int target) {
-         if (temp == target) return 1;
-         if (temp > target) return 0;
+     public int help(int[] nums, int target) {
+         if (dp[target] != 0) {
+             System.out.println(dp[target]);
+             return dp[target];
+         }
+         if (0 == target) return 1;
+         if (0 > target) return 0;
          int res = 0;
          for(int i = 0; i < nums.length; i++) {
-             temp += nums[i];
-             if (temp > target) break;
-             res += help(temp, nums, target);
-             temp -= nums[i];
+             if (target - nums[i] < 0) break;
+             res += help(nums, target - nums[i]);
          }
+         dp[target] = res;
          return res;
      }
-
 
 }
 /** 题
@@ -58,6 +80,23 @@ public class d_377_todo_CombinationSumIV {
  TODO solotion
  ######s1######
  --performance
+ step1 . the first idea is backtracking , however we will find many duplicate calculate
+
+ [1,2,3 ] target = 100
+        1        2        3
+      1 2 3    1 2 3    1 2 3
+ in this case, we can see that the counting of [1,3] and [3,1] will be same ,
+
+ so we should use dp to improve it
+
+
+
+
+
+
+
+
+
  nums = [1, 2, 3]
  target = 4
 

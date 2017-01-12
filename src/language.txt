@@ -24,7 +24,14 @@ come up with 想出
 exchange 交换
 
 --
-consecutive
+consecutive 连续地
 Imagine the given array contains [..., 10, 10, 10, 10, ...]. Obviously we can't
  use more than one of those tens, as that wouldn't be wiggly. So right away we can ignore
  all consecutive duplicates
+
+ arbitrary 任意的
+ Given an arbitrary ransom note string
+
+2017.1.11
+character ['kærəktə] 字符
+letter ['letə] 字母
