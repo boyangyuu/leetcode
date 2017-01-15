@@ -2,6 +2,7 @@ package $;
 
 import temp.NestedInteger;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -25,15 +26,22 @@ import java.util.List;
 public class dfs_$339_review_NestedListWeightSum {
 
     public static void main(String[] args) {
-
+        LinkedList<Double> queue = new LinkedList<>();
+        queue.push(1.0);queue.push(2.0);
+        System.out.println(queue.pollLast());
 
     }
 
     public int depthSum(List<NestedInteger> nestedList) {
+
         return help(nestedList, 1);
     }
 
+    int size = 0;
+
+
     public static int help(List<NestedInteger> nestedList, int deep) {
+
         int sum = 0;
         for (NestedInteger ni : nestedList) {
             if (ni.isInteger()) sum += ni.getInteger();
