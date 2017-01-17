@@ -1,24 +1,33 @@
 package bit;
 
 
-// todo
-public class bit_191_Numberof1Bits {
+// todo just remember that
+public class bit_201_BitwiseANDofNumbersRange {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
-        //System.out.println(a_18_4Sum.fourSum(nums, 0));
-        System.out.println(hammingWeight(43261596));
 
-        System.out.println( (0 << 2) + 1);
     }
 
-    // you need to treat n as an unsigned value
-    public static int hammingWeight(int n) {
-        int res = 0;
-        for (int i = 0; i < 32; i++) {
-            if ((n & (1 << i)) != 0) res++; // todo 记得加() , 防止优先级问题
+    /*
+    m = |101| ,n = |111|
+    the result is the common prefix of m and n
+    case
+    1 0 1
+    1 1 0   => 1 . .  => 100
+    1 1 1
+
+    */
+    public int rangeBitwiseAnd(int m, int n) {
+        int m1 = m, n1 = n;
+        int cnt = 0; // cnt of <<
+        while(m1 != n1) {
+            m1 = m1 >> 1;
+            n1 = n1 >> 1;
+            cnt++;
         }
-        return res;
+        return m1 << cnt;
     }
+
 
 }
 /** 题

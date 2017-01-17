@@ -1,25 +1,31 @@
 package bit;
 
 
-// todo
-public class bit_191_Numberof1Bits {
+
+public class bit_342_PowerofFour {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
-        System.out.println(hammingWeight(43261596));
 
-        System.out.println( (0 << 2) + 1);
+        // todo learn 4 >> 1 为 2 (无论左移右移 位数是不会变的)
+        System.out.println(4 >> 1);
     }
 
-    // you need to treat n as an unsigned value
-    public static int hammingWeight(int n) {
-        int res = 0;
-        for (int i = 0; i < 32; i++) {
-            if ((n & (1 << i)) != 0) res++; // todo 记得加() , 防止优先级问题
+
+    /*
+        idea : bit
+        4: 100, 16: 10000, 64: 1000000,
+        so the rule is single 1 ends with double of 0s
+
+    */
+    public boolean isPowerOfFour(int num) {
+        while (num > 0) {
+            if (num == 1) return true;
+            if ((num & 1) == 0 && (num & 2) == 0) num = num >> 2;
+            else break;
         }
-        return res;
+        return false;
     }
-
 }
 /** 题
  *

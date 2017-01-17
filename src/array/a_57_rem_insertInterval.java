@@ -18,8 +18,10 @@ public class a_57_rem_insertInterval {
 //        System.out.println(insert1(list, new Interval(2,3)));
 
         // todo bug case 2  [[1,5]] [0,0]
-        list.clear();list.add(new Interval(1,5));
-        System.out.println(insert1(list, new Interval(0,0)));
+        list.clear();
+        list.add(new Interval(1,5));
+        list.add(new Interval(8,10));
+        System.out.println(insert5(list, new Interval(2,3)));
 
         // todo bug case 3  [[1,5]] [2,6]
     }
@@ -114,6 +116,37 @@ public class a_57_rem_insertInterval {
         return res;
     }
 
+
+
+    public static List<Interval> insert5(List<Interval> intervals, Interval newInterval) {
+        List<Interval> res = new ArrayList<>();
+        for(int i = 0; i < intervals.size(); i++) {
+            Interval cur = intervals.get(i);
+            if (newInterval == null) {
+                res.add(cur);
+                continue;
+            }
+            if (newInterval.end < cur.start) {
+                res.add(newInterval);
+            } else if (newInterval.start <= cur.end) { // [-1,0]   (1,3)  [4,5]
+                newInterval.start = Math.min(newInterval.start, cur.start);
+                newInterval.end = Math.max(newInterval.end, cur.end);
+            } else {
+                if (newInterval != null) {
+                    res.add(newInterval);
+                    newInterval = null;
+                }
+                res.add(cur);
+            }
+
+
+        }
+        if (newInterval != null) {
+            res.add(newInterval);
+        }
+        return res;
+
+    }
 }
 /** 题
  *

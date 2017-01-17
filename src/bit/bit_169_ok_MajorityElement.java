@@ -1,19 +1,27 @@
-package array;
+package bit;
 
-public class a_169_ok_MajorityElement {
+public class bit_169_ok_MajorityElement {
     public static void mains(String[] args) {
         int[] nums = {0,0,0,0};
-        //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        System.out.println(majorityElement(new int[]{1,1,1,1,1,3,4,43,3}));
     }
 
-    public int majorityElement(int[] nums) {
-        int n = nums[0], c = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (c == 0) n = nums[i];
-            if (n == nums[i]) c++;
-            else c--;
+    /*
+        check every bit of res, from 0 to 31, by using 1 << i
+        then form the final res
+     */
+    public static int majorityElement(int[] nums) {
+        int res = 0;
+        for (int i = 0; i < 32; i++) {
+            int ones = 0, zeros = 0;
+            for (int num : nums) {
+                int cur = num & (1 << i); // 检查num的i位上 是否为0,  i = 2 => 100 or 000
+                if (cur == 0) zeros++;
+                else ones++;
+            }
+            if (ones > zeros) res |= (1 << i);
         }
-        return n;
+        return res;
     }
 }
 /** 题
