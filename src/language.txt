@@ -35,3 +35,13 @@ Imagine the given array contains [..., 10, 10, 10, 10, ...]. Obviously we can't
 2017.1.11
 character ['kærəktə] 字符
 letter ['letə] 字母
+optimize v 优化
+prune 剪枝
+
+1.12
+sums to T 相加等于T    find all unique combinations in C where the candidate numbers todo sums to T.
+plus add 加上
+minus subtract 减去
+product of a,b 乘积
+divide of a,b 商
+represented as  表示 what does the A represent?  Given two non-negative integers num1 and num2 represented as strings

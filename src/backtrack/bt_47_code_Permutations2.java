@@ -1,16 +1,13 @@
 package backtrack;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 // todo 思路1、 set去重。 思路2、想的不好, 要用树状去想, 建议下次code
 // bug case
 
 public class bt_47_code_Permutations2 {
     public static void main(String[] args) {
-        List list;Map map;
+        List list;Map map; Set<Integer> set = new HashSet();
         System.out.println();
     }
 

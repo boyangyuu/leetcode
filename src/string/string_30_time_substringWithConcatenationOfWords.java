@@ -2,7 +2,25 @@ package string;
 
 import java.util.*;
 
-// todo On 方法 建议 直接看http://www.cnblogs.com/grandyang/p/4521224.html的最佳解法
+/*
+     策略
+     给出次优解
+     map1 记单词次数, mapCur备份
+     遍历所有元素, 假设元素i 作为单词的start, 与mapCur 进行检验 可行则加入res
+
+     todo follow up optimization
+     不需要检查所有元素, 例如 word
+
+
+     case s: "barfoothefoobarman" words: ["foo", "bar"] map {foo : 1, bar : 1}
+     0, i = b , barfoo 可行 +1 mapCur {foo, bar} => {foo} => empty
+     1, i = a .
+     ...
+     9, i = f , foobar 可行 +1
+     倒数第6个的时候 arman 不够长, 可以剪掉 (Pruning)
+  */
+
+
 
 public class string_30_time_substringWithConcatenationOfWords {
     public static void main(String[] args) {
@@ -13,6 +31,11 @@ public class string_30_time_substringWithConcatenationOfWords {
 
     }
 
+
+    /*
+
+
+     */
     public List<Integer> findSubstring(String s, String[] words) {
         List<Integer> res = new ArrayList<>();
         if (words.length == 0) return res;
