@@ -34,7 +34,7 @@ public class tree_94_rem_BinaryTreeInorderTraversal {
 
     public static List<Integer> preorderT(TreeNode root) {
         LinkedList<TreeNode> s = new LinkedList<>();
-        List<Integer> res = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();//
         TreeNode cur = root;
         while (cur != null || !s.isEmpty()) {
             while (cur != null) {
