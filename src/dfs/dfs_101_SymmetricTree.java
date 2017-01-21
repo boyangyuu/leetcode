@@ -2,10 +2,15 @@ package dfs;
 
 import tree.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class dfs_101_SymmetricTree {
     public static void main(String[] args) {
         //TreeNode
         TreeNode node;
+        List<Integer> list = new ArrayList<>();
+        list.add(null);
     }
 
     public boolean isSymmetric(TreeNode root) {
