@@ -69,50 +69,15 @@ public class ll_0_tuition {
  * http:
  *
 
-
- */
-
-/** Solution
- * 时间  空间
- *
- *
- *
- 参考网站
-
-
- TODO solotion
- ######s1######
- --O(n)--
-
- --data--
-
- --step1--
-
- --step2--
-
- ######s2######
- --O(n)--
-
- --data--
-
- --step1--
-
- --step2--
-
-
- TODO case
-
- TODO bug
- bug1
-
-
- bug2
-
- bug3
- */
-
-/*
 TODO tutorial
+1. 常见思路
+ a. 断开,合并
+ b. 先翻转下, 再..
+ c. 不停插入
+ d. 快慢指针
+
+
+
 
 
 TODO follow
