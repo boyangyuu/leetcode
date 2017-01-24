@@ -17,7 +17,8 @@ public class hs_187_bug2_RepeatedDNASequences {
     }
 
     public static List<String> findRepeatedDnaSequences1(String s) {
-        List<String> res = new ArrayList<>();
+
+        HashSet<String> res = new HashSet<>();
         HashMap<String, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length() - 9; i++) {
             String cur = s.substring(i, i + 10);
@@ -28,7 +29,7 @@ public class hs_187_bug2_RepeatedDNASequences {
                 map.put(cur, i);
             }
         }
-        return res;
+        return new ArrayList<>(res);
     }
 
 

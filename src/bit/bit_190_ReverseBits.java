@@ -8,7 +8,7 @@ public class bit_190_ReverseBits {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
-        System.out.println(reverseBits1(43261596));
+        System.out.println(reverseBits3(43261596));
 
         System.out.println( (0 << 2) + 1);
     }
@@ -27,11 +27,22 @@ public class bit_190_ReverseBits {
         int res = 0;
         for (int i = 0; i < 32; i++) {
             res = res << 1;
-            if ((n & 1) != 0) res ++;
+            if ((n & 1) != 0) res++;
             n = n >> 1;
         }
         return res;
 
+    }
+
+    // you need treat n as an unsigned value
+    public static int reverseBits3(int n) {
+        int res = 0;
+        for (int i = 31; i >= 0; i--) {
+            int f = n & 1;
+            res |= f << i;
+            n = n >> 1;
+        }
+        return res;
     }
 }
 /** 题
