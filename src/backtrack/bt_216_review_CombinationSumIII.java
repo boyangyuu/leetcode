@@ -20,7 +20,7 @@ public class bt_216_review_CombinationSumIII {
 
     public static List<List<Integer>> combinationSum3(int k, int n) {
         List res = new ArrayList();
-        help(1, new int[n], k, n, new ArrayList<>(), res); // todo bug wait for fixed
+        help(1, new int[10], k, n, new ArrayList<>(), res);
         return res;
     }
 

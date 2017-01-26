@@ -16,7 +16,6 @@ public class a_209_todo_MinimumSizeSubarraySum {
         System.out.println(minSubArrayLen1(1000, new int[]{2,3,1,2,4,3}));
     }
 
-
     public static int minSubArrayLen1(int s, int[] nums) {
         int start = 0, tmp = 0, res = nums.length + 1;
         for (int i = 0; i < nums.length; i++) {
