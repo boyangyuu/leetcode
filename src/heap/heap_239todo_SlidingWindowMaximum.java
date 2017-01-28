@@ -7,6 +7,9 @@ public class heap_239todo_SlidingWindowMaximum {
         List list;Map map;
         PriorityQueue<Integer> heap = new PriorityQueue<>(2);
 
+        PriorityQueue<Integer> q = new PriorityQueue<>();
+        q.add(1);q.add(2);q.add(3);
+        System.out.println(q.peek());
     }
 
     public void addQueue(Deque<Integer> deque, int num) {
@@ -14,6 +17,12 @@ public class heap_239todo_SlidingWindowMaximum {
         while (deque.isEmpty() == false && deque.peekLast() <= num) deque.pollLast(); // todo bug 2 !!!! 重复的不一定是没用的!
         deque.add(num); // todo 加在队尾
     }
+
+
+//    public int[] maxSlidingWindow1(int[] nums, int k) {
+//
+//    }
+
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums.length == 0) return new int[0]; // todo bug 1 // return []
