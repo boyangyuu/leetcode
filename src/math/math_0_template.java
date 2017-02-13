@@ -1,9 +1,13 @@
 package math;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class math_0_template {
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
+        List<ia> list = new ArrayList<>();
     }
 
 

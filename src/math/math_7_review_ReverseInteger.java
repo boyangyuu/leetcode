@@ -41,7 +41,7 @@ public class math_7_review_ReverseInteger {
         if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) return 0; // todo bug2
         else return (int) res; //todo bug 3
     }
-    
+
 
 }
 /** 题
