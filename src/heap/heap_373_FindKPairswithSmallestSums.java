@@ -33,12 +33,11 @@ public class heap_373_FindKPairswithSmallestSums {
 
 
 
-    // bad!!!
+    // todo bad and bug, doesn't work!!!!
     public List<int[]> kSmallestPairs1(int[] nums1, int[] nums2, int k) {
         List<int[]> res = new ArrayList<>();
         int i = 0, j = 0;
-        while (i < nums1.length && j < nums2.length) { //todo bug 1
-            if (k-- == 0) break;
+        while (i < nums1.length && j < nums2.length && k-- != 0) { //todo bug 1
             int[] cur = {nums1[i], nums2[j]};
             res.add(cur);
 

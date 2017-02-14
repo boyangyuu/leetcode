@@ -35,6 +35,7 @@ public class hs_349_IntersectionofTwoArrays {
             else {
                 if (!set.contains(nums1[i])) set.add(nums1[i]);
                 i++;
+                j++;
             }
         }
         int[] ret = new int[set.size()];

@@ -19,7 +19,7 @@ public class d_343_IntegerBreak {
             }
             dp[i] = max;
         }
-        return dp[n+1];
+        return dp[n + 1];
     }
 
     //math
