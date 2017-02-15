@@ -28,29 +28,6 @@ public class heap_378_KthSmallestElementinaSortedMatrix {
 
     }
 
-    public int kthSmallest(int[][] matrix, int k) {
-        int k1 = (int)Math.sqrt(k);
-        int cnt = k1 * k1;
-        if (cnt == k) return matrix[k1 - 1][k1 - 1];
-        int i = 0, j = 0;
-        while (i < k1 && j < k1){
-//            if (cnt == k) return matrix[i][j];
-            int v1 = matrix[k1][i]; // right
-            int v2 = matrix[j][k1]; // below
-
-            if (j == k1 - 1 || v1 <= v2) {
-                cnt++;
-                i++;
-                if (cnt == k) return v1;
-            }
-            else {
-                cnt++;
-                j++;
-                if (cnt == k) return v2;
-            };
-        }
-        return -1;
-    }
 
 
 }

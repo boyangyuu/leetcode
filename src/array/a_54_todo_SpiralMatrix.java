@@ -41,6 +41,8 @@ public class a_54_todo_SpiralMatrix {
                 newj = j + directs[directIndex][1];
             }
             i = newi;j = newj;
+
+            // todo don't miss this part !!! enter the next round
             if (i == r && j == r) {
                 i = r + 1;j = r + 1;r++;directIndex = 0; continue;
             }
