@@ -17,6 +17,7 @@ public class tree_0_template {
         TreeNode root = new TreeNode(2);TreeNode root1 = new TreeNode(1);TreeNode root3 = new TreeNode(3);
         TreeNode root4 = new TreeNode(4);root.left = root1;root.right=root3;root3.right=root4;
 
+        System.out.println("[,]".substring());
     }
 
 

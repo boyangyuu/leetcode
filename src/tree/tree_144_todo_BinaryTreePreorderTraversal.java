@@ -1,21 +1,26 @@
 package tree;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 // todo 没有一遍通过, 有bug, 先过思路, 代码不用写
 public class tree_144_todo_BinaryTreePreorderTraversal {
     public static void main(String[] args) {
         // todo bug case
         // {1,2,3} output : 1,3,2 expected 1,2,3
+        int[] a1;
+
+        String[][] tickets = new String[][]{{}};
+        Map<String, PriorityQueue<String>> targets = new HashMap<>();
+        
 
     }
 
+
+
     public static List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
+
         if (root == null) return res;
         LinkedList<TreeNode> s = new LinkedList<>();
         s.push(root);

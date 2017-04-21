@@ -33,8 +33,6 @@ public class bt_131_slow_PalindromePartitioning {
                 tmp.remove(tmp.size() - 1);
             }
         }
-
-
     }
 
     public static boolean isPalindrome(String s) {

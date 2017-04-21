@@ -14,6 +14,7 @@ public class heap_0_tutorial {
     public static void maxHeap() {
         // minHeap
         PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // 大的优先,最小堆 每次pop最小的
+        List l;
 
         // maxHeap
         Comparator<Integer> com = new Comparator<Integer>() {
@@ -29,6 +30,7 @@ public class heap_0_tutorial {
         // 见 head_239_slidingWIndowMaximum
 
         // todo  heap 每次 pop() 会出最小值, 但是peek不会, 只有每次pop 才会主动对里面的内容进行排序!!
+        
     }
 
 }
@@ -41,6 +43,10 @@ public class heap_0_tutorial {
 
 
 TODO tutorial
+
+ 建堆时间 : O(n)证明
+ https://www.zhihu.com/question/20729324
+
  todo O(n)
  add logn
  pop logn (reorder the elements)

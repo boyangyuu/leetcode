@@ -2,6 +2,9 @@ package linkedList;
 
 import tutorials.ListNode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ll_138_CopyListwithRandomPointer {
     public static void main(String[] args) {
         //TreeNode
@@ -10,11 +13,23 @@ public class ll_138_CopyListwithRandomPointer {
     }
 
     public RandomListNode copyRandomList(RandomListNode head) {
-        if (head == null) return null;
-        RandomListNode node = new RandomListNode(head.label);
-        node.next = copyRandomList(head.next);
-        node.random = copyRandomList(head.random);
-        return node;
+        HashMap<RandomListNode, RandomListNode> map = new HashMap<>(); // old -> new
+        RandomListNode cur = head;
+
+        // step 1, put all the old into map
+        while(cur != null) {
+            map.put(cur, new RandomListNode(cur.label));
+            cur = cur.next;
+        }
+
+        // via map, we can find the element easily
+        for (Map.Entry<RandomListNode, RandomListNode> entry : map.entrySet()) {
+            final RandomListNode newNode = entry.getValue();
+            newNode.next = map.get(entry.getKey().next);
+            newNode.random = map.get(entry.getKey().random);
+        }
+        return map.get(head);
+
     }
 
 

@@ -15,8 +15,7 @@ public class a_$244_todo_ShortestWordDistance2 {
 
     public static void main(String[] args) {
         int[] nums = {0,0,0,0};
-        //System.out.println(a_18_4Sum.fourSum(nums, 0));
-        List list;Map map;
+        System.out.println("2".compareTo("12"));
 
 //        System.out.println(shortestDistance(new String[]{"practice", "makes", "perfect", "coding", "makes"},
 //                "coding", "practice"));
@@ -35,12 +34,14 @@ public class a_$244_todo_ShortestWordDistance2 {
                 map.put(words[i], list);
             }
         }
+
     }
 
     public int shortest(String word1, String word2) {
         int i1 = 0, i2 = 0, res = words.length;
         List<Integer> l1 = map.get(word1);
         List<Integer> l2 = map.get(word2);
+
 
         // 1,2     3,4
         while (i1 != l1.size() || i2 != l2.size()) {

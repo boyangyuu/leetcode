@@ -2,10 +2,7 @@ package $;
 
 import tree.TreeNode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 // todo 学会利用hashmap的特性
 public class tree_$314_BinaryTreeVerticalOrderTraversal {
@@ -18,11 +15,13 @@ public class tree_$314_BinaryTreeVerticalOrderTraversal {
     public List<List<Integer>> verticalOrder(TreeNode root) {
         HashMap<Integer, List<Integer>> map = new HashMap<>();
         help(root, map, 0);
-        List res = new ArrayList();
+        List<List<Integer>> res = new ArrayList();
         for (int i : map.keySet()) {
             System.out.println(i);
             res.add(map.get(i));
         }
+        Queue<TreeNode> q = new LinkedList<>();
+
         return res;
     }
 

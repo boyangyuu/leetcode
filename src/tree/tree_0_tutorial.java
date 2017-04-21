@@ -14,7 +14,13 @@ public class tree_0_tutorial {
         level2(root);
     }
 
-
+    // 树的插入
+    public TreeNode insert(TreeNode root, int val) {
+        if(root == null) return new TreeNode(val);
+        else if(val < root.val) root.left = insert(root.left, val);
+        else root.right = insert(root.right, val);
+        return root;
+    }
 
     // todo 知道每行的 层序遍历   question 199,
     public static void level2(TreeNode root) {

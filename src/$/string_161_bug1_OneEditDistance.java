@@ -3,13 +3,38 @@ package $;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 // todo 没看清题意 , 思路不难, 建议找到bug case即可
 
 
 public class string_161_bug1_OneEditDistance {
+
+    public static boolean isValid(String s) {
+        char[] cLeft = {'{', '[', '('};
+        char[] cRight = {'}', ']', ')'};
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            for (int i = 0; i < cLeft.length; i++) {
+                if (c == cLeft[i]) stack.push(c);
+            }
+            for (int i = 0; i < cRight.length; i++) {
+                if (c == cRight[i]) {
+                    if (stack.size() == 0) return false;
+                    char cur = stack.pop();
+                    if (cur != cLeft[i]) return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
     public static void main(String[] args) {
+        System.out.println(isValid("([aaa]{})"));
+        System.out.println(isValid("([aaa{})"));
+
         List list;Map map;Set set;
+        System.out.println(Integer.parseInt("01"));
         System.out.println(isOneEditDistance("ab", "a"));
         System.out.println(isOneEditDistance("ab", "ac"));
 

@@ -16,6 +16,7 @@ public class hs_$288_bug_UniqueWordAbbreviation {
         System.out.println(a.isUnique("aeec"));
         System.out.println(a.isUnique("aec"));
 
+
         //todo bug 1 case 同一个词 应该返回true hello属于unique
         hs_$288_bug_UniqueWordAbbreviation bug = new hs_$288_bug_UniqueWordAbbreviation(new String[]{"hello"});
         System.out.println(bug.isUnique("hello"));

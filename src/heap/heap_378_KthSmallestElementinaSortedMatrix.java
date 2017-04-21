@@ -28,7 +28,27 @@ public class heap_378_KthSmallestElementinaSortedMatrix {
 
     }
 
+    //todo better one!
+    public static int kthSmallest(int[][] matrix, int k) {
+        int size = matrix.length * matrix[0].length;
+        PriorityQueue<Integer> pq = new PriorityQueue<>(size, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return -o1 + o2;
+            }
+        });
 
+        int lastPoll = Integer.MAX_VALUE;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                int cur = matrix[i][j];
+                if (cur >= lastPoll) break; // todo 剪枝
+                pq.offer(cur);
+                if (pq.size() > k) lastPoll = pq.poll();
+            }
+        }
+        return pq.poll();
+    }
 
 }
 /** 题

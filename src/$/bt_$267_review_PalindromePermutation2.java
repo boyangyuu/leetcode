@@ -1,10 +1,7 @@
 package $;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 // tag : learn , review
@@ -14,10 +11,14 @@ import java.util.Map;
 // 30 分钟自己做出来的, 所以不需要code review 下即可
 public class bt_$267_review_PalindromePermutation2 {
     public static void main(String[] args) {
+        char cur = 98;
+        System.out.println(cur + "aa");
+
         List list;Map map;
         char a = 'a';
         System.out.println((int)a);
         System.out.println((char)97);
+
         System.out.println(generatePalindromes("aabb"));
 
         // todo bug case
@@ -25,48 +26,46 @@ public class bt_$267_review_PalindromePermutation2 {
     }
 
     public static List<String> generatePalindromes(String s) {
-        List<String> res = new ArrayList<>();
-        int[] cnt = new int[256];
-        for (int i = 0; i < s.length(); i++) {
-            char cur = s.charAt(i);
-            cnt[cur]++;
-        }
+        // step 1
+        Set<String> res = new HashSet<>();
+        int[] map = new int[256];
+        int count = s.length();
+        for (char c : s.toCharArray()) map[c]++;
 
+        // step 2 check
+        int oddTimes = 0;
         String odd = "";
-        for (int i = 0; i < cnt.length; i++) {
-            if (cnt[i] % 2 != 0) {
-                if (odd != "") return res;
-                cnt[i] -= 1;
-                odd = "" + (char)i;
+        for (int i = 0; i < map.length; i++) {
+            if (map[i] % 2 != 0) {
+                odd += (char) i;
+                oddTimes++;
+                map[i]--;
             }
         }
+        if (oddTimes >= 2) return new ArrayList<String>(res);
 
-        help(res, "", cnt, 0, odd, s.length());
-        return res;
+        // step 3
+        if (count % 2 == 1) count--;
+        help(map, count, odd, res);
+
+        return new ArrayList<String>(res);
     }
 
-    static void help(List res, String tmp, int[] cnt, int index, String odd, int l) {
-        if (tmp.length() * 2 == l || tmp.length() * 2 + 1 == l) {
-            res.add(new String(tmp + odd + reverseString(tmp)));
+
+
+    public static void help(int[] map, int count, String temp, Set<String> res) {
+        if (count == 0) {
+            res.add(new String(temp));
             return;
         }
-
-        for (int i = index; i < 256; i++) {
-            if (cnt[i] == 0) {
-                continue;
+        for (int i = 0; i < map.length; i++) {
+            if (map[i] >= 2) {
+                map[i] -= 2;
+                char cur = (char) i;
+                help(map, count - 2, cur + temp + cur, res);
+                map[i] += 2;
             }
-            cnt[i] -= 2;
-            help(res, tmp + (char)i, cnt, cnt[i]== 0 ? index + 1 : index, odd, l);
-            cnt[i] += 2;
         }
-    }
-
-    static String reverseString(String s) {
-        char[] c = new char[s.length()];
-        for (int i = 0; i < s.toCharArray().length; i++) {
-            c[c.length - i - 1] = s.toCharArray()[i];
-        }
-        return new String(c);
     }
 
 }

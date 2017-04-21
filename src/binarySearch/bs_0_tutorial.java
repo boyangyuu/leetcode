@@ -1,6 +1,8 @@
 package binarySearch;
 
 
+import java.util.*;
+
 public class bs_0_tutorial {
     public static void main(String[] args) {
         System.out.println("第一个小于0的位置" + binarySearchLeft(new int[]{1,2,3}, 0));
@@ -8,6 +10,31 @@ public class bs_0_tutorial {
 
         System.out.println("第一个大于0的位置" + binarySearchRight(new int[]{1,2,3}, 0));
         System.out.println("第一个大于3的位置" + binarySearchRight(new int[]{1,2,3}, 3));
+
+        List<Integer> l = new ArrayList<>();
+
+
+        for (int i = 0; i < 9; i++) {
+            int index = findIndex(l, i);
+            l.add(index, i);
+            l.add(index, i);
+        }
+        System.out.println("! " + findIndex(l, 2));
+        System.out.println(l);
+    }
+
+
+    public static int findIndex(List<Integer> list, int target) {
+        if (list.size() == 0) return 0;
+
+        int i = 0, j = list.size() - 1;
+        while (i <= j) {
+            int m = (i + j) >> 1;
+            if (list.get(m) > target) j = m - 1;
+            else i = m + 1;
+        }
+        System.out.println(i);
+        return i;
     }
 
     /*

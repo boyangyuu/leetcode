@@ -8,9 +8,7 @@ public class dfs_116_PopulatingNextRighPointersinEachNode {
         //TreeNode
         TreeNode node;
     }
-
-
-
+    
     public void connect(TreeLinkNode root) {
         if (root == null) return;
         if (root.left != null) root.left.next = root.right;

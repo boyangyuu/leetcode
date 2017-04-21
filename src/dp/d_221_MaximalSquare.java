@@ -17,7 +17,24 @@ public class d_221_MaximalSquare {
             }
         }
         return ret * ret;
+
+
     }
+
+//    public int getValue(int[] nums) {
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] == i || nums[i] >= nums.length) continue;
+//            int temp = nums[i];
+//            nums[i] = nums[nums[i]];
+//            nums[nums[i]] = temp;
+//            i--;
+//        }
+//
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] != i) return i;
+//        }
+//        return null;
+//    }
 
 }
 /** 题

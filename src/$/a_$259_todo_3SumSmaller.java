@@ -22,7 +22,7 @@ public class a_$259_todo_3SumSmaller {
             int j = i + 1, k = nums.length - 1;
             int t = target - nums[i];
             while (j < k) {
-                if (nums[k] + nums[j] < t) res += k - j++;
+                if (nums[k] + nums[j] < t) res += k - j++; // todo alert!!
                 else k--;
             }
         }
