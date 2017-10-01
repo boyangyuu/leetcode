@@ -1,0 +1,56 @@
+1. requirements
+functional
+suggest top 10
+
+unfunctional
+should response in real time
+
+ignore
+case insensitive
+
+
+2. db design
+trietree
+
+
+3. make it work : API
+Restaurant service
+ search(searchPrefix)
+ return list of scentence
+
+
+4. make it better and scalable: system design and algo
+##
+ a ("about": 100, "abort" : 99, "abcd": 88, "accept": 77)
+ ab(..) ac(..)
+we put top10 in every node, once we insert or update, we will update the whole branch/path by logHieght time from bottom to up.
+
+## when to update update it every interval (every hour)
+
+## record it randomly(samply), 1/1000 percentage
+
+## use map reduce to build the tree from the log data
+
+## build it offline, when it is done, switch it
+
+5. data partition
+
+
+others :
+6.1 replica (read traffic, )
+
+
+6.2 loadBalance
+
+6.3 how to store it?
+
+
+
+
+英语
+inventory 库存
+accurate 精确的
+PRECISE 精准的
+sampling 取样的
+starting location
+Region

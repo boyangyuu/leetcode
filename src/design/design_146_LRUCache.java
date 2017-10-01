@@ -21,6 +21,7 @@ public class design_146_LRUCache {
 
 
 
+
     public static int kcapacity;
 
     public Map<Integer, Node> maps = new HashMap<>(); // key value

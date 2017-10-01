@@ -2,6 +2,7 @@ package tree;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -10,6 +11,7 @@ public class tree_0_tutorial {
         //[2,1,3,*,*,*,4] 1层 2; 2层 1,3 ;3层 4
         TreeNode root = new TreeNode(2);TreeNode root1 = new TreeNode(1);TreeNode root3 = new TreeNode(3);
         TreeNode root4 = new TreeNode(4);root.left = root1;root.right=root3;root3.right=root4;
+        List<Integer> list = new ArrayList<>();
 
         level2(root);
     }
@@ -19,6 +21,9 @@ public class tree_0_tutorial {
         if(root == null) return new TreeNode(val);
         else if(val < root.val) root.left = insert(root.left, val);
         else root.right = insert(root.right, val);
+        LinkedList<Integer> list;
+
+
         return root;
     }
 
@@ -45,7 +50,7 @@ public class tree_0_tutorial {
         // 一遍层序遍历
     }
 
-    // todo 前序 左儿子入栈,且输出
+    // todo 前序 左儿子入栈,且输出 https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/
     void pre(TreeNode root){
         TreeNode cur = root;
         Stack<TreeNode> stack = new Stack<>();

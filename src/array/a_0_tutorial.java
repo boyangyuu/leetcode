@@ -1,10 +1,7 @@
 package array;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
 
 public class a_0_tutorial {
     public static void main(String[] args) {
@@ -42,15 +39,26 @@ TODO 思路
  1. O(n)
   a、快慢指针, b、交换方式, c、先 for n, 求可能值再 for n
 
+
+
  2、先排序
+
 
  3、插入排序 todo 待复习
 
+
  4、空间换时间 ,( 利用set map O(1)找key 128 , 求最长连续长度)
+O (n), O(1)
+
+
+
 
  5、注意元素的范围
+int[] - {1,2,3,3,1,2,2}
+
 
  6、利用坐标法 (有点忘了)
+
 
  7、假想式 ,直接赋值
 

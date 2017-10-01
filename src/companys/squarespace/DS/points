@@ -1,0 +1,27 @@
+todo 1. requirements
+Functional Requirements: user can...
+non Functional Requirements:
+latency(seprate read, write[read, write server, used for file uploading];
+load banlancer[many servers], cache),
+reliable(using replica),
+consistency (eventually consistency, or high consistency),
+ storage , metadata.
+
+todo 2. considerations:
+latency tolerance,
+
+todo 3. high level system design
+filesystem, metedata, sharding design,
+
+todo 4. database schema
+nosql vs sql
+sql: easy to do transaction and more safe
+nosql: scale, large data, faster, cheap
+Cassandra: key value => user's followers, user's photos
+
+todo 5 component design
+// 1. user scenario, sequence, qps, dau,
+//services,
+
+
+

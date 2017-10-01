@@ -5,13 +5,69 @@ package array;
 // todo bug case {3,1} 3, 1
 public class a_33_todo_SearchinRotatedSortedArray {
     public static void main(String[] args) {
+        // 1,2,3,3,4,5,6 find first occurence of x, 3, -1,
+        System.out.println(searchFirst(new int[]{1,2,3,3,4,5,6}, 3));
+        System.out.println(searchFirst(new int[]{3,3,3,3,4,5,6}, 3));
+        System.out.println(searchFirst(new int[]{3,3,3,3,3,5,6}, 3));
+
         int[] nums = {0,0,0,0};
         //System.out.println(a_18_4Sum.fourSum(nums, 0));
 
         // case 7
-        System.out.println(search3(new int[]{4,5,6,7,0,1,2}, 0));
+//        System.out.println(search3(new int[]{4,5,6,7,0,1,2}, 0));
+//
+//        System.out.println(search3(new int[]{3,1}, 1));
 
-        System.out.println(search3(new int[]{3,1}, 1));
+//        System.out.println(searchPivot(new int[]{4,5,6,0,0,1,1}, 0));
+    }
+
+    /*
+    0           6
+    1,2,3,3,4,5,6  // 3
+     */
+    public static int searchFirst(int[] arr, int target) {
+        int left = 0, right = arr.length - 1; // 6
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (arr[mid] == target) {
+                if (mid == 0) return mid;
+                else if (arr[mid] == arr[mid - 1]) right = mid - 1;
+                else return mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else
+                right = mid - 1;
+        }
+        return -1;
+    }
+
+    //follow up
+    /*
+    0 1 2 3 4 5
+    4 5 6 7 0 1
+          ^   ^
+     */
+
+    public static int searchPivot(int[] nums, int target) {
+        int i = 0, j = nums.length - 1;
+        int ans = -1;
+        while (i <= j) {
+            int mid = j + (i - j) / 2;
+            if (nums[i] <= nums[j]) {
+                ans = i;
+                break;
+            } else {
+                if (mid == 0 || nums[mid] < nums[mid - 1]) {
+                    ans = mid;
+                    break;
+                } else if (nums[mid] < nums[i]) {
+                    j = mid - 1;
+                } else {
+                    i = mid + 1;
+                }
+            }
+        }
+        return ans;
     }
 
     public static int search3(int[] nums, int target) {
@@ -29,6 +85,8 @@ public class a_33_todo_SearchinRotatedSortedArray {
         }
         return -1;
     }
+
+
 
     //神秘方法
     public int search(int[] nums, int target) {

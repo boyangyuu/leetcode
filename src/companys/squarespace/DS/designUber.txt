@@ -1,0 +1,53 @@
+1. requirements
+functional
+user order
+driver agree
+
+unfunctional
+order consistency
+write heavy
+
+
+2. db design
+DriverLocation
++ postion
++ category
+
+DriverInfo
+
+...
+
+User
+
+3. make it work : API
+Driver service
+ search(userID, location)
+ return list of drivers
+
+ update(RID, Driver)
+
+4. make it better and scalable: system design
+index, optionmize
+## we will use geo hashing[quad tree] to store the locations, so it will take logn to find the neighbors (locations)
+in cache, we can whave a hashMap<gridId, list of drivers>
+
+## after searching, we can subscribe the user into driver, when driver update location, he will push updating to the revlent
+user (long polling or push notifications.)
+
+5. data partition
+way1
+
+way2
+sharding based on the location grid. (disadvantage: query from a lot of servers)
+
+others :
+6.1 replica (read traffic, )
+distribute read traffic, (writing is not that heavy)
+
+6.2 loadBalance
+if one replica is dead, it will not be asked again
+if one replica is slow, it will be queriyed less oftenly.
+
+
+英语
+inventory 库存

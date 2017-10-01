@@ -69,8 +69,6 @@ public class a_54_todo_SpiralMatrix {
             for (int row = i + p - 2; row > i; --row)
                 ret.add(matrix[row][i]);
         }
-
-
         return ret;
     }
 

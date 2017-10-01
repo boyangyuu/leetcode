@@ -26,7 +26,7 @@ public class bfs_0_tutorials {
             for (int i = 0; i < list.size(); i++) {
                 TreeNode cur = list.get(i);
                 System.out.print(cur.val + ",");
-                if (i == list.size() - 1) System.out.println();;
+                if (i == list.size() - 1) System.out.println();
                 if (cur.left != null) t.add(cur.left);
                 if (cur.right != null) t.add(cur.right);
             }

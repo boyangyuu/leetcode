@@ -21,7 +21,27 @@ todo 需要加上query, count 以检测是否完全连通
 import java.util.HashSet;
 
 public class uf_261_GraphValidTree {
-    class UnionFind {
+
+    public static void main(String[] args) {
+        System.out.println(zombieCluster(new String[]{"1100", "1110", "0110", "0001"}));
+    }
+
+    static int zombieCluster(String[] zombies) {
+        UnionFind uf = new UnionFind(zombies.length);
+        for (int i = 0; i < zombies.length; i++) {
+            String cur = zombies[i];
+            char[] chars = cur.toCharArray();
+            for (int j = 0; j < chars.length; j++) {
+                if (i != j && chars[j] == '1') {
+                    uf.union(i, j);
+                }
+            }
+        }
+        return uf.query();
+
+    }
+
+    static class UnionFind {
         int[] fathers;
         int count;
 
@@ -38,7 +58,6 @@ public class uf_261_GraphValidTree {
                 return a;
             }
             return fathers[a] = find(fathers[a]);
-
         }
 
         boolean union(int a, int b) {

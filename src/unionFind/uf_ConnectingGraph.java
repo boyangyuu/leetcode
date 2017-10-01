@@ -6,14 +6,15 @@ package unionFind;
 public class uf_ConnectingGraph {
 
     public static void main(String[] args) {
-        /*
-query(1,2)
-connect(1,2)
-query(1,3)
-connect(2,4)
-query(1,4)
-         */
+        uf_ConnectingGraph uf = new uf_ConnectingGraph(4);
+        uf.query(1,2);
+        uf.connect(1,2);
+        uf.query(1,3);
+        uf.connect(2,4);
+        uf.query(1,4);
+
     }
+
 
     int father[] = null;
     public uf_ConnectingGraph(int n) {
@@ -22,6 +23,7 @@ query(1,4)
         for(int i = 0; i < n + 1; i++) {
             this.father[i] = i;
         }
+
 
     }
 
@@ -41,5 +43,7 @@ query(1,4)
         int root_b = find(b);
         return root_a == root_b;
     }
+
+
 
 }

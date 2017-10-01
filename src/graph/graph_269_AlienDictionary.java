@@ -16,15 +16,6 @@ public class graph_269_AlienDictionary {
             }
         }
 
-        double target1 = 3.0;
-        PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
-            double target = target1;
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return (int) (Math.abs(o2 - target) - Math.abs(o1 - target));
-            }
-        });
-        
 
         // step 2 build relations
         for (int i = 0; i < words.length - 1; i++) {
@@ -41,28 +32,44 @@ public class graph_269_AlienDictionary {
                 }
             }
         }
-
-        for (char c : inDegree.keySet()) {
+        for (char c : inDegree.keySet())
             System.out.println("key: " + c + ", " + inDegree.get(c));
-        }
+
 
         // step 3 remove from inDegree
-        LinkedList<Character> q = new LinkedList<>();
-        for (char c : inDegree.keySet()) if (inDegree.get(c) == 0) q.push(c);
         String res = "";
-        while (q.isEmpty() == false) {
-            char cur = q.pollLast();
+        while (exist(inDegree)) {
+            char cur = getNextChar(inDegree);
             res += cur;
             Set<Character> set = graph.get(cur);
             for (char c : set) {
                 inDegree.put(c, inDegree.get(c) - 1);
-                if (inDegree.get(c) == 0) q.push(c);
             }
             inDegree.remove(cur);
             graph.remove(cur);
         }
         if (inDegree.size() == 0) return res; //todo bug 1
         else return "";
+    }
+
+    public boolean exist(HashMap<Character, Integer> inDegree) {
+        for (char c : inDegree.keySet()) {
+            if (inDegree.get(c) == 0) {
+
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Character getNextChar(HashMap<Character, Integer> inDegree) {
+        for (char c : inDegree.keySet()) {
+            if (inDegree.get(c) == 0) {
+                inDegree.remove(c);
+                return c;
+            }
+        }
+        return null;
     }
 }
 /** 题

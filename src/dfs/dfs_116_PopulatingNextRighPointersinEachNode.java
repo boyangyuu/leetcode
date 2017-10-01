@@ -3,10 +3,16 @@ package dfs;
 import tree.TreeLinkNode;
 import tree.TreeNode;
 
+import java.util.LinkedList;
+import java.util.TreeSet;
+
 public class dfs_116_PopulatingNextRighPointersinEachNode {
     public static void main(String[] args) {
         //TreeNode
         TreeNode node;
+        TreeSet<Float> set = new TreeSet<>();
+        LinkedList<Integer> list = new LinkedList<>();
+
     }
     
     public void connect(TreeLinkNode root) {

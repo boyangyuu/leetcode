@@ -1,0 +1,8 @@
+##考点
+ Iterator pattern w/queue
+ publish subscribe/pattern w/heap.
+
+##学习
+1. protected (本包, 子类)
+2. default (本包)
+3. Iterator pattern :

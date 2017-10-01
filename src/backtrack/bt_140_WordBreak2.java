@@ -20,6 +20,7 @@ public class bt_140_WordBreak2 {
         // System.out.println(dp[s.length()]);
         List<String> res = new ArrayList<>();
         dfs(res, "", s, wordDict, dp);
+
         return res;
     }
 

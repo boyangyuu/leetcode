@@ -1,9 +1,6 @@
 package brain;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 // todo remember 即可 , true true true 之后 必为false, 只要前三个有false, 则 可以true 那么 后面又可以连续三个true
 //  t t t f t t t f。。。。
@@ -25,6 +22,11 @@ public class dp_$292_rem_NimGame {
 
     // s2
     public static boolean canWinNim(int n) {
+
+
+        PriorityQueue<Integer> q = new PriorityQueue<>();
+
+
         if (n <= 3) return true;
         boolean b1 = true;boolean b2 = true;boolean b3 = true;
         for (int i = 4; i <= n; i++) {

@@ -1,0 +1,47 @@
+1. requirements
+functional
+
+unfunctional
+avaliablablity, latency, scalablity, consistency, read heavy or write heavy
+searching : latency should be import
+
+2. db design
+Restaurant
++ postion
++ category
+...
+
+User
+
+3. make it work : API
+Restaurant service
+ search(userID, longitude, latitude, category, sortFunc, radius, range)
+ return list of restaurant
+
+ update(RID, Restaurant r)
+
+4. make it better and scalable: system design
+index, optionmize
+## we will use geo hashing to store the locations, so it will take logn to find the neighbors (locations)
+## in restaurant schema, we will put location and rid as index, to be easier find the rid with the location
+
+5. data partition
+way1
+sharding based on the region(zipcode) , if one server is serving too many restaurant, we can divide it into 2 servers.
+we may use a metadata to store the relationships between the region and server machine. (disadvantage : one region is very hot
+)
+
+way2
+sharding based on the location grid. (disadvantage: query from a lot of servers)
+
+others :
+6.1 replica (read traffic, )
+distribute read traffic, (writing is not that heavy)
+
+6.2 loadBalance
+if one replica is dead, it will not be asked again
+if one replica is slow, it will be queriyed less oftenly.
+
+
+英语
+inventory 库存
